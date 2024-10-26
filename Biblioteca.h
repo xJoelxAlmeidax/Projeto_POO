@@ -8,9 +8,9 @@ class Biblioteca
 {
 	string NOME;
 	public:
-		Biblioteca(string _nome) {
-		}
+		Biblioteca(string _nome);
 		~Biblioteca();
+
 };
 
 #endif 
