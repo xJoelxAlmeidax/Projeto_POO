@@ -28,14 +28,14 @@ O ojetivo deste projeto é criar um sistema de gestão de uma biblioteca que uti
 
 ### **Herança e Polimorfismo:**
 
-    - As classes são projetadas de modo que a herança e o polimorfismo sejam explorados intensivamente. A classe base para os livros será Livro e, a partir dela, serão criadas subclasses como LivroFiccao, LivroCientifico, Revista, etc.
-    - A classe Leitor será a classe base para diferentes tipos de leitores, e cada subclasse (como Estudante, Professor, Senior) terá seu próprio comportamento para empréstimos, multas e prorrogações.
+- As classes são projetadas de modo que a herança e o polimorfismo sejam explorados intensivamente. A classe base para os livros será Livro e, a partir dela, serão criadas subclasses como LivroFiccao, LivroCientifico, Revista, etc.
+- A classe Leitor será a classe base para diferentes tipos de leitores, e cada subclasse (como Estudante, Professor, Senior) terá seu próprio comportamento para empréstimos, multas e prorrogações.
 ### **Encapsulamento**
 
-    - As classes devem implementar encapsulamento, com os atributos privados e métodos públicos para manipulação de dados.
+- As classes devem implementar encapsulamento, com os atributos privados e métodos públicos para manipulação de dados.
 ### **Classes e Arquitetura**
     
-    - Organizar o código em múltiplos ficheiros, separando as classes em módulos distintos para facilitar a manutenção e expansão do sistema.
+- Organizar o código em múltiplos ficheiros, separando as classes em módulos distintos para facilitar a manutenção e expansão do sistema.
 
 ## 👨‍💻Autores
 
