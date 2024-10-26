@@ -128,10 +128,36 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Biblioteca.cpp" />
+    <ClCompile Include="Emprestimo.cpp" />
+    <ClCompile Include="Estudante.cpp" />
+    <ClCompile Include="Jornal.cpp" />
+    <ClCompile Include="Leitor.cpp" />
+    <ClCompile Include="LeitorComum.cpp" />
+    <ClCompile Include="Livro.cpp" />
+    <ClCompile Include="LivroCientifico.cpp" />
+    <ClCompile Include="LivroEducativo.cpp" />
+    <ClCompile Include="LivroFiccao.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Multa.cpp" />
+    <ClCompile Include="Professor.cpp" />
+    <ClCompile Include="Revista.cpp" />
+    <ClCompile Include="Senior.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Biblioteca.h" />
+    <ClInclude Include="Emprestimo.h" />
+    <ClInclude Include="Estudante.h" />
+    <ClInclude Include="Jornal.h" />
+    <ClInclude Include="Leitor.h" />
+    <ClInclude Include="LeitorComum.h" />
+    <ClInclude Include="Livro.h" />
+    <ClInclude Include="LivroCientifico.h" />
+    <ClInclude Include="LivroEducativo.h" />
+    <ClInclude Include="LivroFiccao.h" />
+    <ClInclude Include="Multa.h" />
+    <ClInclude Include="Professor.h" />
+    <ClInclude Include="Revista.h" />
+    <ClInclude Include="Senior.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
