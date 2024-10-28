@@ -1,0 +1,102 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="NameAndType">
+  <Class Name="Biblioteca" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="14.75" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAIAAAAAABAAQAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Biblioteca.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Livro" Collapsed="true">
+    <Position X="13.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Livro.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Leitor" Collapsed="true">
+    <Position X="0.75" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Leitor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Emprestimo" Collapsed="true">
+    <Position X="7.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Emprestimo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Estudante" Collapsed="true">
+    <Position X="0.5" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Estudante.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jornal" Collapsed="true">
+    <Position X="14" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Jornal.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Multa" Collapsed="true">
+    <Position X="15.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Multa.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LeitorComum" Collapsed="true">
+    <Position X="1.75" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\LeitorComum.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivroCientifico" Collapsed="true">
+    <Position X="12.75" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\LivroCientifico.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivroEducativo" Collapsed="true">
+    <Position X="11.5" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\LivroEducativo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="LivroFiccao" Collapsed="true">
+    <Position X="10.25" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\LivroFiccao.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Professor" Collapsed="true">
+    <Position X="3" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Professor.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Revista" Collapsed="true">
+    <Position X="9" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Revista.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Senior" Collapsed="true">
+    <Position X="4.25" Y="2.25" Width="1.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>include\Senior.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

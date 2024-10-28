@@ -18,91 +18,94 @@
     <ClCompile Include="main.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Biblioteca.cpp">
+    <ClCompile Include="src\Biblioteca.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="LivroFiccao.cpp">
+    <ClCompile Include="src\Emprestimo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="LivroCientifico.cpp">
+    <ClCompile Include="src\Estudante.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="LivroEducativo.cpp">
+    <ClCompile Include="src\Jornal.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Revista.cpp">
+    <ClCompile Include="src\Leitor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Jornal.cpp">
+    <ClCompile Include="src\LeitorComum.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="LeitorComum.cpp">
+    <ClCompile Include="src\Livro.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Estudante.cpp">
+    <ClCompile Include="src\LivroCientifico.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Professor.cpp">
+    <ClCompile Include="src\LivroEducativo.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Senior.cpp">
+    <ClCompile Include="src\LivroFiccao.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Livro.cpp">
+    <ClCompile Include="src\Multa.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Leitor.cpp">
+    <ClCompile Include="src\Professor.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Emprestimo.cpp">
+    <ClCompile Include="src\Revista.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
-    <ClCompile Include="Multa.cpp">
+    <ClCompile Include="src\Senior.cpp">
       <Filter>Arquivos de Origem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Biblioteca.h">
+    <ClInclude Include="include\Biblioteca.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="LivroFiccao.h">
+    <ClInclude Include="include\Emprestimo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="LivroCientifico.h">
+    <ClInclude Include="include\Estudante.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="LivroEducativo.h">
+    <ClInclude Include="include\Jornal.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Revista.h">
+    <ClInclude Include="include\Leitor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Jornal.h">
+    <ClInclude Include="include\LeitorComum.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="LeitorComum.h">
+    <ClInclude Include="include\Livro.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Estudante.h">
+    <ClInclude Include="include\LivroCientifico.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Professor.h">
+    <ClInclude Include="include\LivroEducativo.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Senior.h">
+    <ClInclude Include="include\LivroFiccao.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Livro.h">
+    <ClInclude Include="include\Multa.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Leitor.h">
+    <ClInclude Include="include\Professor.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Emprestimo.h">
+    <ClInclude Include="include\Revista.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
-    <ClInclude Include="Multa.h">
+    <ClInclude Include="include\Senior.h">
       <Filter>Arquivos de Cabeçalho</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
 </Project>

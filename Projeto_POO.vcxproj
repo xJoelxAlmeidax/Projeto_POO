@@ -127,37 +127,40 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Biblioteca.cpp" />
-    <ClCompile Include="Emprestimo.cpp" />
-    <ClCompile Include="Estudante.cpp" />
-    <ClCompile Include="Jornal.cpp" />
-    <ClCompile Include="Leitor.cpp" />
-    <ClCompile Include="LeitorComum.cpp" />
-    <ClCompile Include="Livro.cpp" />
-    <ClCompile Include="LivroCientifico.cpp" />
-    <ClCompile Include="LivroEducativo.cpp" />
-    <ClCompile Include="LivroFiccao.cpp" />
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="Multa.cpp" />
-    <ClCompile Include="Professor.cpp" />
-    <ClCompile Include="Revista.cpp" />
-    <ClCompile Include="Senior.cpp" />
+    <ClCompile Include="src\Biblioteca.cpp" />
+    <ClCompile Include="src\Emprestimo.cpp" />
+    <ClCompile Include="src\Estudante.cpp" />
+    <ClCompile Include="src\Jornal.cpp" />
+    <ClCompile Include="src\Leitor.cpp" />
+    <ClCompile Include="src\LeitorComum.cpp" />
+    <ClCompile Include="src\Livro.cpp" />
+    <ClCompile Include="src\LivroCientifico.cpp" />
+    <ClCompile Include="src\LivroEducativo.cpp" />
+    <ClCompile Include="src\LivroFiccao.cpp" />
+    <ClCompile Include="src\Multa.cpp" />
+    <ClCompile Include="src\Professor.cpp" />
+    <ClCompile Include="src\Revista.cpp" />
+    <ClCompile Include="src\Senior.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Biblioteca.h" />
-    <ClInclude Include="Emprestimo.h" />
-    <ClInclude Include="Estudante.h" />
-    <ClInclude Include="Jornal.h" />
-    <ClInclude Include="Leitor.h" />
-    <ClInclude Include="LeitorComum.h" />
-    <ClInclude Include="Livro.h" />
-    <ClInclude Include="LivroCientifico.h" />
-    <ClInclude Include="LivroEducativo.h" />
-    <ClInclude Include="LivroFiccao.h" />
-    <ClInclude Include="Multa.h" />
-    <ClInclude Include="Professor.h" />
-    <ClInclude Include="Revista.h" />
-    <ClInclude Include="Senior.h" />
+    <ClInclude Include="include\Biblioteca.h" />
+    <ClInclude Include="include\Emprestimo.h" />
+    <ClInclude Include="include\Estudante.h" />
+    <ClInclude Include="include\Jornal.h" />
+    <ClInclude Include="include\Leitor.h" />
+    <ClInclude Include="include\LeitorComum.h" />
+    <ClInclude Include="include\Livro.h" />
+    <ClInclude Include="include\LivroCientifico.h" />
+    <ClInclude Include="include\LivroEducativo.h" />
+    <ClInclude Include="include\LivroFiccao.h" />
+    <ClInclude Include="include\Multa.h" />
+    <ClInclude Include="include\Professor.h" />
+    <ClInclude Include="include\Revista.h" />
+    <ClInclude Include="include\Senior.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ClassDiagram.cd" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
