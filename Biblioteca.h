@@ -3,6 +3,9 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "Livro.h"
+#include "Leitor.h"
+#include "Emprestimo.h"
 using namespace std;
 
 class Biblioteca

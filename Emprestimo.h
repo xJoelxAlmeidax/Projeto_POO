@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include "Multa.h"
 class Emprestimo
 {
 };
