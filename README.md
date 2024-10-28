@@ -42,4 +42,4 @@ O ojetivo deste projeto é criar um sistema de gestão de uma biblioteca que uti
 - [@xJoelxAlmeidax](https://github.com/xJoelxAlmeidax)
 - [@2maas](https://www.github.com/2maas)
 - [@renato934](https://www.github.com/renato934)
-- Simão Lopes
+- [@simao205](https://www.github.com/simao205)
