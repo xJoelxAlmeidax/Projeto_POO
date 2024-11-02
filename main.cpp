@@ -9,5 +9,6 @@ int main() {
 	setlocale(LC_ALL, "Portuguese");
 	cout << "Projeto de POO" << endl;
 	Biblioteca B_IPV("Biblioteca do Instituto Politécnico de Viseu");
+	B_IPV.load();
 	return 0;
 }

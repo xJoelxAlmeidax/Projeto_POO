@@ -11,10 +11,15 @@ using namespace std;
 class Biblioteca
 {
 	string NOME;
+	list<Livro*> Livro;
+	list<Leitor*> Leitor;
+	list<Emprestimo*> Emprestimo;
 	public:
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
-
+		void virtual show();
+		void load();
+		void save();
 };
 
 #endif 
