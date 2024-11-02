@@ -3,13 +3,17 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "LivroCientifico.h"
-#include "LivroEducativo.h"
-#include "LivroFiccao.h"
-#include "Revista.h"
-#include "Jornal.h"
+using namespace std;
 class Livro
 {
+	string TITULO;
+	string AUTOR;
+	int ANO;
+
+public:
+	Livro(string titulo, string autor, int ano);
+	virtual ~Livro();
+	virtual void Show();
 };
 
 #endif

@@ -6,6 +6,7 @@
 #include "Livro.h"
 #include "Leitor.h"
 #include "Emprestimo.h"
+#include "LivroGenerico.h"
 using namespace std;
 
 class Biblioteca
@@ -18,6 +19,9 @@ class Biblioteca
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
 		void virtual show();
+		void Add_Livro();
+		void Add_Leitor();
+		void Add_Emprestimo();
 		void load();
 		void save();
 };

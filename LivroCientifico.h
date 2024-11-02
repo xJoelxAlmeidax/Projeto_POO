@@ -3,8 +3,12 @@
 #include <iostream>
 #include <string>
 #include <list>
-class LivroCientifico
+#include "LivroGenerico.h"
+class LivroCientifico: public LivroGenerico
 {
+	string areaEstudo;
+public:
+	LivroCientifico(string titulo, string autor, int ano);
 };
 
 #endif

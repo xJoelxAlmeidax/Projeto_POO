@@ -137,6 +137,7 @@
     <ClCompile Include="LivroCientifico.cpp" />
     <ClCompile Include="LivroEducativo.cpp" />
     <ClCompile Include="LivroFiccao.cpp" />
+    <ClCompile Include="LivroGenerico.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Multa.cpp" />
     <ClCompile Include="Professor.cpp" />
@@ -157,6 +158,7 @@
     <ClInclude Include="LivroCientifico.h" />
     <ClInclude Include="LivroEducativo.h" />
     <ClInclude Include="LivroFiccao.h" />
+    <ClInclude Include="LivroGenerico.h" />
     <ClInclude Include="Multa.h" />
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Revista.h" />
