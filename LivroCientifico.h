@@ -8,7 +8,9 @@ class LivroCientifico: public LivroGenerico
 {
 	string areaEstudo;
 public:
-	LivroCientifico(string titulo, string autor, int ano);
+	LivroCientifico(string _titulo, string _autor, int _ano, string _isbn, string _areaestudo);
+	virtual ~LivroCientifico();
+	void Show();
 };
 
 #endif

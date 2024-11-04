@@ -3,12 +3,34 @@ Biblioteca::Biblioteca(string _nome) {
 	NOME = _nome;
 }
 Biblioteca::~Biblioteca(){}
-void Biblioteca::show() {
+
+bool Biblioteca::Add_Livros() {
+	return true;
+}
+bool Biblioteca::Add_Leitores() {
+	return true;
+}
+bool Biblioteca::Add_Livro(Livro* L) {
+	return true;
+}
+bool Biblioteca::Add_Leitor(Leitor* P) {
+	return true;
+}
+void Biblioteca::Add_Emprestimo() {
 
 }
-void Biblioteca::load() {
+bool Biblioteca::load(string nf) {
+	return true;
+}
+bool Biblioteca::save(string nf) {
+	return true;
+}
+void Biblioteca::RelatorioCategoria(string cat) {
 
 }
-void Biblioteca::save() {
+void Biblioteca::Sistema_Not_atraso() {
+
+}
+void Biblioteca::listagem_livros() {
 
 }

@@ -3,12 +3,18 @@
 #include <iostream>
 #include <string>
 #include <list>
-#include "LeitorComum.h"
-#include "Senior.h"
-#include "Estudante.h"
-#include "Professor.h"
+using namespace std;
 class Leitor
 {
+	string N_CC;
+	string NOME;
+	string MORADA;
+	string TELEFONE;
+public:
+	Leitor(string _ncc, string _nome, string _morada, string _telefone);
+	virtual ~Leitor();
+	void virtual Show();
+
 };
 
 #endif

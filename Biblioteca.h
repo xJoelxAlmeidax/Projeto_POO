@@ -7,23 +7,28 @@
 #include "Leitor.h"
 #include "Emprestimo.h"
 #include "LivroGenerico.h"
+#include "LivroCientifico.h"
 using namespace std;
 
 class Biblioteca
 {
 	string NOME;
-	list<Livro*> Livro;
-	list<Leitor*> Leitor;
-	list<Emprestimo*> Emprestimo;
+	list<Livro*> Livros;
+	list<Leitor*> Leitores;
+	list<Emprestimo*> Emprestimos;
 	public:
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
-		void virtual show();
-		void Add_Livro();
-		void Add_Leitor();
+		bool Add_Livros();
+		bool Add_Leitores();
+		bool Add_Livro(Livro* L);
+		bool Add_Leitor(Leitor* P);
 		void Add_Emprestimo();
-		void load();
-		void save();
+		bool load(string nf);
+		bool save(string nf);
+		void RelatorioCategoria(string cat);
+		void Sistema_Not_atraso();
+		void listagem_livros();
 };
 
 #endif 
