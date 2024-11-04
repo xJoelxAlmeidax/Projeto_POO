@@ -29,7 +29,7 @@ void Biblioteca::RelatorioCategoria(string cat) {
 
 }
 void Biblioteca::Sistema_Not_atraso() {
-
+	cout << "Entrei em" << __FUNCTION__ << endl;
 }
 void Biblioteca::listagem_livros() {
 

@@ -2,7 +2,7 @@
 const int NUM_TABS = 4; // Número de abas
 
 void mostrarMenuTabs(int abaSelecionada) {
-    const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "4 M4C4C0S" };
+    const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "Ficheiros" };
 
     cout << "---------------------------------------------------------------------\n";
     cout << "BIBLIOTECA: ";
@@ -42,10 +42,11 @@ void menu_principal() {
     const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Procurar Nome" }; // 2 opções
     const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Jornais", "Mostrar Revistas", "Pesquisar Livro" }; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
+    const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair"}; // 1 opção
 
     // Criando um array de ponteiros para armazenar as opções de cada aba
-    const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3 };
-    int numOpcoes[NUM_TABS] = { 6, 9, 6 }; // Número de opções em cada aba
+    const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
+    int numOpcoes[NUM_TABS] = { 6, 9, 6, 2 }; // Número de opções em cada aba
 
     int abaSelecionada = 0; // Inicia na primeira aba
     int opcaoSelecionada = 0; // Inicia na primeira opção da aba selecionada

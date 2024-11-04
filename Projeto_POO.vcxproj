@@ -146,9 +146,6 @@
     <ClCompile Include="Uteis.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-  </ItemGroup>
-  <ItemGroup>
     <ClInclude Include="Biblioteca.h" />
     <ClInclude Include="Emprestimo.h" />
     <ClInclude Include="Estudante.h" />

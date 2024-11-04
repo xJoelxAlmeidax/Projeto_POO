@@ -6,9 +6,10 @@
 #include "LivroGenerico.h"
 class LivroCientifico: public LivroGenerico
 {
-	string areaEstudo;
+	string AREAESTUDO;
+	string REVISORCIENTIFICO;
 public:
-	LivroCientifico(string _titulo, string _autor, int _ano, string _isbn, string _areaestudo);
+	LivroCientifico(string _titulo, string _autor, int _ano, string _isbn, string _areaestudo, string _revisor);
 	virtual ~LivroCientifico();
 	void Show();
 };
