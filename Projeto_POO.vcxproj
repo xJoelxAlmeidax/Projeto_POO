@@ -143,6 +143,7 @@
     <ClCompile Include="Professor.cpp" />
     <ClCompile Include="Revista.cpp" />
     <ClCompile Include="Senior.cpp" />
+    <ClCompile Include="Uteis.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
@@ -163,6 +164,7 @@
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Revista.h" />
     <ClInclude Include="Senior.h" />
+    <ClInclude Include="Uteis.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
