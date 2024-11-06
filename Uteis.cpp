@@ -39,14 +39,14 @@ void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes
 
 void menu_principal() {
     // Definindo opções para cada aba com diferentes números de opções
-    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Procurar Nome" }; // 2 opções
+    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Procurar Nome" }; // 7 opções
     const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Jornais", "Mostrar Revistas", "Pesquisar Livro" }; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair"}; // 1 opção
 
     // Criando um array de ponteiros para armazenar as opções de cada aba
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
-    int numOpcoes[NUM_TABS] = { 6, 9, 6, 2 }; // Número de opções em cada aba
+    int numOpcoes[NUM_TABS] = { 7, 9, 6, 2 }; // Número de opções em cada aba
 
     int abaSelecionada = 0; // Inicia na primeira aba
     int opcaoSelecionada = 0; // Inicia na primeira opção da aba selecionada
@@ -124,9 +124,67 @@ void menu_principal() {
             }
         }
         else if (tecla == 13) { // Tecla Enter
-            // Se o usuário pressionar Enter, seleciona a opção atual
-            cout << "Você escolheu: " << opcoes[abaSelecionada][opcaoSelecionada] << endl;
-            Sleep(1000); // Pausa para mostrar a escolha
+            int valor = abaSelecionada * 10 + opcaoSelecionada;
+            switch (valor) {
+                //primeira aba
+            case 0:
+                cout << "Inscrição";
+                break;
+            case 1:
+                cout << "Alterar dados";
+                break;
+                cout << "Remover Leitor";
+            case 2:
+                break;
+            case 3:
+                break;
+            case 4:
+                break;
+            case 5:
+                break;
+            case 6:
+                break;
+                //segunda aba
+            case 10:
+                cout << "adicionar livro";
+                break;
+            case 11:
+                break;
+            case 12:
+                break;
+            case 13:
+                break;
+            case 14:
+                break;
+            case 15:
+                break;
+            case 16:
+                break;
+            case 17:
+                break;
+            case 18:
+                break;
+                //terceira aba
+            case 20:
+                break;
+            case 21:
+                break;
+            case 22:
+                break;
+            case 23:
+                break;
+            case 24: 
+                break;
+            case 25:
+                break;
+                //quarta aba
+            case 30:
+                break;
+            case 31:
+                return;
+            }
+            
+            Sleep(2000); // Pausa para mostrar a escolha
         }
 
         system("cls"); // Limpa a tela para atualizar a interface
