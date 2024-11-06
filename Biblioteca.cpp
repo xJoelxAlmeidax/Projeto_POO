@@ -4,13 +4,15 @@ Biblioteca::Biblioteca(string _nome) {
 }
 Biblioteca::~Biblioteca(){}
 
-bool Biblioteca::Add_Livros() {
-	return true;
+Livro* Biblioteca::Add_Livros() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	return NULL;
 }
-bool Biblioteca::Add_Leitores() {
-	return true;
+Leitor* Biblioteca::Add_Leitores() {
+	return NULL;
 }
 bool Biblioteca::Add_Livro(Livro* L) {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	return true;
 }
 bool Biblioteca::Add_Leitor(Leitor* P) {

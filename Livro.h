@@ -3,18 +3,19 @@
 #include <iostream>
 #include <string>
 #include <list>
-using namespace std;
 #include "Emprestimo.h"
 #include "Leitor.h"
+using namespace std;
 class Livro
 {
 	string TITULO;
 	string AUTOR;
 	int ANO;
+	string TIPO;
 	list<Emprestimo*> Emp;
 	list<Leitor*> Reservas;
 public:
-	Livro(string titulo, string autor, int ano);
+	Livro(string titulo, string autor, int ano, string _tipo);
 	virtual ~Livro();
 	virtual void Show();
 };

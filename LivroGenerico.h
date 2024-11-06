@@ -8,7 +8,7 @@ class LivroGenerico : public Livro
 {
 	string ISBN;
 	public:
-	LivroGenerico(string titulo, string autor, int ano, string _ISBN);
+	LivroGenerico(string titulo, string autor, int ano, string tipo, string _ISBN);
 	virtual ~LivroGenerico();
 	void Show();
 };

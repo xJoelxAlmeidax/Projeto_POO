@@ -8,6 +8,7 @@
 #include "Emprestimo.h"
 #include "LivroGenerico.h"
 #include "LivroCientifico.h"
+#include "LivroFiccao.h"
 using namespace std;
 
 class Biblioteca
@@ -19,8 +20,8 @@ class Biblioteca
 	public:
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
-		bool Add_Livros();
-		bool Add_Leitores();
+		Livro* Add_Livros();
+		Leitor* Add_Leitores();
 		bool Add_Livro(Livro* L);
 		bool Add_Leitor(Leitor* P);
 		void Add_Emprestimo();

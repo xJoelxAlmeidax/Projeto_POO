@@ -1,6 +1,6 @@
 #include "LivroCientifico.h"
 
-LivroCientifico::LivroCientifico(string _titulo, string _autor, int _ano, string _isbn, string _areaestudo, string _revisor) : LivroGenerico(_titulo, _autor, _ano, _isbn), AREAESTUDO(_areaestudo), REVISORCIENTIFICO(_revisor){}
+LivroCientifico::LivroCientifico(string _titulo, string _autor, int _ano, string tipo, string _isbn, string _areaestudo, string _revisor) : LivroGenerico(_titulo, _autor, _ano, tipo, _isbn), AREAESTUDO(_areaestudo), REVISORCIENTIFICO(_revisor){}
 LivroCientifico::~LivroCientifico() {
 
 }
