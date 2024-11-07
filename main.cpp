@@ -56,6 +56,10 @@ int main() {
             case 0:
                 system("cls");
                 cout << "Inscrever Leitor\n";
+                {
+                    Leitor* L = B->Add_Leitores();
+                    B->Add_Leitor(L);
+                }
                 break;
             case 1:
                 system("cls");

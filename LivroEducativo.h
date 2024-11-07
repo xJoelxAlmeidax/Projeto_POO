@@ -10,7 +10,7 @@ class LivroEducativo: public LivroGenerico
 	string AREA;
 	string ILUSTRADOR;
 public:
-	LivroEducativo(string titulo, string autor, int ano, string tipo, string _ISBN, string _idaderec, string _area, string _ilustrador);
+	LivroEducativo(string titulo, string autor, int ano, string _ISBN, string _idaderec, string _area, string _ilustrador);
 	virtual ~LivroEducativo();
 	void Show();
 };

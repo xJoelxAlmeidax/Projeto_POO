@@ -1,5 +1,5 @@
 #include "LivroEducativo.h"
-LivroEducativo::LivroEducativo(string titulo, string autor, int ano, string tipo, string _ISBN, string _idaderec, string _area, string _ilustrador): LivroGenerico(titulo, autor, ano, tipo,  _ISBN), IDADE_REC(_idaderec), AREA(_area), ILUSTRADOR(_ilustrador){}
+LivroEducativo::LivroEducativo(string titulo, string autor, int ano,  string _ISBN, string _idaderec, string _area, string _ilustrador): LivroGenerico(titulo, autor, ano,  _ISBN), IDADE_REC(_idaderec), AREA(_area), ILUSTRADOR(_ilustrador){}
 LivroEducativo::~LivroEducativo(){}
 void LivroEducativo::Show() {
 	LivroGenerico::Show();

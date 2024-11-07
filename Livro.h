@@ -11,11 +11,10 @@ class Livro
 	string TITULO;
 	string AUTOR;
 	int ANO;
-	string TIPO;
 	list<Emprestimo*> Emp;
 	list<Leitor*> Reservas;
 public:
-	Livro(string titulo, string autor, int ano, string _tipo);
+	Livro(string titulo, string autor, int ano);
 	virtual ~Livro();
 	virtual void Show();
 };

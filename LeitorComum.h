@@ -3,8 +3,10 @@
 #include <iostream>
 #include <string>
 #include <list>
-class LeitorComum
+#include "Leitor.h"
+class LeitorComum: public Leitor
 {
+
 };
 
 #endif

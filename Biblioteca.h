@@ -9,6 +9,9 @@
 #include "LivroGenerico.h"
 #include "LivroCientifico.h"
 #include "LivroFiccao.h"
+#include "LivroEducativo.h"
+#include "Jornal.h"
+#include "Revista.h"
 using namespace std;
 
 class Biblioteca

@@ -8,7 +8,7 @@ class LivroFiccao: public LivroGenerico
 {
 	string SUBGENERO;
 public:
-	LivroFiccao(string titulo, string autor, int ano, string tipo, string _ISBN, string _subgenero);
+	LivroFiccao(string titulo, string autor, int ano, string _ISBN, string _subgenero);
 	virtual ~LivroFiccao();
 	void Show();
 
