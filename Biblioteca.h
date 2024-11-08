@@ -3,6 +3,7 @@
 #include <iostream>
 #include <string>
 #include <list>
+#include <cctype>
 #include "Livro.h"
 #include "Leitor.h"
 #include "Emprestimo.h"
@@ -32,7 +33,17 @@ class Biblioteca
 		bool save(string nf);
 		void RelatorioCategoria(string cat);
 		void Sistema_Not_atraso();
-		void listagem_livros();
+		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chaama a funcao
+		template <typename T>
+		void listagem_livros()
+		{
+			for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
+			{
+				// dynaminc_cast metodo de polimorfismo para saber o tipo de livro
+				if (dynamic_cast<T*>(*it))
+					(*it)->Show();
+			}
+		};
 };
 
 #endif 

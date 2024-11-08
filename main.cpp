@@ -107,22 +107,27 @@ int main() {
             case 13:
                 system("cls");
                 cout << "Mostrar Livros de Ficção\n";
+                B->listagem_livros<LivroFiccao>();
                 break;
             case 14:
                 system("cls");
                 cout << "Mostrar Livros Científicos\n";
+                B->listagem_livros<LivroCientifico>();
                 break;
             case 15:
                 system("cls");
                 cout << "Mostrar Livros Educativos\n";
+                B->listagem_livros<LivroEducativo>();
                 break;
             case 16:
                 system("cls");
                 cout << "Mostrar Revistas\n";
+                B->listagem_livros<Revista>();
                 break;
             case 17:
                 system("cls");
                 cout << "Mostrar Jornais\n";
+                B->listagem_livros<Jornal>();
                 break;
             case 18:
                 system("cls");
