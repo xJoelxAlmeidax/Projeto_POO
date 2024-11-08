@@ -8,7 +8,6 @@ struct DATA {
 	int dia;
 	int mês;
 	int ano;
-
 };
 class Livro;
 class Leitor;

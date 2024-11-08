@@ -11,11 +11,12 @@ Livro* Biblioteca::Add_Livros() {
 	string autor;
 	int ano; 
 	cout << "Título: ";
-	cin >> titulo;
+	getline(cin, titulo);
 	cout << "Autor: ";
-	cin >> autor;
+	getline(cin, autor);
 	cout << "Ano: ";
 	cin >> ano;
+	cin.ignore();
 	Livro* L = NULL;
 	do {
 		cout << "Tipo de Livro(Ficcao/Cientifico/Educativo/Jornal/Revista): ";
@@ -25,8 +26,9 @@ Livro* Biblioteca::Add_Livros() {
 			string _subgenero;
 			cout << "ISBN: ";
 			cin >> _ISBN;
-			cout << "subgenero: ";
-			cin >> _subgenero;
+			cin.ignore();
+			cout << "Subgénero: ";
+			getline(cin, _subgenero);
 			L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
 			break;
 		}
@@ -36,10 +38,11 @@ Livro* Biblioteca::Add_Livros() {
 			string _revisor;
 			cout << "ISBN: ";
 			cin >> _ISBN;
+			cin.ignore();
 			cout << "Area Estudo: ";
-			cin >> _areaestudo;
+			getline(cin, _areaestudo);
 			cout << "Revisor Cientifico: ";
-			cin >> _revisor;
+			getline(cin, _revisor);
 			L = new LivroCientifico(titulo,autor,ano,_ISBN, _areaestudo,_revisor);
 			break;
 		}
@@ -50,21 +53,48 @@ Livro* Biblioteca::Add_Livros() {
 			string _ilustrador;
 			cout << "ISBN: ";
 			cin >> _ISBN;
-			cout << "Idade: ";
-			cin >> _idaderec;
+			cin.ignore();
+			cout << "Idade Recomendada: ";
+			getline(cin, _idaderec);
 			cout << "Area: ";
-			cin >> _area;
+			getline(cin, _area);
 			cout << "Ilustrador: ";
-			cin >> _ilustrador;
+			getline(cin, _ilustrador);
 			L = new LivroEducativo(titulo, autor,ano,_ISBN,_idaderec,_area,_ilustrador);
 			break;
 		}
 		else if (tipo_uti == "Jornal") {
-			//L = new Jornal();
+			string _issn;
+			string _edicao;
+			string _editor_boss;
+			string _tipo_dis;
+			cout << "ISSN: ";
+			cin >> _issn;
+			cin.ignore();
+			cout << "Edição: ";
+			getline(cin, _edicao);
+			cout << "Editor Chefe: ";
+			getline(cin, _editor_boss);
+			cout << "Distribuição geográfica (nacional/regional/local/etc.): ";
+			getline(cin, _tipo_dis);
+			L = new Jornal(titulo, autor, ano, _issn, _edicao, _editor_boss, _tipo_dis);
 			break;
 		}
 		else if (tipo_uti == "Revista") {
-			//L = new Revista();
+			string _issn;
+			string _edicao;
+			string _editora;
+			string _fotografo;
+			cout << "ISSN: ";
+			cin >> _issn;
+			cin.ignore();
+			cout << "Edição: ";
+			getline(cin, _edicao);
+			cout << "Editora: ";
+			getline(cin, _editora);
+			cout << "Fotografo da Capa: ";
+			getline(cin, _fotografo);
+			L = new Revista(titulo, autor, ano, _issn, _edicao, _editora, _fotografo);
 			break;
 		}
 		else {

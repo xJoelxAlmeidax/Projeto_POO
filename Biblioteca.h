@@ -33,15 +33,17 @@ class Biblioteca
 		bool save(string nf);
 		void RelatorioCategoria(string cat);
 		void Sistema_Not_atraso();
-		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chaama a funcao
+		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename T>
 		void listagem_livros()
 		{
 			for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
 			{
 				// dynaminc_cast metodo de polimorfismo para saber o tipo de livro
-				if (dynamic_cast<T*>(*it))
+				if (dynamic_cast<T*>(*it)) {
 					(*it)->Show();
+					cout << "-------------------------------------" << endl;
+				}
 			}
 		};
 };

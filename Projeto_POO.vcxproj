@@ -140,6 +140,7 @@
     <ClCompile Include="LivroGenerico.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Multa.cpp" />
+    <ClCompile Include="OutrosLivros.cpp" />
     <ClCompile Include="Professor.cpp" />
     <ClCompile Include="Revista.cpp" />
     <ClCompile Include="Senior.cpp" />
@@ -158,6 +159,7 @@
     <ClInclude Include="LivroFiccao.h" />
     <ClInclude Include="LivroGenerico.h" />
     <ClInclude Include="Multa.h" />
+    <ClInclude Include="OutrosLivros.h" />
     <ClInclude Include="Professor.h" />
     <ClInclude Include="Revista.h" />
     <ClInclude Include="Senior.h" />
