@@ -80,6 +80,7 @@ Leitor* Biblioteca::Add_Leitores() {
 	return NULL;
 }
 bool Biblioteca::Add_Livro(Livro* L) {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	Livros.push_back(L);
 	return true;
 }
