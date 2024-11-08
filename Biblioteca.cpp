@@ -106,6 +106,7 @@ Livro* Biblioteca::Add_Livros() {
 	return L;
 }
 Leitor* Biblioteca::Add_Leitores() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	return NULL;
 }
 bool Biblioteca::Add_Livro(Livro* L) {
@@ -114,22 +115,48 @@ bool Biblioteca::Add_Livro(Livro* L) {
 	return true;
 }
 bool Biblioteca::Add_Leitor(Leitor* P) {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	Leitores.push_back(P);
 	return true;
 }
 void Biblioteca::Add_Emprestimo() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 
 }
 bool Biblioteca::load_file(string nf) {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	return true;
 }
 bool Biblioteca::save_file(string nf) {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	return true;
 }
-void Biblioteca::RelatorioCategoria(string cat) {
-
+void Biblioteca::RelatorioCategorias() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	cout << "LIVROS" << endl;
+	cout << "------------------------------------------" << endl;
+	cout << "            LIVROS CIENTIFICOS" << endl;
+	cout << "------------------------------------------" << endl;
+	listagem_livros<LivroCientifico>();
+	cout << "------------------------------------------" << endl;
+	cout << "             LIVROS DE FICÇÃO" << endl;
+	cout << "------------------------------------------" << endl;
+	listagem_livros<LivroFiccao>();
+	cout << "------------------------------------------" << endl;
+	cout << "            LIVROS EDUCATIVOS" << endl;
+	cout << "------------------------------------------" << endl;
+	listagem_livros<LivroEducativo>();
+	cout << "------------------------------------------" << endl;
+	cout << "                REVISTAS" << endl;
+	cout << "------------------------------------------" << endl;
+	listagem_livros<Revista>();
+	cout << "------------------------------------------" << endl;
+	cout << "                JORNAIS" << endl;
+	cout << "------------------------------------------" << endl;
+	listagem_livros<Jornal>();
 }
 void Biblioteca::Sistema_Not_atraso() {
-	cout << "Entrei em" << __FUNCTION__ << endl;
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 }
 
 

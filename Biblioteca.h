@@ -32,7 +32,7 @@ class Biblioteca
 		void Add_Emprestimo();
 		bool load_file(string nf);
 		bool save_file(string nf);
-		void RelatorioCategoria(string cat);
+		void RelatorioCategorias();
 		void Sistema_Not_atraso();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename T>

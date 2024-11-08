@@ -137,6 +137,7 @@ int main() {
             case 18:
                 system("cls");
                 cout << "Mostrar todos os Livros\n";
+                B->RelatorioCategorias();
                 break;
             case 19:
                 system("cls");
@@ -190,7 +191,7 @@ int main() {
 
         system("cls"); // Limpa a tela para atualizar a interface
     }
-    B->save("Dados.txt");
+    B->save_file("Dados.txt");
 
     return 0;
 }
