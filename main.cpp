@@ -1,21 +1,21 @@
 ﻿#include <iostream>
 #include <locale>
 #include "Biblioteca.h"
-#include "Uteis.h"
 const int NUM_TABS = 4;
 using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
+    B->load_file("Dados.txt");
     B->Sistema_Not_atraso();
     system("pause"); system("cls");
-    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Procurar Nome" }; // 7 opções
-    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Jornais", "Mostrar Revistas", "Pesquisar Livro" }; // 4 opções
+    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Mostrar todos", "Procurar Nome"}; // 7 opções
+    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Jornais", "Mostrar Revistas", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
-    int numOpcoes[NUM_TABS] = { 7, 9, 7, 2 };
+    int numOpcoes[NUM_TABS] = { 8, 10, 7, 2 };
     int abaSelecionada = 0;
     int opcaoSelecionada = 0;
     while (true) {
@@ -83,6 +83,10 @@ int main() {
                 break;
             case 6:
                 system("cls");
+                cout << "Mostrar todos os Utilizadores\n";
+                break;
+            case 7:
+                system("cls");
                 cout << "Mostrar Leitor P/ Nome\n";
                 break;
 
@@ -99,6 +103,7 @@ int main() {
             case 11:
                 system("cls");
                 cout << "Alterar Livro\n";
+
                 break;
             case 12:
                 system("cls");
@@ -130,6 +135,10 @@ int main() {
                 B->listagem_livros<Jornal>();
                 break;
             case 18:
+                system("cls");
+                cout << "Mostrar todos os Livros\n";
+                break;
+            case 19:
                 system("cls");
                 cout << "Pesquisar Livro\n";
                 break;
@@ -170,6 +179,7 @@ int main() {
             case 30:
                 system("cls");
                 cout << "Salvar Ficheiros\n";
+                B->save_file("Dados.txt");
                 break;
             case 31:
                 return 0;
@@ -180,6 +190,7 @@ int main() {
 
         system("cls"); // Limpa a tela para atualizar a interface
     }
+    B->save("Dados.txt");
 
     return 0;
 }

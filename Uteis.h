@@ -4,11 +4,12 @@
 #include <string>
 #include <conio.h> 
 #include <windows.h> 
+#include <algorithm>
 using namespace std;
 
 void mostrarMenuTabs(int abaSelecionada);
 void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes);
-void menu_principal();
+string normalizarString(const string& texto);
 
 class Uteis
 {

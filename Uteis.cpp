@@ -37,18 +37,46 @@ void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes
 }
 
 
+//Remover acentos e letras maiusculas para verificações quando é feito um input
+string normalizarString(const string& texto) {
+    string textoNormalizado = texto;
+
+    // Converter para minúsculas
+    transform(textoNormalizado.begin(), textoNormalizado.end(), textoNormalizado.begin(), ::tolower);
+
+    // Substituir letras acentuadas
+    for (char& c : textoNormalizado) {
+        switch (c) {
+        case 'á': case 'à': case 'ã': case 'â': case 'æ': c = 'a'; break;
+        case 'é': case 'è': case 'ê': c = 'e'; break;
+        case 'í': case 'ì': case 'î': case '¡':c = 'i'; break;
+        case 'ó': case 'ò': case 'õ': case 'ô': c = 'o'; break;
+        case 'ú': case 'ù': case 'û': c = 'u'; break;
+        case 'ç': case '‡': c = 'c'; break;
+        case 'Á': case 'À': case 'Ã': case 'Â': case 'Æ': c = 'a'; break;
+        case 'É': case 'È': case 'Ê': c = 'e'; break;
+        case 'Í': case 'Ì': case 'Î': c = 'i'; break;
+        case 'Ó': case 'Ò': case 'Õ': case 'Ô': c = 'o'; break;
+        case 'Ú': case 'Ù': case 'Û': c = 'u'; break;
+        case 'Ç': c = 'c'; break;
+        }
+        cout << textoNormalizado;
+    }
+
+    return textoNormalizado;
+}
 /*cout << R"(
-                .--.         .--.          .--.           .--.
-                |o_o |       |o_o |        |o_o |         |o_o |
-                |:_/ |       |:_/ |        |:_/ |         |:_/ |
-                //   \ \     //   \ \      //   \ \       //   \ \
-                (|     | )   (|     | )    (|     | )     (|     | )
-            /'\_   _/`\  /'\_   _/`\   /'\_   _/`\    /'\_   _/`\
-            \___)=(___/  \___)=(___/   \___)=(___/    \___)=(___/
-                _|___|_      _|___|_       _|___|_       .-|---|-.
-                /       \    /       \     /       \     /         \
-            |         |  |         |   |         |   |    ___    |
-            |_________|  |_________|   |  O   O  |   |   /   \   |
+                    .--.         .--.         .--.         .--.
+                   |o_o |       |o_o |       |o_o |       |o_o |
+                   |:_/ |       |:_/ |       |:_/ |       |:_/ |
+                  //   \ \     //   \ \     //   \ \     //   \ \
+                 (|     | )   (|     | )   (|     | )   (|     | )
+                /'\_   _/`\  /'\_   _/`\  /'\_   _/`\  /'\_   _/`\
+                \___)=(___/  \___)=(___/  \___)=(___/  \___)=(___/
+                 __|___|__    __|___|_    ___|___|__    __|___|__
+                /         \  /        \  /          \  /         \
+                |  Simão  |  |  Joel  |  |  Renato  |  |  Tomás  |
+                \_________/  \________/  \__________/  \_________/
 )";
         cout << R"(
                         .,,uod8B8bou,,.

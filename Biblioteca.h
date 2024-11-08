@@ -13,6 +13,7 @@
 #include "LivroEducativo.h"
 #include "Jornal.h"
 #include "Revista.h"
+#include "Uteis.h"
 using namespace std;
 
 class Biblioteca
@@ -29,8 +30,8 @@ class Biblioteca
 		bool Add_Livro(Livro* L);
 		bool Add_Leitor(Leitor* P);
 		void Add_Emprestimo();
-		bool load(string nf);
-		bool save(string nf);
+		bool load_file(string nf);
+		bool save_file(string nf);
 		void RelatorioCategoria(string cat);
 		void Sistema_Not_atraso();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao

@@ -19,9 +19,10 @@ Livro* Biblioteca::Add_Livros() {
 	cin.ignore();
 	Livro* L = NULL;
 	do {
-		cout << "Tipo de Livro(Ficcao/Cientifico/Educativo/Jornal/Revista): ";
-		cin >> tipo_uti;
-		if (tipo_uti == "Ficcao") {
+		cout << "Tipo de Livro(Ficção/Cientifico/Educativo/Jornal/Revista): ";
+		getline(cin, tipo_uti);
+		tipo_uti = normalizarString(tipo_uti);
+		if (tipo_uti == "ficcao") {
 			string _ISBN;
 			string _subgenero;
 			cout << "ISBN: ";
@@ -32,7 +33,7 @@ Livro* Biblioteca::Add_Livros() {
 			L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
 			break;
 		}
-		else if (tipo_uti == "Cientifico") {
+		else if (tipo_uti == "cientifico") {
 			string _ISBN;
 			string _areaestudo;
 			string _revisor;
@@ -46,7 +47,7 @@ Livro* Biblioteca::Add_Livros() {
 			L = new LivroCientifico(titulo,autor,ano,_ISBN, _areaestudo,_revisor);
 			break;
 		}
-		else if (tipo_uti == "Educativo") {
+		else if (tipo_uti == "educativo") {
 			string _ISBN;
 			string _idaderec;
 			string _area;
@@ -63,7 +64,7 @@ Livro* Biblioteca::Add_Livros() {
 			L = new LivroEducativo(titulo, autor,ano,_ISBN,_idaderec,_area,_ilustrador);
 			break;
 		}
-		else if (tipo_uti == "Jornal") {
+		else if (tipo_uti == "jornal") {
 			string _issn;
 			string _edicao;
 			string _editor_boss;
@@ -80,7 +81,7 @@ Livro* Biblioteca::Add_Livros() {
 			L = new Jornal(titulo, autor, ano, _issn, _edicao, _editor_boss, _tipo_dis);
 			break;
 		}
-		else if (tipo_uti == "Revista") {
+		else if (tipo_uti == "revista") {
 			string _issn;
 			string _edicao;
 			string _editora;
@@ -101,9 +102,7 @@ Livro* Biblioteca::Add_Livros() {
 			cout << "Não é valida! Tente novamente!" << endl;
 		}
 
-	} while (true);
-	//Ver biblioteca para testar acentos
-	
+	} while (true);	
 	return L;
 }
 Leitor* Biblioteca::Add_Leitores() {
@@ -120,10 +119,10 @@ bool Biblioteca::Add_Leitor(Leitor* P) {
 void Biblioteca::Add_Emprestimo() {
 
 }
-bool Biblioteca::load(string nf) {
+bool Biblioteca::load_file(string nf) {
 	return true;
 }
-bool Biblioteca::save(string nf) {
+bool Biblioteca::save_file(string nf) {
 	return true;
 }
 void Biblioteca::RelatorioCategoria(string cat) {
