@@ -6,3 +6,7 @@ void LivroGenerico::Show(){
 	Livro::Show();
 	cout << "ISBN: " << ISBN << endl;
 }
+
+string LivroGenerico::get_isbn() {
+	return ISBN;
+}

@@ -11,6 +11,7 @@ class LivroGenerico : public Livro
 	LivroGenerico(string titulo, string autor, int ano,  string _ISBN);
 	virtual ~LivroGenerico();
 	void Show();
+	string get_isbn();
 };
 
 #endif

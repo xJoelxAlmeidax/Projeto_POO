@@ -11,3 +11,13 @@ void Livro::Show() {
 	cout << "Autor: " << AUTOR << endl;
 	cout << "Ano: " << ANO << endl; 
 }
+
+string Livro::get_titulo() {
+	return TITULO;
+}
+string Livro::get_autor() {
+	return AUTOR;
+}
+int Livro::get_ano() {
+	return ANO;
+}

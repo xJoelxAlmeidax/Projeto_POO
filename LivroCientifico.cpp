@@ -9,3 +9,9 @@ void LivroCientifico::Show() {
 	cout << "Area de Estudo: " << AREAESTUDO << endl;
 	cout << "Revisor Cientifico: " << REVISORCIENTIFICO << endl;
 }
+string LivroCientifico::get_area() {
+	return AREAESTUDO;
+}
+string LivroCientifico::get_revisor() {
+	return REVISORCIENTIFICO;
+}

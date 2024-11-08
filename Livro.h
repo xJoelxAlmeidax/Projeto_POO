@@ -17,6 +17,10 @@ public:
 	Livro(string titulo, string autor, int ano);
 	virtual ~Livro();
 	virtual void Show();
+	virtual string get_titulo();
+	virtual string get_autor();
+	virtual int get_ano();
+
 };
 
 #endif

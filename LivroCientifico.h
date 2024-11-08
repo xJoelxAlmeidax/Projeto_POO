@@ -12,6 +12,9 @@ public:
 	LivroCientifico(string _titulo, string _autor, int _ano, string _isbn, string _areaestudo, string _revisor);
 	virtual ~LivroCientifico();
 	void Show();
+	string get_area();
+	string get_revisor();
+
 };
 
 #endif
