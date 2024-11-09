@@ -41,10 +41,16 @@ class Biblioteca
 		void Add_Emprestimo();
 		bool load_file(string nf);
 		bool save_file(string nf);
+		list<Livro*> get_Livros() {
+			return Livros;
+		}
+		list<Leitor*> get_Leitores() {
+			return Leitores;
+		}
 		void RelatorioCategorias();
 		void RelatorioLeitores();
 		void Sistema_Not_atraso();
-		Livro* Pesquisa();
+		Livro* Pesquisar(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs);
 		void AlterarLivro();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename LivroTestagem>

@@ -489,6 +489,72 @@ void Biblioteca::RelatorioLeitores() {
 
 }
 
+Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs) {
+	string entrada;
+	auto selecao = livros.begin();
+
+	while (true) {
+		// Filtrar livros de acordo com a aba selecionada e a entrada do usuário
+		system("CLS");  // Limpar a tela
+		list<Livro*> filtrados;
+
+		for (Livro* livro : livros) {
+			bool correspondeCategoria = false;
+			switch (abaSelecionada) {
+			case 0: correspondeCategoria = true; break; // Biblioteca inteira
+			case 1: correspondeCategoria = dynamic_cast<LivroFiccao*>(livro); break;
+			case 2: correspondeCategoria = dynamic_cast<LivroCientifico*>(livro); break;
+			case 3: correspondeCategoria = dynamic_cast<LivroEducativo*>(livro); break;
+			case 4: correspondeCategoria = dynamic_cast<Revista*>(livro); break;
+			case 5: correspondeCategoria = dynamic_cast<Jornal*>(livro); break;
+			}
+			if (correspondeCategoria && livro->get_titulo().find(entrada) != string::npos) {
+				filtrados.push_back(livro);
+			}
+		}
+
+		// Mostrar lista de livros filtrados
+		selecao = filtrados.begin();
+
+		// Limpa a tela e exibe os livros filtrados
+		system("CLS");
+		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
+		cout << "Digite para pesquisar: " << entrada << endl;
+		cout << "-------------------------------------------------" << endl;
+
+		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
+			if (it == selecao) cout << " > "; else cout << "   ";
+			cout << (*it)->get_titulo() << endl;
+		}
+
+		// Captura a tecla pressionada
+		int tecla = _getch();
+
+		if (tecla == 224) { // Tecla especial para setas
+			int direcao = _getch(); // Captura o código da seta pressionada
+			if (!filtrados.empty()) {
+				switch (direcao) {
+				case 72: // Seta para cima
+					if (selecao != filtrados.begin()) --selecao;
+					break;
+				case 80: // Seta para baixo
+					if (next(selecao) != filtrados.end()) ++selecao;
+					break;
+				}
+			}
+		}
+		else if (tecla == '\r') { // Enter
+			return (selecao != filtrados.end()) ? *selecao : nullptr;
+		}
+		else if (tecla == 8 && !entrada.empty()) { // Backspace
+			entrada.pop_back();
+		}
+		else if (isprint(tecla)) { // Caractere imprimível
+			entrada += static_cast<char>(tecla);  // Adiciona o caractere à entrada
+		}
+	}
+}
+
 void Biblioteca::Sistema_Not_atraso() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 }

@@ -22,7 +22,8 @@ int main() {
     while (true) {
 
         // -------------Exibe o menu-------------
-        
+        cout << "                             BIBLIOTECA:                             " << endl;
+        cout << "---------------------------------------------------------------------" << endl;
         mostrarMenuTabs(abaSelecionada, tabs, 4);
 
         mostrarMenuOpcoes(opcaoSelecionada, opcoes[abaSelecionada], numOpcoes[abaSelecionada]);
@@ -151,8 +152,34 @@ int main() {
                 break;
             case 19:
                 {
+                const char* tabs_p[] = { "Biblioteca", "Ficção", "Científico", "Educativo", "Revistas", "Jornais" };
+                int abaSelecionada_p = 0;
                 system("cls");
                 cout << "Pesquisar Livro\n";
+                while (true) {
+                    system("CLS"); // Limpar tela
+                    mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
+
+                    // Espera por seta para mudar aba
+                    int tecla = _getch();
+                    if (tecla == 224) {
+                        switch (_getch()) {
+                        case 75: // Seta esquerda
+                            abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
+                            break;
+                        case 77: // Seta direita
+                            abaSelecionada_p = (abaSelecionada_p < 5) ? abaSelecionada_p + 1 : 0;
+                            break;
+                        }
+                    }
+                    else if (tecla == '\r') { // Enter para iniciar pesquisa
+                        Livro* livroSelecionado = B->Pesquisar(B->get_Livros(), abaSelecionada_p, tabs_p, 6);
+                        if (livroSelecionado) {
+                            cout << "Você selecionou: " << livroSelecionado->get_titulo() << endl;
+                            break;
+                        }
+                    }
+                }
                 break;
             }
 
