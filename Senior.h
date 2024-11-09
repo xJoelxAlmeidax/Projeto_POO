@@ -3,8 +3,16 @@
 #include <iostream>
 #include <string>
 #include <list>
-class Senior
+#include "Leitor.h"
+class Senior : public Leitor
 {
+	string NecessidadesAcessibilidade;
+
+	public:
+		Senior(string ncc, string nome, string morada, string telefone,int idade, string _NecessidadesAcessibilidade);
+		virtual~Senior();
+		void Show();
+		string get_NecessidadesAcessibilidade();
 };
 
 #endif

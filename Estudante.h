@@ -3,8 +3,18 @@
 #include <iostream>
 #include <string>
 #include <list>
-class Estudante
+#include "Leitor.h"
+
+class Estudante : public Leitor
 {
+	string EMAIL;
+	string Curso;
+	public:
+	Estudante(string ncc, string nome, string morada, string telefone, int idade, string _email, string _Curso);
+	virtual ~Estudante();
+	void Show();
+	string get_curso();
+	string get_Email();
 };
 
 #endif

@@ -14,6 +14,10 @@
 #include "LivroEducativo.h"
 #include "Jornal.h"
 #include "Revista.h"
+#include "Estudante.h"
+#include "Professor.h"
+#include "LeitorComum.h"
+#include "Senior.h"
 #include "Uteis.h"
 
 
@@ -32,20 +36,36 @@ class Biblioteca
 		Leitor* Add_Leitores();
 		bool Add_Livro(Livro* L);
 		bool Add_Leitor(Leitor* P);
+		void RemoverLivro(Livro* L);
+		void RemoverLeitor(Leitor* P);
 		void Add_Emprestimo();
 		bool load_file(string nf);
 		bool save_file(string nf);
 		void RelatorioCategorias();
+		void RelatorioLeitores();
 		void Sistema_Not_atraso();
+		Livro* Pesquisa();
 		void AlterarLivro();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
-		template <typename T>
+		template <typename LivroTestagem>
 		void listagem_livros()
 		{
 			for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
 			{
 				// dynaminc_cast metodo de polimorfismo para saber o tipo de livro
-				if (dynamic_cast<T*>(*it)) {
+				if (dynamic_cast<LivroTestagem*>(*it)) {
+					(*it)->Show();
+					cout << "-------------------------------------" << endl;
+				}
+			}
+		};
+		template <typename LeitorTestagem>
+		void listagem_leitoresTipo()
+		{
+			for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
+			{
+				// dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
+				if (dynamic_cast<LeitorTestagem*>(*it)) {
 					(*it)->Show();
 					cout << "-------------------------------------" << endl;
 				}

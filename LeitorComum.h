@@ -6,7 +6,12 @@
 #include "Leitor.h"
 class LeitorComum: public Leitor
 {
-
+	string EMAIL;
+	public:
+		LeitorComum(string ncc, string nome, string morada, string telefone, int idade, string _email);
+		virtual ~LeitorComum();
+		void Show();
+		string get_Email();
 };
 
 #endif

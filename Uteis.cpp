@@ -1,4 +1,6 @@
 #include "Uteis.h"
+#include <regex>
+
 const int NUM_TABS = 4; // Número de abas
 
 void mostrarMenuTabs(int abaSelecionada) {
@@ -64,6 +66,20 @@ string normalizarString(const string& texto) {
 
     return textoNormalizado;
 }
+
+bool validarEmail(const string& email) {
+    // Valida o formato dos emails
+    const regex formatoEmail(R"((\w+)(\.\w+)*@(\w+)(\.\w+)+)");
+    return regex_match(email, formatoEmail);
+}
+
+bool validarTelefone(const string& telefone) {
+    // Valida os números de telefone com 9 dígitos começando com 9
+    const regex formatoTelefone(R"(9[1236]\d{7})");
+    return regex_match(telefone, formatoTelefone);
+}
+
+
 /*cout << R"(
                     .--.         .--.         .--.         .--.
                    |o_o |       |o_o |       |o_o |       |o_o |

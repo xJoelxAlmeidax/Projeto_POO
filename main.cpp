@@ -10,12 +10,12 @@ int main() {
     B->load_file("Dados.txt");
     B->Sistema_Not_atraso();
     system("pause"); system("cls");
-    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Mostrar todos", "Procurar Nome"}; // 7 opções
+    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover","Mostrar Leitores Comuns", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Seniores", "Mostrar todos", "Procurar Nome"}; // 7 opções
     const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
-    int numOpcoes[NUM_TABS] = { 8, 10, 7, 2 };
+    int numOpcoes[NUM_TABS] = { 9, 10, 7, 2 };
     int abaSelecionada = 0;
     int opcaoSelecionada = 0;
     while (true) {
@@ -71,21 +71,30 @@ int main() {
                 break;
             case 3:
                 system("cls");
-                cout << "Mostrar Estudantes\n";
+                cout << "Mostrar Leitores Comuns\n";
+                B->listagem_leitoresTipo<LeitorComum>();
                 break;
             case 4:
                 system("cls");
-                cout << "Mostrar Professores\n";
+                cout << "Mostrar Estudantes\n";
+                B->listagem_leitoresTipo<Estudante>();
                 break;
             case 5:
                 system("cls");
-                cout << "Mostrar Outros\n";
+                cout << "Mostrar Professores\n";
+                B->listagem_leitoresTipo<Professor>();
                 break;
             case 6:
                 system("cls");
-                cout << "Mostrar todos os Utilizadores\n";
+                cout << "Mostrar Seniores\n";
+                B->listagem_leitoresTipo<Senior>();
                 break;
             case 7:
+                system("cls");
+                cout << "Mostrar todos os Utilizadores\n";
+                B->RelatorioLeitores();
+                break;
+            case 8:
                 system("cls");
                 cout << "Mostrar Leitor P/ Nome\n";
                 break;
@@ -183,15 +192,14 @@ int main() {
                 B->save_file("Dados.txt");
                 break;
             case 31:
+                system("cls");
+                cout << "Sair\n";
+                B->save_file("Dados.txt");
                 return 0;
             }
 
             Sleep(5000); // Pausa para testes
         }
-
         system("cls"); // Limpa a tela para atualizar a interface
     }
-    B->save_file("Dados.txt");
-
-    return 0;
 }

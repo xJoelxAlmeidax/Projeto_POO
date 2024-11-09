@@ -12,6 +12,7 @@ void LivroCientifico::Show() {
 string LivroCientifico::get_area() {
 	return AREAESTUDO;
 }
+
 string LivroCientifico::get_revisor() {
 	return REVISORCIENTIFICO;
 }
