@@ -42,3 +42,19 @@ int Leitor::get_idade()
 {
 	return IDADE;
 }
+
+void Leitor::mudarncc(string new_ncc) {
+	N_CC = new_ncc;
+}
+void Leitor::mudarnome(string new_nome) {
+	NOME = new_nome;
+}
+void Leitor::mudarmorada(string new_morada) {
+	MORADA = new_morada;
+}
+void Leitor::mudartelefone(string new_telefone) {
+	TELEFONE = new_telefone;
+}
+void Leitor::mudaridade(int new_idade) {
+	IDADE = new_idade;
+}

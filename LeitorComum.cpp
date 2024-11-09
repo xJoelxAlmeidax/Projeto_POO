@@ -10,3 +10,7 @@ void LeitorComum::Show() {
 string LeitorComum::get_Email() {
 	return EMAIL;
 }
+
+void LeitorComum::mudaremail(string new_email) {
+	EMAIL = new_email;
+}

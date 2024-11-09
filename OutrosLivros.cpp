@@ -16,3 +16,10 @@ string OutrosLivros::get_edicao()
 {
 	return EDICAO;
 }
+
+void OutrosLivros::mudarISSN(string new_issn) {
+	ISSN = new_issn;
+}
+void OutrosLivros::mudaredicao(string new_edicao) {
+	EDICAO = new_edicao;
+}

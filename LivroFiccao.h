@@ -12,7 +12,7 @@ public:
 	virtual ~LivroFiccao();
 	string get_subgenero();
 	void Show();
-
+	void mudarsubgenero(string new_sub);
 };
 
 #endif

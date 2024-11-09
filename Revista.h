@@ -11,6 +11,8 @@ public:
 	string get_editora();
 	string get_fotografo();
 	void Show();
+	void mudareditora(string new_editora);
+	void mudarfotografo(string new_fotografo);
 };
 
 #endif

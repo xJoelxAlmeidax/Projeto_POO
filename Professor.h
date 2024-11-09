@@ -15,5 +15,7 @@ class Professor : public Leitor
 		void Show();
 		string get_Disciplinas();
 		string get_Email();
+		void mudaremail(string new_email);
+		void mudardisciplina(string new_disciplina);
 };
 #endif

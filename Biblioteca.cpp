@@ -230,8 +230,12 @@ void Biblioteca::RemoverLeitor(Leitor* P){
 	Leitores.remove(P);
 }
 
-void Biblioteca::AlterarLivro()
+void Biblioteca::AlterarLivro(Livro* L)
 {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+}
+
+void Biblioteca::AlterarLeitor(Leitor* L) {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 }
 
@@ -539,7 +543,7 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
-		cout << "Digite para pesquisar: " << entrada << endl;
+		cout << "Pesquisa: " << entrada << endl;
 		cout << "-------------------------------------------------" << endl;
 
 		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
@@ -566,6 +570,9 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 					break;
 				}
 			}
+		}
+		else if (tecla == 27) { // ESC
+			return NULL; // Retorna nullptr para indicar cancelamento
 		}
 		else if (tecla == '\r') {  // Enter para selecionar o livro
 			return (selecao != filtrados.end()) ? *selecao : nullptr;
@@ -607,11 +614,13 @@ Livro* Biblioteca::ResultadoPesquisa() {
 				break;
 			}
 		}
+		else if (tecla == 27) { // ESC
+			return NULL; // Retorna nullptr para indicar cancelamento
+		}
 		else if (tecla == '\r') { // Enter para iniciar a pesquisa
 			// Inicia a pesquisa de livros, considerando a aba selecionada
 			Livro* livroSelecionado = Pesquisar_L(get_Livros(), abaSelecionada_p, tabs_p, 6);
 			if (livroSelecionado)
-				cout << "Livro selecionado: " << livroSelecionado->get_titulo() << endl;
 				return livroSelecionado;
 		}
 	}
@@ -664,7 +673,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
-		cout << "Digite para pesquisar: " << entrada << endl;
+		cout << "Pesquisa: " << entrada << endl;
 		cout << "-------------------------------------------------" << endl;
 
 		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
@@ -691,6 +700,9 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 					break;
 				}
 			}
+		}
+		else if (tecla == 27) { // ESC
+			return NULL; // Retorna nullptr para indicar cancelamento
 		}
 		else if (tecla == '\r') {  // Enter para selecionar o livro
 			return (selecao != filtrados.end()) ? *selecao : nullptr;
@@ -732,11 +744,13 @@ Leitor* Biblioteca::ResultadoPesquisaP(){
 				break;
 			}
 		}
+		else if (tecla == 27) { // ESC
+			return NULL; // Retorna nullptr para indicar cancelamento
+		}
 		else if (tecla == '\r') { // Enter para iniciar a pesquisa
 			// Inicia a pesquisa de livros, considerando a aba selecionada
 			Leitor* leitorSelecionado = Pesquisar_P(get_Leitores(), abaSelecionada_p, tabs_p, 5);
 			if (leitorSelecionado)
-				cout << "Livro selecionado: " << leitorSelecionado->get_nome() << endl;
 			return leitorSelecionado;
 		}
 	}

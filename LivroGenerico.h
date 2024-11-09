@@ -12,6 +12,7 @@ class LivroGenerico : public Livro
 	virtual ~LivroGenerico();
 	void Show();
 	string get_isbn();
+	void mudarISBN(string new_isbn);
 };
 
 #endif

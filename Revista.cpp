@@ -17,3 +17,10 @@ string Revista::get_fotografo()
 {
 	return FOTOGRAFO_CAPA;
 }
+
+void Revista::mudareditora(string new_editora) {
+	EDITORA = new_editora;
+}
+void Revista::mudarfotografo(string new_fotografo) {
+	FOTOGRAFO_CAPA = new_fotografo;
+}

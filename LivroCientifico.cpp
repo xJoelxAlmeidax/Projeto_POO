@@ -17,3 +17,10 @@ string LivroCientifico::get_area() {
 string LivroCientifico::get_revisor() {
 	return REVISORCIENTIFICO;
 }
+
+void LivroCientifico::mudararea(string new_area) {
+	AREAESTUDO = new_area;
+}
+void LivroCientifico::mudarrevisor(string new_revisor) {
+	REVISORCIENTIFICO = new_revisor;
+}

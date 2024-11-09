@@ -11,6 +11,8 @@ public:
 	string get_issn();
 	string get_edicao();
 	void Show();
+	void mudarISSN(string new_issn);
+	void mudaredicao(string new_edicao);
 };
 
 #endif

@@ -10,3 +10,7 @@ void LivroGenerico::Show(){
 string LivroGenerico::get_isbn() {
 	return ISBN;
 }
+
+void LivroGenerico::mudarISBN(string new_isbn){
+	ISBN = new_isbn;
+}

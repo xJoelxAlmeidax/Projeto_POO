@@ -13,6 +13,7 @@ class Senior : public Leitor
 		virtual~Senior();
 		void Show();
 		string get_NecessidadesAcessibilidade();
+		void mudarNecessidades(string new_acessibilidade);
 };
 
 #endif

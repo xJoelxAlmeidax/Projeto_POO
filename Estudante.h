@@ -15,6 +15,8 @@ class Estudante : public Leitor
 	void Show();
 	string get_curso();
 	string get_Email();
+	void mudaremail(string new_email);
+	void mudarcurso(string new_curso);
 };
 
 #endif

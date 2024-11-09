@@ -14,3 +14,15 @@ string Professor::get_Disciplinas() {
 string Professor::get_Email() {
 	return EMAIL;
 }
+
+void Professor::mudaremail(string new_email) {
+	EMAIL = new_email;
+}
+void Professor::mudardisciplina(string new_disciplina) {
+	Disciplinas = new_disciplina;
+}
+
+
+
+
+

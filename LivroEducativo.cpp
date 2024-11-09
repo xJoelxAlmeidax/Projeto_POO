@@ -24,3 +24,13 @@ string LivroEducativo::get_ilustrador()
 {
 	return ILUSTRADOR;
 }
+
+void LivroEducativo::mudaridade(string new_idade) {
+	IDADE_REC = new_idade;
+}
+void LivroEducativo::mudararea(string new_area) {
+	AREA = new_area;
+}
+void LivroEducativo::mudarilustrador(string new_ilustrador) {
+	ILUSTRADOR = new_ilustrador;
+}

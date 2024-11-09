@@ -16,6 +16,9 @@ public:
 	string get_idade();
 	string get_ilustrador();
 	void Show();
+	void mudaridade(string new_idade);
+	void mudararea(string new_area);
+	void mudarilustrador(string new_ilustrador);
 };
 
 #endif

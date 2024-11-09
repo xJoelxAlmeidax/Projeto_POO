@@ -23,3 +23,13 @@ string Livro::get_autor() {
 int Livro::get_ano() {
 	return ANO;
 }
+
+void Livro::mudartitulo(string new_titulo) {
+	TITULO = new_titulo;
+}
+void Livro::mudarautor(string new_autor) {
+	AUTOR = new_autor;
+}
+void Livro::mudarano(int new_ano){
+	ANO = new_ano;
+}

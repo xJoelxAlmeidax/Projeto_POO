@@ -20,7 +20,9 @@ public:
 	virtual string get_titulo();
 	virtual string get_autor();
 	virtual int get_ano();
-
+	virtual void mudartitulo(string new_titulo);
+	virtual void mudarautor(string new_autor);
+	virtual void mudarano(int new_ano);
 };
 
 #endif

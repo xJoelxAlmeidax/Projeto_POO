@@ -12,3 +12,7 @@ string LivroFiccao::get_subgenero()
 {
 	return SUBGENERO;
 }
+
+void LivroFiccao::mudarsubgenero(string new_sub) {
+	SUBGENERO = new_sub;
+}

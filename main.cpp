@@ -11,7 +11,7 @@ int main() {
     B->Sistema_Not_atraso();
     system("pause"); system("cls");
     const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover","Mostrar Leitores Comuns", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Seniores", "Mostrar todos", "Procurar Nome"}; // 7 opções
-    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
+    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Científicos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
@@ -64,14 +64,26 @@ int main() {
                 }
                 break;
             case 1:
+            {
                 system("cls");
                 cout << "Alterar dados do Leitor\n";
+                Leitor* P = B->ResultadoPesquisaP();
+                if (P == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
+                B->AlterarLeitor(P);
+            }
                 break;
             case 2:
             {
                 system("cls");
                 cout << "Remover Leitor\n";
                 Leitor* P = B->ResultadoPesquisaP();
+                if (P == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
                 B->RemoverLeitor(P);
                 delete(P);
             }
@@ -106,7 +118,13 @@ int main() {
                 system("cls");
                 cout << "Mostrar Leitor P/ Nome\n";
                 Leitor* P = B->ResultadoPesquisaP();
+                if (P == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
+                cout << "--------------------------------------" << endl;
                 P->Show();
+                cout << "--------------------------------------" << endl;
             }
                 break;
 
@@ -121,15 +139,26 @@ int main() {
                 }
                 break;
             case 11:
+            {
                 system("cls");
                 cout << "Alterar Livro\n";
-                B->AlterarLivro();
+                Livro* L = B->ResultadoPesquisa();
+                if (L == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
+                B->AlterarLivro(L);
+            }
                 break;
             case 12:
             {
                 system("cls");
                 cout << "Remover Livro\n";
                 Livro* L = B->ResultadoPesquisa();
+                if (L == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
                 B->RemoverLivro(L);
                 delete(L);
             }
@@ -167,6 +196,10 @@ int main() {
             case 19:
             {
                 Livro* L = B->ResultadoPesquisa();
+                if (L == NULL) {
+                    cout << "Operação Cancelada" << endl;
+                    break;
+                }
                 cout << "--------------------------------------" << endl;
                 L->Show();
                 cout << "--------------------------------------" << endl;

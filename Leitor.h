@@ -21,7 +21,11 @@ public:
 	string get_morada();
 	string get_telefone();
 	int get_idade();
-
-};
-
+	virtual void mudarncc(string new_ncc);   //Será que faz sentido?
+	virtual void mudarnome(string new_nome); //Será que faz sentido? pt2
+	virtual void mudarmorada(string new_morada);
+	virtual void mudartelefone(string new_telefone);
+	virtual void mudaridade(int new_idade);
+};	
+	
 #endif

@@ -11,3 +11,6 @@ string Senior::get_NecessidadesAcessibilidade() {
 	return NecessidadesAcessibilidade;
 }
 
+void Senior::mudarNecessidades(string new_acessibilidade) {
+	NecessidadesAcessibilidade = new_acessibilidade;
+}

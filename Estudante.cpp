@@ -15,3 +15,10 @@ string Estudante::get_curso() {
 string Estudante::get_Email() {
 	return EMAIL;
 }
+
+void Estudante::mudaremail(string new_email) {
+	EMAIL = new_email;
+}
+void Estudante::mudarcurso(string new_curso) {
+	Curso = new_curso;
+}

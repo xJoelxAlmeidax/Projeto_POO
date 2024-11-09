@@ -11,6 +11,8 @@ public:
 	string get_editor();
 	string get_tipo();
 	void Show();
+	void mudareditor(string new_editor);
+	void mudartipo(string new_tipo);
 };
 
 #endif

@@ -54,7 +54,8 @@ class Biblioteca
 		Livro* ResultadoPesquisa();
 		Leitor* Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionada, const char* tabs[], int num_tabs);
 		Leitor* ResultadoPesquisaP();
-		void AlterarLivro();
+		void AlterarLivro(Livro* L);
+		void AlterarLeitor(Leitor* L);
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename LivroTestagem>
 		void listagem_livros()

@@ -12,6 +12,7 @@ class LeitorComum: public Leitor
 		virtual ~LeitorComum();
 		void Show();
 		string get_Email();
+		void mudaremail(string new_email);
 };
 
 #endif
