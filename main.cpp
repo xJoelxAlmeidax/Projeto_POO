@@ -151,18 +151,25 @@ int main() {
                 B->RelatorioCategorias();
                 break;
             case 19:
-                {
+            {
                 const char* tabs_p[] = { "Biblioteca", "Ficção", "Científico", "Educativo", "Revistas", "Jornais" };
                 int abaSelecionada_p = 0;
-                system("cls");
-                cout << "Pesquisar Livro\n";
-                while (true) {
-                    system("CLS"); // Limpar tela
-                    mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
 
-                    // Espera por seta para mudar aba
+                system("CLS");
+                cout << "Pesquisar Livro\n";
+
+                while (true) {
+                    // Limpa a tela apenas uma vez antes de mostrar o menu
+                    system("CLS");
+
+                    // Exibe o menu de abas
+                    mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
+                    cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
+
+                    // Espera pela tecla pressionada para navegar entre as abas
                     int tecla = _getch();
-                    if (tecla == 224) {
+
+                    if (tecla == 224) { // Tecla especial (setas)
                         switch (_getch()) {
                         case 75: // Seta esquerda
                             abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
@@ -172,12 +179,10 @@ int main() {
                             break;
                         }
                     }
-                    else if (tecla == '\r') { // Enter para iniciar pesquisa
+                    else if (tecla == '\r') { // Enter para iniciar a pesquisa
+                        // Inicia a pesquisa de livros, considerando a aba selecionada
                         Livro* livroSelecionado = B->Pesquisar(B->get_Livros(), abaSelecionada_p, tabs_p, 6);
-                        if (livroSelecionado) {
-                            cout << "Você selecionou: " << livroSelecionado->get_titulo() << endl;
-                            break;
-                        }
+                        // return livroSelecionado;
                     }
                 }
                 break;
@@ -226,7 +231,7 @@ int main() {
                 return 0;
             }
 
-            Sleep(5000); // Pausa para testes
+            Sleep(3000); // Pausa para testes
         }
         system("cls"); // Limpa a tela para atualizar a interface
     }

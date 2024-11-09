@@ -491,13 +491,20 @@ void Biblioteca::RelatorioLeitores() {
 
 Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs) {
 	string entrada;
-	auto selecao = livros.begin();
+	list<Livro*> filtrados;
+	list<Livro*>::iterator selecao = filtrados.end(); // Inicializa selecao como vazia
 
 	while (true) {
-		// Filtrar livros de acordo com a aba selecionada e a entrada do usuário
-		system("CLS");  // Limpar a tela
-		list<Livro*> filtrados;
+		// Armazena o índice atual da seleção, se houver uma seleção válida
+		int indiceSelecionado = -1;
+		if (selecao != filtrados.end()) {
+			indiceSelecionado = distance(filtrados.begin(), selecao);
+		}
 
+		// Limpa a lista de filtrados antes de reprocessar
+		filtrados.clear();
+
+		// Filtra os livros com base na aba selecionada e na entrada do usuário
 		for (Livro* livro : livros) {
 			bool correspondeCategoria = false;
 			switch (abaSelecionada) {
@@ -513,10 +520,20 @@ Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, con
 			}
 		}
 
-		// Mostrar lista de livros filtrados
-		selecao = filtrados.begin();
+		// Atualiza a seleção com base no índice armazenado
+		if (!filtrados.empty()) {
+			if (indiceSelecionado >= 0 && indiceSelecionado < filtrados.size()) {
+				selecao = next(filtrados.begin(), indiceSelecionado);
+			}
+			else {
+				selecao = filtrados.begin();  // Se índice não é válido, começa do primeiro livro
+			}
+		}
+		else {
+			selecao = filtrados.end();  // Sem seleção válida se `filtrados` estiver vazio
+		}
 
-		// Limpa a tela e exibe os livros filtrados
+		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
 		cout << "Digite para pesquisar: " << entrada << endl;
@@ -527,30 +544,34 @@ Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, con
 			cout << (*it)->get_titulo() << endl;
 		}
 
-		// Captura a tecla pressionada
+		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
 
-		if (tecla == 224) { // Tecla especial para setas
-			int direcao = _getch(); // Captura o código da seta pressionada
+		if (tecla == 224) {  // Tecla especial (setas)
+			int direcao = _getch();
 			if (!filtrados.empty()) {
 				switch (direcao) {
-				case 72: // Seta para cima
-					if (selecao != filtrados.begin()) --selecao;
+				case 72:  // Seta para cima
+					if (selecao != filtrados.begin()) {
+						--selecao;
+					}
 					break;
-				case 80: // Seta para baixo
-					if (next(selecao) != filtrados.end()) ++selecao;
+				case 80:  // Seta para baixo
+					if (next(selecao) != filtrados.end()) {
+						++selecao;
+					}
 					break;
 				}
 			}
 		}
-		else if (tecla == '\r') { // Enter
+		else if (tecla == '\r') {  // Enter para selecionar o livro
 			return (selecao != filtrados.end()) ? *selecao : nullptr;
 		}
-		else if (tecla == 8 && !entrada.empty()) { // Backspace
+		else if (tecla == 8 && !entrada.empty()) {  // Backspace para apagar caracteres da pesquisa
 			entrada.pop_back();
 		}
-		else if (isprint(tecla)) { // Caractere imprimível
-			entrada += static_cast<char>(tecla);  // Adiciona o caractere à entrada
+		else if (isprint(tecla)) {  // Caractere imprimível (adiciona à pesquisa)
+			entrada += static_cast<char>(tecla);
 		}
 	}
 }
