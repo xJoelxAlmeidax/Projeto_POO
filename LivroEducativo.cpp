@@ -1,6 +1,8 @@
 #include "LivroEducativo.h"
 LivroEducativo::LivroEducativo(string titulo, string autor, int ano,  string _ISBN, string _idaderec, string _area, string _ilustrador): LivroGenerico(titulo, autor, ano,  _ISBN), IDADE_REC(_idaderec), AREA(_area), ILUSTRADOR(_ilustrador){}
-LivroEducativo::~LivroEducativo(){}
+LivroEducativo::~LivroEducativo(){
+	cout << "Destruindo Livro Educativo..." << endl;
+}
 void LivroEducativo::Show() {
 	LivroGenerico::Show();
 	cout << "Idade recomendada: " << IDADE_REC << endl;

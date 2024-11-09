@@ -222,9 +222,12 @@ bool Biblioteca::Add_Livro(Livro* L) {
 	return true;
 }
 
-void Biblioteca::RemoverLivro(Livro* L)
-{
+void Biblioteca::RemoverLivro(Livro* L){
+	Livros.remove(L);
+}
 
+void Biblioteca::RemoverLeitor(Leitor* P){
+	Leitores.remove(P);
 }
 
 void Biblioteca::AlterarLivro()

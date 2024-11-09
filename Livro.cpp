@@ -4,7 +4,9 @@ Livro::Livro(string titulo, string autor, int ano) {
 	AUTOR = autor;
 	ANO = ano;
 }
-Livro::~Livro(){}
+Livro::~Livro(){
+	cout << "Destruindo Livro..." << endl;
+}
 
 void Livro::Show() {
 	cout << "Título: " << TITULO << endl;

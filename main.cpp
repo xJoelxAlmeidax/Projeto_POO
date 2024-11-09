@@ -68,8 +68,13 @@ int main() {
                 cout << "Alterar dados do Leitor\n";
                 break;
             case 2:
+            {
                 system("cls");
                 cout << "Remover Leitor\n";
+                Leitor* P = B->ResultadoPesquisaP();
+                B->RemoverLeitor(P);
+                delete(P);
+            }
                 break;
             case 3:
                 system("cls");
@@ -101,8 +106,11 @@ int main() {
                 system("cls");
                 cout << "Mostrar Leitor P/ Nome\n";
                 Leitor* P = B->ResultadoPesquisaP();
+                P->Show();
             }
                 break;
+
+
                 //segunda aba
             case 10:
                 system("cls");
@@ -118,8 +126,13 @@ int main() {
                 B->AlterarLivro();
                 break;
             case 12:
+            {
                 system("cls");
                 cout << "Remover Livro\n";
+                Livro* L = B->ResultadoPesquisa();
+                B->RemoverLivro(L);
+                delete(L);
+            }
                 break;
             case 13:
                 system("cls");
