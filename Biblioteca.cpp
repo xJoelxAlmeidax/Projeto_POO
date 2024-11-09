@@ -500,7 +500,7 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 	string entrada;
 	list<Livro*> filtrados;
 	list<Livro*>::iterator selecao = filtrados.end(); // Inicializa seleção como vazia
-
+	int contador = 0;
 	while (true) {
 		// Armazena o índice atual da seleção, se houver uma seleção válida
 		int indiceSelecionado = -1;
@@ -545,15 +545,14 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
 		cout << "Pesquisa: " << entrada << endl;
 		cout << "-------------------------------------------------" << endl;
-
-		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
+		int count = 0;
+		for (auto it = filtrados.begin(); it != filtrados.end() && count<=20; ++it, count++) {
 			if (it == selecao) cout << " > "; else cout << "   ";
 			cout << (*it)->get_titulo() << endl;
 		}
-
+		cout << "-------------------------------------------------" << endl;
 		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
-
 		if (tecla == 224) {  // Tecla especial (setas)
 			int direcao = _getch();
 			if (!filtrados.empty()) {
@@ -561,11 +560,13 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 				case 72:  // Seta para cima
 					if (selecao != filtrados.begin()) {
 						--selecao;
+						--contador;
 					}
 					break;
 				case 80:  // Seta para baixo
-					if (next(selecao) != filtrados.end()) {
+					if (next(selecao) != filtrados.end() && contador<20) {
 						++selecao;
+						++contador;
 					}
 					break;
 				}
@@ -631,7 +632,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 	string entrada;
 	list<Leitor*> filtrados;
 	list<Leitor*>::iterator selecao = filtrados.end(); // Inicializa seleção como vazia
-
+	int contador=0;
 	while (true) {
 		// Armazena o índice atual da seleção, se houver uma seleção válida
 		int indiceSelecionado = -1;
@@ -675,11 +676,12 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
 		cout << "Pesquisa: " << entrada << endl;
 		cout << "-------------------------------------------------" << endl;
-
-		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
+		int count=0;
+		for (auto it = filtrados.begin(); it != filtrados.end() && count<=20; ++it, count++) {
 			if (it == selecao) cout << " > "; else cout << "   ";
 			cout << (*it)->get_nome() << endl;
 		}
+		cout << "-------------------------------------------------" << endl;
 
 		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
@@ -694,7 +696,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 					}
 					break;
 				case 80:  // Seta para baixo
-					if (next(selecao) != filtrados.end()) {
+					if (next(selecao) != filtrados.end() && contador < 20) {
 						++selecao;
 					}
 					break;
