@@ -50,7 +50,10 @@ class Biblioteca
 		void RelatorioCategorias();
 		void RelatorioLeitores();
 		void Sistema_Not_atraso();
-		Livro* Pesquisar(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs);
+		Livro* Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs);
+		Livro* ResultadoPesquisa();
+		Leitor* Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionada, const char* tabs[], int num_tabs);
+		Leitor* ResultadoPesquisaP();
 		void AlterarLivro();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename LivroTestagem>

@@ -50,8 +50,8 @@ int main() {
             }
         }
         else if (tecla == 13) { // Tecla Enter
-            int valor = abaSelecionada * 10 + opcaoSelecionada; // calculo para obter valores diferentes para todas as opções
-            switch (valor) {
+            int valor = abaSelecionada * 10 + opcaoSelecionada; // calculo para obter valores diferentes para todas as opções 
+            switch (valor) {                                      //(funciona neste caso, porque cada aba tem menos de 10 opções)
 
 
                 //primeira aba
@@ -97,11 +97,12 @@ int main() {
                 B->RelatorioLeitores();
                 break;
             case 8:
+            {
                 system("cls");
                 cout << "Mostrar Leitor P/ Nome\n";
+                Leitor* P = B->ResultadoPesquisaP();
+            }
                 break;
-
-
                 //segunda aba
             case 10:
                 system("cls");
@@ -152,39 +153,10 @@ int main() {
                 break;
             case 19:
             {
-                const char* tabs_p[] = { "Biblioteca", "Ficção", "Científico", "Educativo", "Revistas", "Jornais" };
-                int abaSelecionada_p = 0;
-
-                system("CLS");
-                cout << "Pesquisar Livro\n";
-
-                while (true) {
-                    // Limpa a tela apenas uma vez antes de mostrar o menu
-                    system("CLS");
-
-                    // Exibe o menu de abas
-                    mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
-                    cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
-
-                    // Espera pela tecla pressionada para navegar entre as abas
-                    int tecla = _getch();
-
-                    if (tecla == 224) { // Tecla especial (setas)
-                        switch (_getch()) {
-                        case 75: // Seta esquerda
-                            abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
-                            break;
-                        case 77: // Seta direita
-                            abaSelecionada_p = (abaSelecionada_p < 5) ? abaSelecionada_p + 1 : 0;
-                            break;
-                        }
-                    }
-                    else if (tecla == '\r') { // Enter para iniciar a pesquisa
-                        // Inicia a pesquisa de livros, considerando a aba selecionada
-                        Livro* livroSelecionado = B->Pesquisar(B->get_Livros(), abaSelecionada_p, tabs_p, 6);
-                        // return livroSelecionado;
-                    }
-                }
+                Livro* L = B->ResultadoPesquisa();
+                cout << "--------------------------------------" << endl;
+                L->Show();
+                cout << "--------------------------------------" << endl;
                 break;
             }
 

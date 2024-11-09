@@ -489,10 +489,10 @@ void Biblioteca::RelatorioLeitores() {
 
 }
 
-Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs) {
+Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, const char* tabs[], int num_tabs) {
 	string entrada;
 	list<Livro*> filtrados;
-	list<Livro*>::iterator selecao = filtrados.end(); // Inicializa selecao como vazia
+	list<Livro*>::iterator selecao = filtrados.end(); // Inicializa seleção como vazia
 
 	while (true) {
 		// Armazena o índice atual da seleção, se houver uma seleção válida
@@ -574,6 +574,170 @@ Livro* Biblioteca::Pesquisar(const list<Livro*>& livros, int abaSelecionada, con
 			entrada += static_cast<char>(tecla);
 		}
 	}
+}
+
+Livro* Biblioteca::ResultadoPesquisa() {
+	const char* tabs_p[] = { "BIBLIOTECA", "Ficção", "Científico", "Educativo", "Revistas", "Jornais" };
+	int abaSelecionada_p = 0;
+
+	system("CLS");
+	cout << "Pesquisar Livro\n";
+
+	while (true) {
+		// Limpa a tela apenas uma vez antes de mostrar o menu
+		system("CLS");
+
+		// Exibe o menu de abas
+		mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
+		cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
+
+		// Espera pela tecla pressionada para navegar entre as abas
+		int tecla = _getch();
+
+		if (tecla == 224) { // Tecla especial (setas)
+			switch (_getch()) {
+			case 75: // Seta esquerda
+				abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
+				break;
+			case 77: // Seta direita
+				abaSelecionada_p = (abaSelecionada_p < 5) ? abaSelecionada_p + 1 : 0;
+				break;
+			}
+		}
+		else if (tecla == '\r') { // Enter para iniciar a pesquisa
+			// Inicia a pesquisa de livros, considerando a aba selecionada
+			Livro* livroSelecionado = Pesquisar_L(get_Livros(), abaSelecionada_p, tabs_p, 6);
+			if (livroSelecionado)
+				cout << "Livro selecionado: " << livroSelecionado->get_titulo() << endl;
+				return livroSelecionado;
+		}
+	}
+	return NULL;
+}
+
+Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionada, const char* tabs[], int num_tabs) {
+	string entrada;
+	list<Leitor*> filtrados;
+	list<Leitor*>::iterator selecao = filtrados.end(); // Inicializa seleção como vazia
+
+	while (true) {
+		// Armazena o índice atual da seleção, se houver uma seleção válida
+		int indiceSelecionado = -1;
+		if (selecao != filtrados.end()) {
+			indiceSelecionado = distance(filtrados.begin(), selecao);
+		}
+
+		// Limpa a lista de filtrados antes de reprocessar
+		filtrados.clear();
+
+		// Filtra os livros com base na aba selecionada e na entrada do usuário
+		for (Leitor* leitor : leitores) {
+			bool correspondeCategoria = false;
+			switch (abaSelecionada) {
+			case 0: correspondeCategoria = true; break; // Biblioteca inteira
+			case 1: correspondeCategoria = dynamic_cast<LeitorComum*>(leitor); break;
+			case 2: correspondeCategoria = dynamic_cast<Estudante*>(leitor); break;
+			case 3: correspondeCategoria = dynamic_cast<Professor*>(leitor); break;
+			case 4: correspondeCategoria = dynamic_cast<Senior*>(leitor); break;
+			}
+			if (correspondeCategoria && leitor->get_nome().find(entrada) != string::npos) {
+				filtrados.push_back(leitor);
+			}
+		}
+
+		// Atualiza a seleção com base no índice armazenado
+		if (!filtrados.empty()) {
+			if (indiceSelecionado >= 0 && indiceSelecionado < filtrados.size()) {
+				selecao = next(filtrados.begin(), indiceSelecionado);
+			}
+			else {
+				selecao = filtrados.begin();  // Se índice não é válido, começa do primeiro livro
+			}
+		}
+		else {
+			selecao = filtrados.end();  // Sem seleção válida se `filtrados` estiver vazio
+		}
+
+		// Exibe o menu e os livros filtrados com a seleção destacada
+		system("CLS");
+		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
+		cout << "Digite para pesquisar: " << entrada << endl;
+		cout << "-------------------------------------------------" << endl;
+
+		for (auto it = filtrados.begin(); it != filtrados.end(); ++it) {
+			if (it == selecao) cout << " > "; else cout << "   ";
+			cout << (*it)->get_nome() << endl;
+		}
+
+		// Captura a tecla pressionada para navegação ou seleção
+		int tecla = _getch();
+
+		if (tecla == 224) {  // Tecla especial (setas)
+			int direcao = _getch();
+			if (!filtrados.empty()) {
+				switch (direcao) {
+				case 72:  // Seta para cima
+					if (selecao != filtrados.begin()) {
+						--selecao;
+					}
+					break;
+				case 80:  // Seta para baixo
+					if (next(selecao) != filtrados.end()) {
+						++selecao;
+					}
+					break;
+				}
+			}
+		}
+		else if (tecla == '\r') {  // Enter para selecionar o livro
+			return (selecao != filtrados.end()) ? *selecao : nullptr;
+		}
+		else if (tecla == 8 && !entrada.empty()) {  // Backspace para apagar caracteres da pesquisa
+			entrada.pop_back();
+		}
+		else if (isprint(tecla)) {  // Caractere imprimível (adiciona à pesquisa)
+			entrada += static_cast<char>(tecla);
+		}
+	}
+}
+
+Leitor* Biblioteca::ResultadoPesquisaP(){
+	const char* tabs_p[] = { "LEITORES", "Leitor Comum", "Estudante", "Professor", "Senior"};
+	int abaSelecionada_p = 0;
+
+	system("CLS");
+	cout << "Pesquisar Leitor\n";
+
+	while (true) {
+		// Limpa a tela apenas uma vez antes de mostrar o menu
+		system("CLS");
+
+		// Exibe o menu de abas
+		mostrarMenuTabs(abaSelecionada_p, tabs_p, 5);
+		cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
+
+		// Espera pela tecla pressionada para navegar entre as abas
+		int tecla = _getch();
+
+		if (tecla == 224) { // Tecla especial (setas)
+			switch (_getch()) {
+			case 75: // Seta esquerda
+				abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
+				break;
+			case 77: // Seta direita
+				abaSelecionada_p = (abaSelecionada_p < 5) ? abaSelecionada_p + 1 : 0;
+				break;
+			}
+		}
+		else if (tecla == '\r') { // Enter para iniciar a pesquisa
+			// Inicia a pesquisa de livros, considerando a aba selecionada
+			Leitor* leitorSelecionado = Pesquisar_P(get_Leitores(), abaSelecionada_p, tabs_p, 5);
+			if (leitorSelecionado)
+				cout << "Livro selecionado: " << leitorSelecionado->get_nome() << endl;
+			return leitorSelecionado;
+		}
+	}
+	return NULL;
 }
 
 void Biblioteca::Sistema_Not_atraso() {
