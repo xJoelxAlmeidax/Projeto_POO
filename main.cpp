@@ -16,13 +16,14 @@ int main() {
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
     int numOpcoes[NUM_TABS] = { 9, 10, 7, 2 };
+    const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "Ficheiros" };
     int abaSelecionada = 0;
     int opcaoSelecionada = 0;
     while (true) {
 
         // -------------Exibe o menu-------------
         
-        mostrarMenuTabs(abaSelecionada);
+        mostrarMenuTabs(abaSelecionada, tabs, 4);
 
         mostrarMenuOpcoes(opcaoSelecionada, opcoes[abaSelecionada], numOpcoes[abaSelecionada]);
 

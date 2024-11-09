@@ -7,7 +7,7 @@
 #include <algorithm>
 using namespace std;
 
-void mostrarMenuTabs(int abaSelecionada);
+void mostrarMenuTabs(int abaSelecionada, const char* tabs[], int num_tabs);
 void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes);
 string normalizarString(const string& texto);
 bool validarEmail(const string& email);

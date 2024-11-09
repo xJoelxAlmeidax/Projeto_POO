@@ -3,11 +3,10 @@
 
 const int NUM_TABS = 4; // Número de abas
 
-void mostrarMenuTabs(int abaSelecionada) {
-    const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "Ficheiros" };
+void mostrarMenuTabs(int abaSelecionada, const char* tabs[], int num_tabs) {
     cout << "                             BIBLIOTECA:                             "<<endl;
     cout << "---------------------------------------------------------------------"<<endl;
-    for (int i = 0; i < NUM_TABS; i++) {
+    for (int i = 0; i < num_tabs; i++) {
         if (i == abaSelecionada) {
             cout << "  > " << tabs[i] << " <  "; // Destaque a aba selecionada
         }
