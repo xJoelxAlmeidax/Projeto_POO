@@ -6,3 +6,12 @@ void Revista::Show(){
 	cout << "Editora:" << EDITORA << endl;
 	cout << "Fotografo da Capa:" << FOTOGRAFO_CAPA << endl;
 }
+
+string Revista::get_editora()
+{
+	return EDITORA;
+}
+string Revista::get_fotografo()
+{
+	return FOTOGRAFO_CAPA;
+}

@@ -7,3 +7,18 @@ void LivroEducativo::Show() {
 	cout << "Area: " << AREA << endl;
 	cout << "Ilustrador: " << ILUSTRADOR << endl;
 }
+
+string LivroEducativo::get_area()
+{
+	return AREA;
+}
+
+string LivroEducativo::get_idade()
+{
+	return IDADE_REC;
+}
+
+string LivroEducativo::get_ilustrador()
+{
+	return ILUSTRADOR;
+}

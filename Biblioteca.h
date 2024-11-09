@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 #include <cctype>
+#include <fstream> 
 #include "Livro.h"
 #include "Leitor.h"
 #include "Emprestimo.h"
@@ -14,6 +15,8 @@
 #include "Jornal.h"
 #include "Revista.h"
 #include "Uteis.h"
+
+
 using namespace std;
 
 class Biblioteca
@@ -34,6 +37,7 @@ class Biblioteca
 		bool save_file(string nf);
 		void RelatorioCategorias();
 		void Sistema_Not_atraso();
+		void AlterarLivro();
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		template <typename T>
 		void listagem_livros()

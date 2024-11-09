@@ -105,6 +105,7 @@ Livro* Biblioteca::Add_Livros() {
 	} while (true);	
 	return L;
 }
+
 Leitor* Biblioteca::Add_Leitores() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	return NULL;
@@ -114,23 +115,143 @@ bool Biblioteca::Add_Livro(Livro* L) {
 	Livros.push_back(L);
 	return true;
 }
+
+void Biblioteca::AlterarLivro()
+{
+
+}
+
 bool Biblioteca::Add_Leitor(Leitor* P) {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	Leitores.push_back(P);
 	return true;
 }
+
 void Biblioteca::Add_Emprestimo() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 
 }
+
 bool Biblioteca::load_file(string nf) {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+
+	ifstream File(nf);
+	if (!File) {
+		return false;
+	}
+
+	string buffer1, buffer2, buffer3, buffer4, buffer5, buffer6, buffer7, buffer8;
+	Livro* L = NULL;
+
+	while(getline(File,buffer1,'\t'))
+	{
+		getline(File, buffer2, '\t');
+		getline(File, buffer3, '\t');
+		getline(File, buffer4, '\t');
+
+		if (buffer1 == "LivroCientifico") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7);
+			L = new LivroCientifico(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7);
+		}
+		else if (buffer1 == "LivroEducativo") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			L = new LivroEducativo(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7, buffer8);
+		}
+		else if (buffer1 == "LivroFiccao") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6);
+			L = new LivroFiccao(buffer2, buffer3, stoi(buffer4), buffer5,buffer6);
+		}
+		else if (buffer1 == "Revista") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			L = new Revista(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7, buffer8);
+		}
+		else {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			L = new Jornal(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7, buffer8);
+		}
+		Add_Livro(L);
+	}
 	return true;
 }
+
 bool Biblioteca::save_file(string nf) {
-	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	ofstream File(nf);
+
+	if (!File)
+	{
+		return false;
+	}
+
+	for (auto livroSave : Livros)
+	{
+		if (LivroCientifico * livroTeste = dynamic_cast<LivroCientifico*>(livroSave)) {
+			File << "LivroCientifico\t";
+			File << livroTeste->get_titulo() << "\t";
+			File << livroTeste->get_autor() << "\t";
+			File << livroTeste->get_ano() << "\t";
+			File << livroTeste->get_isbn() << "\t";
+			File << livroTeste->get_area() << "\t";
+			File << livroTeste->get_revisor() << "\n";
+		}
+		else if (LivroEducativo* livroTeste = dynamic_cast<LivroEducativo*>(livroSave)) {
+			File << "LivroEducativo\t";
+			File << livroTeste->get_titulo() << "\t";
+			File << livroTeste->get_autor() << "\t";
+			File << livroTeste->get_ano() << "\t";
+			File << livroTeste->get_isbn() << "\t";
+			File << livroTeste->get_idade() << "\t";
+			File << livroTeste->get_area() << "\t";
+			File << livroTeste->get_ilustrador() << "\n";
+		}
+		else if (LivroFiccao* livroTeste = dynamic_cast<LivroFiccao*>(livroSave)) {
+			File << "LivroFiccao\t";
+			File << livroTeste->get_titulo() << "\t";
+			File << livroTeste->get_autor() << "\t";
+			File << livroTeste->get_ano() << "\t";
+			File << livroTeste->get_isbn() << "\t";
+			File << livroTeste->get_subgenero() << "\n";
+
+		}
+		else if (Revista* livroTeste = dynamic_cast<Revista*>(livroSave))
+		{
+			File << "Revista\t";
+			File << livroTeste->get_titulo() << "\t";
+			File << livroTeste->get_autor() << "\t";
+			File << livroTeste->get_ano() << "\t";
+			File << livroTeste->get_issn() << "\t";
+			File << livroTeste->get_edicao() << "\t";
+			File << livroTeste->get_editora() << "\t";
+			File << livroTeste->get_fotografo() << "\n";
+		}
+		else if (Jornal* livroTeste = dynamic_cast<Jornal*>(livroSave))
+		{
+			File << "Jornal\t";
+			File << livroTeste->get_titulo() << "\t";
+			File << livroTeste->get_autor() << "\t";
+			File << livroTeste->get_ano() << "\t";
+			File << livroTeste->get_issn() << "\t";
+			File << livroTeste->get_edicao() << "\t";
+			File << livroTeste->get_editor() << "\t";
+			File << livroTeste->get_tipo() << "\n";
+		}
+	}
+
+	File.close();
 	return true;
 }
+
 void Biblioteca::RelatorioCategorias() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	cout << "LIVROS" << endl;
@@ -155,6 +276,7 @@ void Biblioteca::RelatorioCategorias() {
 	cout << "------------------------------------------" << endl;
 	listagem_livros<Jornal>();
 }
+
 void Biblioteca::Sistema_Not_atraso() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 }

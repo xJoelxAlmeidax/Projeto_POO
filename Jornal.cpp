@@ -8,3 +8,13 @@ void Jornal::Show() {
 	cout << "Editor Chefe: " << EDITOR_CHEFE <<endl;
 	cout << "Distribuição Geográfica: " << TIPO_DISTRIBUICAO << endl;
 }
+
+string Jornal::get_editor()
+{
+	return EDITOR_CHEFE;
+}
+
+string Jornal::get_tipo() 
+{
+	return TIPO_DISTRIBUICAO;
+}

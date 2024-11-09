@@ -1,0 +1,2 @@
+LivroFiccao	titulo1	autor1	16543	77567	hergsfd
+Jornal	titulo2	autor2	154343	13123	645646	hdghfg	nacional

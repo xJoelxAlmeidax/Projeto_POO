@@ -12,6 +12,9 @@ class LivroEducativo: public LivroGenerico
 public:
 	LivroEducativo(string titulo, string autor, int ano, string _ISBN, string _idaderec, string _area, string _ilustrador);
 	virtual ~LivroEducativo();
+	string get_area();
+	string get_idade();
+	string get_ilustrador();
 	void Show();
 };
 

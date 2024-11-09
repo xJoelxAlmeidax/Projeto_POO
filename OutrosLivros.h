@@ -8,6 +8,8 @@ class OutrosLivros : public Livro
 public:
 	OutrosLivros(string _titulo, string _autor, int _ano, string _issn, string _edicao);
 	virtual ~OutrosLivros();
+	string get_issn();
+	string get_edicao();
 	void Show();
 };
 

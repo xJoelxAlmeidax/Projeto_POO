@@ -10,6 +10,7 @@ class LivroFiccao: public LivroGenerico
 public:
 	LivroFiccao(string titulo, string autor, int ano, string _ISBN, string _subgenero);
 	virtual ~LivroFiccao();
+	string get_subgenero();
 	void Show();
 
 };

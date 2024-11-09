@@ -11,7 +11,7 @@ int main() {
     B->Sistema_Not_atraso();
     system("pause"); system("cls");
     const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Outros", "Mostrar todos", "Procurar Nome"}; // 7 opções
-    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Jornais", "Mostrar Revistas", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
+    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Cientificos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
     const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
@@ -103,7 +103,7 @@ int main() {
             case 11:
                 system("cls");
                 cout << "Alterar Livro\n";
-
+                B->AlterarLivro();
                 break;
             case 12:
                 system("cls");
@@ -140,10 +140,11 @@ int main() {
                 B->RelatorioCategorias();
                 break;
             case 19:
+                {
                 system("cls");
                 cout << "Pesquisar Livro\n";
                 break;
-
+            }
 
                 //terceira aba
             case 20:
@@ -175,7 +176,6 @@ int main() {
                 cout << "Ver Multas pendentes\n";
                 break;
 
-
                 //quarta aba
             case 30:
                 system("cls");
@@ -186,7 +186,7 @@ int main() {
                 return 0;
             }
 
-            Sleep(2000); // Pausa para testes
+            Sleep(5000); // Pausa para testes
         }
 
         system("cls"); // Limpa a tela para atualizar a interface

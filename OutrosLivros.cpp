@@ -7,3 +7,12 @@ void OutrosLivros::Show(){
 	cout << "ISSN: " << ISSN << endl;
 	cout << "Edição: " << EDICAO << endl;
 }
+
+string OutrosLivros::get_issn()
+{
+	return ISSN;
+}
+string OutrosLivros::get_edicao() 
+{
+	return EDICAO;
+}

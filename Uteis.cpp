@@ -60,7 +60,6 @@ string normalizarString(const string& texto) {
         case 'Ú': case 'Ù': case 'Û': c = 'u'; break;
         case 'Ç': c = 'c'; break;
         }
-        cout << textoNormalizado;
     }
 
     return textoNormalizado;

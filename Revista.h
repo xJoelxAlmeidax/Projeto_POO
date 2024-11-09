@@ -8,6 +8,8 @@ class Revista: public OutrosLivros
 public:
 	Revista(string _titulo, string _autor, int _ano, string _issn, string _edicao, string _editora, string _fotografo);
 	virtual ~Revista();
+	string get_editora();
+	string get_fotografo();
 	void Show();
 };
 

@@ -5,3 +5,8 @@ void LivroFiccao::Show(){
 	LivroGenerico::Show();
 	cout << "Subgénero: " << SUBGENERO << endl;
 }
+
+string LivroFiccao::get_subgenero()
+{
+	return SUBGENERO;
+}

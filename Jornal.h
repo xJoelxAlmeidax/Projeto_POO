@@ -8,6 +8,8 @@ class Jornal: public OutrosLivros
 public:
 	Jornal(string _titulo, string _autor, int _ano, string _issn, string _edicao, string _editor_boss, string _tipo_dis);
 	virtual ~Jornal();
+	string get_editor();
+	string get_tipo();
 	void Show();
 };
 
