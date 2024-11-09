@@ -77,6 +77,40 @@ bool validarTelefone(const string& telefone) {
     return regex_match(telefone, formatoTelefone);
 }
 
+static bool AnoBissexto(int ano) {
+    if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
+        return true;
+    }
+    return false;
+}
+
+static int DiasNoMes(int mes, int ano) {
+    switch (mes) {
+    case 4: case 6: case 9: case 11:
+        return 30;
+    case 2:
+        return AnoBissexto(ano) ? 29 : 28; // if AnoBissexto == true -> 29 else -> 28
+    default:
+        return 31;
+    }
+}
+
+static int ConverterDataDias(int dia, int mes, int ano) {
+    int DiasTotais = dia;
+
+    for (int mes_ = 1; mes_ < mes; mes_++)
+    {
+        DiasTotais += DiasNoMes(mes_, ano);
+    }
+
+    for (int ano_ = 1500; ano_ < ano; ano_++) // 1500 é um ano genérico só para não gerar um número gigante
+    {
+        DiasTotais += AnoBissexto(ano_) ? 366 : 365;
+    }
+
+    return DiasTotais;
+}
+
 
 /*cout << R"(
                     .--.         .--.         .--.         .--.

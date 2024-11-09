@@ -16,6 +16,8 @@ bool validarTelefone(const string& telefone);
 class Uteis
 {
 public:
-	
+	static bool AnoBisexto(int Ano);
+	static int DiasNoMes(int Mes, int Ano);
+	static int ConverterDataDias(int dia, int mes, int ano);
 };
 #endif
