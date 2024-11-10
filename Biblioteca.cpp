@@ -428,7 +428,7 @@ bool Biblioteca::save_file(string nf) {
 			File << LeitorTeste->get_morada() << "\t";
 			File << LeitorTeste->get_telefone() << "\t";
 			File << LeitorTeste->get_idade() << "\t";
-			File << LeitorTeste->get_Email() << "\n";
+			File << LeitorTeste->get_Email() << "\t";
 			File << LeitorTeste->get_Disciplinas() << "\n";
 
 		}
