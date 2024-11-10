@@ -149,7 +149,10 @@ int main() {
                     break;
                 }
                 B->AlterarLivro(L);
-            }
+
+                
+
+                }
                 break;
             case 12:
             {

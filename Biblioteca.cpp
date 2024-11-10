@@ -233,6 +233,8 @@ void Biblioteca::RemoverLeitor(Leitor* P){
 void Biblioteca::AlterarLivro(Livro* L)
 {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+
+
 }
 
 void Biblioteca::AlterarLeitor(Leitor* L) {
