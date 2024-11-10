@@ -95,16 +95,16 @@ static int DiasNoMes(int mes, int ano) {
     }
 }
 
-static int ConverterDataDias(int dia, int mes, int ano) {
+int ConverterDataDias(int dia, int mes, int ano) {
     int DiasTotais = dia;
 
-    for (int mes_ = 1; mes_ < mes; mes_++)
-    {
+    // Somar os dias dos meses anteriores ao mês atual
+    for (int mes_ = 1; mes_ < mes; mes_++) {
         DiasTotais += DiasNoMes(mes_, ano);
     }
 
-    for (int ano_ = 1500; ano_ < ano; ano_++) // 1500 é um ano genérico só para não gerar um número gigante
-    {
+    // Somar os dias dos anos anteriores ao ano atual (assumindo 1500 como referência)
+    for (int ano_ = 1500; ano_ < ano; ano_++) {
         DiasTotais += AnoBissexto(ano_) ? 366 : 365;
     }
 

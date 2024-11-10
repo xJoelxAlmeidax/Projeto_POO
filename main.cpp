@@ -6,7 +6,25 @@ using namespace std;
 
 int main() {
     setlocale(LC_ALL, "Portuguese");
+
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
+
+
+
+    /*for (int i = 1; i <= 25; i++) {
+        string titulo = "Revista Exemplo " + to_string(i);
+        string autor = "Autor Exemplo " + to_string(i);
+        int ano = 2020 + i;
+        string issn = "1234-567" + to_string(i);
+        string edicao = "96512312" + to_string(i);
+        string editora = "email" + to_string(i) + "@gmail.com";
+        string fotografo = "Fotografo" + to_string(i);
+
+        Professor* t = new Professor(titulo, autor, issn, edicao, ano, editora, fotografo);
+        B->Add_Leitor(t);
+    }*/
+
+
     B->load_file("Dados.txt");
     B->Sistema_Not_atraso();
     system("pause"); system("cls");
@@ -249,7 +267,7 @@ int main() {
                 return 0;
             }
 
-            Sleep(3000); // Pausa para testes
+            Sleep(4000); // Pausa para testes
         }
         system("cls"); // Limpa a tela para atualizar a interface
     }

@@ -13,12 +13,13 @@ Emprestimo::~Emprestimo() {
 
 int Emprestimo::VerMulta(DATA dataInicio, DATA dataFim) { //Data do inicio do emprestimo e fim
 	time_t DATA = time(nullptr);//data atual
-	tm* _DataAtual_ = localtime(&DATA); //data atual convertida para dd/mm/yyyy (só dá para ver os dias se converter)
+	tm _DataAtual_;
+	localtime_s(&_DataAtual_ ,&DATA); //data atual convertida para dd/mm/yyyy (só dá para ver os dias se converter)
 
 	//Diferença do dia em que foi realizado o emprestimo até hoje
-	int DiferencaDataAtual = abs(Uteis::ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - Uteis::ConverterDataDias(_DataAtual_->tm_mday, _DataAtual_->tm_mon + 1, _DataAtual_->tm_year));
+	int DiferencaDataAtual = abs(ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - ConverterDataDias(_DataAtual_.tm_mday, _DataAtual_.tm_mon + 1, _DataAtual_.tm_year));
 	//Tempo Max em dias que pode manter o livro
-	int DiferencaDataMax = abs(Uteis::ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - Uteis::ConverterDataDias(dataFim.dia, dataFim.mes, dataFim.ano));
+	int DiferencaDataMax = abs(ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - ConverterDataDias(dataFim.dia, dataFim.mes, dataFim.ano));
 
 	//Se a DiferencaDataAtual for maior significa que o dia de entrega já passou
 	if (DiferencaDataAtual > DiferencaDataMax) {

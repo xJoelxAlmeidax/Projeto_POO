@@ -74,7 +74,7 @@ class Biblioteca
 		{
 			for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
 			{
-				// dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
+				//dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
 				if (dynamic_cast<LeitorTestagem*>(*it)) {
 					(*it)->Show();
 					cout << "-------------------------------------" << endl;

@@ -12,12 +12,13 @@ void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes
 string normalizarString(const string& texto);
 bool validarEmail(const string& email);
 bool validarTelefone(const string& telefone);
+bool AnoBisexto(int Ano);
+int DiasNoMes(int Mes, int Ano);
+int ConverterDataDias(int dia, int mes, int ano);
 
 class Uteis
 {
 public:
-	static bool AnoBisexto(int Ano);
-	static int DiasNoMes(int Mes, int Ano);
-	static int ConverterDataDias(int dia, int mes, int ano);
+	
 };
 #endif

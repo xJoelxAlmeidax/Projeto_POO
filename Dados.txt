@@ -123,3 +123,78 @@ Revista	Revista Exemplo 22	Autor Exemplo 22	2042	1234-56722	22	Editora 22	Fotogr
 Revista	Revista Exemplo 23	Autor Exemplo 23	2043	1234-56723	23	Editora 23	Fotografo23
 Revista	Revista Exemplo 24	Autor Exemplo 24	2044	1234-56724	24	Editora 24	Fotografo24
 Revista	Revista Exemplo 25	Autor Exemplo 25	2045	1234-56725	25	Editora 25	Fotografo25
+LeitorComum	Revista Exemplo 1	Autor Exemplo 1	1234-5671	1	2021	Editora 1
+LeitorComum	Revista Exemplo 2	Autor Exemplo 2	1234-5672	2	2022	Editora 2
+LeitorComum	Revista Exemplo 3	Autor Exemplo 3	1234-5673	3	2023	Editora 3
+LeitorComum	Revista Exemplo 4	Autor Exemplo 4	1234-5674	4	2024	Editora 4
+LeitorComum	Revista Exemplo 5	Autor Exemplo 5	1234-5675	5	2025	Editora 5
+LeitorComum	Revista Exemplo 6	Autor Exemplo 6	1234-5676	6	2026	Editora 6
+LeitorComum	Revista Exemplo 7	Autor Exemplo 7	1234-5677	7	2027	Editora 7
+LeitorComum	Revista Exemplo 8	Autor Exemplo 8	1234-5678	8	2028	Editora 8
+LeitorComum	Revista Exemplo 9	Autor Exemplo 9	1234-5679	9	2029	Editora 9
+LeitorComum	Revista Exemplo 10	Autor Exemplo 10	1234-56710	10	2030	Editora 10
+LeitorComum	Revista Exemplo 11	Autor Exemplo 11	1234-56711	11	2031	Editora 11
+LeitorComum	Revista Exemplo 12	Autor Exemplo 12	1234-56712	12	2032	Editora 12
+LeitorComum	Revista Exemplo 13	Autor Exemplo 13	1234-56713	13	2033	Editora 13
+LeitorComum	Revista Exemplo 14	Autor Exemplo 14	1234-56714	14	2034	Editora 14
+LeitorComum	Revista Exemplo 15	Autor Exemplo 15	1234-56715	15	2035	Editora 15
+LeitorComum	Revista Exemplo 16	Autor Exemplo 16	1234-56716	16	2036	Editora 16
+LeitorComum	Revista Exemplo 17	Autor Exemplo 17	1234-56717	17	2037	Editora 17
+LeitorComum	Revista Exemplo 18	Autor Exemplo 18	1234-56718	18	2038	Editora 18
+LeitorComum	Revista Exemplo 19	Autor Exemplo 19	1234-56719	19	2039	Editora 19
+LeitorComum	Revista Exemplo 20	Autor Exemplo 20	1234-56720	20	2040	Editora 20
+LeitorComum	Revista Exemplo 21	Autor Exemplo 21	1234-56721	21	2041	Editora 21
+LeitorComum	Revista Exemplo 22	Autor Exemplo 22	1234-56722	22	2042	Editora 22
+LeitorComum	Revista Exemplo 23	Autor Exemplo 23	1234-56723	23	2043	Editora 23
+LeitorComum	Revista Exemplo 24	Autor Exemplo 24	1234-56724	24	2044	Editora 24
+LeitorComum	Revista Exemplo 25	Autor Exemplo 25	1234-56725	25	2045	Editora 25
+Estudante	Revista Exemplo 1	Autor Exemplo 1	1234-5671	1	2021	Editora 1	Fotografo1
+Estudante	Revista Exemplo 2	Autor Exemplo 2	1234-5672	2	2022	Editora 2	Fotografo2
+Estudante	Revista Exemplo 3	Autor Exemplo 3	1234-5673	3	2023	Editora 3	Fotografo3
+Estudante	Revista Exemplo 4	Autor Exemplo 4	1234-5674	4	2024	Editora 4	Fotografo4
+Estudante	Revista Exemplo 5	Autor Exemplo 5	1234-5675	5	2025	Editora 5	Fotografo5
+Estudante	Revista Exemplo 6	Autor Exemplo 6	1234-5676	6	2026	Editora 6	Fotografo6
+Estudante	Revista Exemplo 7	Autor Exemplo 7	1234-5677	7	2027	Editora 7	Fotografo7
+Estudante	Revista Exemplo 8	Autor Exemplo 8	1234-5678	8	2028	Editora 8	Fotografo8
+Estudante	Revista Exemplo 9	Autor Exemplo 9	1234-5679	9	2029	Editora 9	Fotografo9
+Estudante	Revista Exemplo 10	Autor Exemplo 10	1234-56710	10	2030	Editora 10	Fotografo10
+Estudante	Revista Exemplo 11	Autor Exemplo 11	1234-56711	11	2031	Editora 11	Fotografo11
+Estudante	Revista Exemplo 12	Autor Exemplo 12	1234-56712	12	2032	Editora 12	Fotografo12
+Estudante	Revista Exemplo 13	Autor Exemplo 13	1234-56713	13	2033	Editora 13	Fotografo13
+Estudante	Revista Exemplo 14	Autor Exemplo 14	1234-56714	14	2034	Editora 14	Fotografo14
+Estudante	Revista Exemplo 15	Autor Exemplo 15	1234-56715	15	2035	Editora 15	Fotografo15
+Estudante	Revista Exemplo 16	Autor Exemplo 16	1234-56716	16	2036	Editora 16	Fotografo16
+Estudante	Revista Exemplo 17	Autor Exemplo 17	1234-56717	17	2037	Editora 17	Fotografo17
+Estudante	Revista Exemplo 18	Autor Exemplo 18	1234-56718	18	2038	Editora 18	Fotografo18
+Estudante	Revista Exemplo 19	Autor Exemplo 19	1234-56719	19	2039	Editora 19	Fotografo19
+Estudante	Revista Exemplo 20	Autor Exemplo 20	1234-56720	20	2040	Editora 20	Fotografo20
+Estudante	Revista Exemplo 21	Autor Exemplo 21	1234-56721	21	2041	Editora 21	Fotografo21
+Estudante	Revista Exemplo 22	Autor Exemplo 22	1234-56722	22	2042	Editora 22	Fotografo22
+Estudante	Revista Exemplo 23	Autor Exemplo 23	1234-56723	23	2043	Editora 23	Fotografo23
+Estudante	Revista Exemplo 24	Autor Exemplo 24	1234-56724	24	2044	Editora 24	Fotografo24
+Estudante	Revista Exemplo 25	Autor Exemplo 25	1234-56725	25	2045	Editora 25	Fotografo25
+Senior	Revista Exemplo 1	Autor Exemplo 1	1234-5671	1	2021	Editora 1
+Senior	Revista Exemplo 2	Autor Exemplo 2	1234-5672	2	2022	Editora 2
+Senior	Revista Exemplo 3	Autor Exemplo 3	1234-5673	3	2023	Editora 3
+Senior	Revista Exemplo 4	Autor Exemplo 4	1234-5674	4	2024	Editora 4
+Senior	Revista Exemplo 5	Autor Exemplo 5	1234-5675	5	2025	Editora 5
+Senior	Revista Exemplo 6	Autor Exemplo 6	1234-5676	6	2026	Editora 6
+Senior	Revista Exemplo 7	Autor Exemplo 7	1234-5677	7	2027	Editora 7
+Senior	Revista Exemplo 8	Autor Exemplo 8	1234-5678	8	2028	Editora 8
+Senior	Revista Exemplo 9	Autor Exemplo 9	1234-5679	9	2029	Editora 9
+Senior	Revista Exemplo 10	Autor Exemplo 10	1234-56710	10	2030	Editora 10
+Senior	Revista Exemplo 11	Autor Exemplo 11	1234-56711	11	2031	Editora 11
+Senior	Revista Exemplo 12	Autor Exemplo 12	1234-56712	12	2032	Editora 12
+Senior	Revista Exemplo 13	Autor Exemplo 13	1234-56713	13	2033	Editora 13
+Senior	Revista Exemplo 14	Autor Exemplo 14	1234-56714	14	2034	Editora 14
+Senior	Revista Exemplo 15	Autor Exemplo 15	1234-56715	15	2035	Editora 15
+Senior	Revista Exemplo 16	Autor Exemplo 16	1234-56716	16	2036	Editora 16
+Senior	Revista Exemplo 17	Autor Exemplo 17	1234-56717	17	2037	Editora 17
+Senior	Revista Exemplo 18	Autor Exemplo 18	1234-56718	18	2038	Editora 18
+Senior	Revista Exemplo 19	Autor Exemplo 19	1234-56719	19	2039	Editora 19
+Senior	Revista Exemplo 20	Autor Exemplo 20	1234-56720	20	2040	Editora 20
+Senior	Revista Exemplo 21	Autor Exemplo 21	1234-56721	21	2041	Editora 21
+Senior	Revista Exemplo 22	Autor Exemplo 22	1234-56722	22	2042	Editora 22
+Senior	Revista Exemplo 23	Autor Exemplo 23	1234-56723	23	2043	Editora 23
+Senior	Revista Exemplo 24	Autor Exemplo 24	1234-56724	24	2044	Editora 24
+Senior	Revista Exemplo 25	Autor Exemplo 25	1234-56725	25	2045	Editora 25
