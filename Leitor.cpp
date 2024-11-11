@@ -10,6 +10,10 @@ Leitor::Leitor(string _ncc, string _nome, string _morada, string _telefone, int 
 Leitor::~Leitor() {
 
 }
+
+string Leitor::quem_es() {
+	return "";
+}
 void Leitor::Show() {
 	cout << "Nome: " << NOME << endl;
 	cout << "CC: " << N_CC << endl;

@@ -13,6 +13,7 @@ class LeitorComum: public Leitor
 		void Show();
 		string get_Email();
 		void mudaremail(string new_email);
+		string quem_es();
 };
 
 #endif

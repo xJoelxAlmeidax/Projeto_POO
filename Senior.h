@@ -14,6 +14,7 @@ class Senior : public Leitor
 		void Show();
 		string get_NecessidadesAcessibilidade();
 		void mudarNecessidades(string new_acessibilidade);
+		string quem_es();
 };
 
 #endif

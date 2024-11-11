@@ -25,3 +25,7 @@ void Jornal::mudareditor(string new_editor) {
 void Jornal::mudartipo(string new_tipo) {
 	TIPO_DISTRIBUICAO = new_tipo;
 }
+
+string Jornal::quem_es() {
+	return "Jornal";
+}

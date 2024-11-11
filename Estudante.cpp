@@ -22,3 +22,6 @@ void Estudante::mudaremail(string new_email) {
 void Estudante::mudarcurso(string new_curso) {
 	Curso = new_curso;
 }
+string Estudante::quem_es() {
+	return "Estudante";
+}

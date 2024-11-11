@@ -24,3 +24,7 @@ void LivroCientifico::mudararea(string new_area) {
 void LivroCientifico::mudarrevisor(string new_revisor) {
 	REVISORCIENTIFICO = new_revisor;
 }
+
+string LivroCientifico::quem_es() {
+	return "LivroCientifico";
+}

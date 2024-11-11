@@ -92,22 +92,22 @@ int main() {
             case 3:
                 system("cls");
                 cout << "Mostrar Leitores Comuns\n";
-                B->listagem_leitoresTipo<LeitorComum>();
+                B->listagemP("LeitorComum");
                 break;
             case 4:
                 system("cls");
                 cout << "Mostrar Estudantes\n";
-                B->listagem_leitoresTipo<Estudante>();
+                B->listagemP("Estudante");
                 break;
             case 5:
                 system("cls");
                 cout << "Mostrar Professores\n";
-                B->listagem_leitoresTipo<Professor>();
+                B->listagemP("Professor");
                 break;
             case 6:
                 system("cls");
                 cout << "Mostrar Seniores\n";
-                B->listagem_leitoresTipo<Senior>();
+                B->listagemP("Senior");
                 break;
             case 7:
                 system("cls");
@@ -170,27 +170,27 @@ int main() {
             case 13:
                 system("cls");
                 cout << "Mostrar Livros de Ficção\n";
-                B->listagem_livros<LivroFiccao>();
+                B->listagemL("LivroFiccao");
                 break;
             case 14:
                 system("cls");
                 cout << "Mostrar Livros Científicos\n";
-                B->listagem_livros<LivroCientifico>();
+                B->listagemL("LivroCientifico");
                 break;
             case 15:
                 system("cls");
                 cout << "Mostrar Livros Educativos\n";
-                B->listagem_livros<LivroEducativo>();
+                B->listagemL("LivroEducativo");
                 break;
             case 16:
                 system("cls");
                 cout << "Mostrar Revistas\n";
-                B->listagem_livros<Revista>();
+                B->listagemL("Revista");
                 break;
             case 17:
                 system("cls");
                 cout << "Mostrar Jornais\n";
-                B->listagem_livros<Jornal>();
+                B->listagemL("Jornal");
                 break;
             case 18:
                 system("cls");

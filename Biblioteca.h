@@ -5,9 +5,10 @@
 #include <list>
 #include <cctype>
 #include <fstream> 
+#include "Emprestimo.h"
+#include "Uteis.h"
 #include "Livro.h"
 #include "Leitor.h"
-#include "Emprestimo.h"
 #include "LivroGenerico.h"
 #include "LivroCientifico.h"
 #include "LivroFiccao.h"
@@ -18,9 +19,6 @@
 #include "Professor.h"
 #include "LeitorComum.h"
 #include "Senior.h"
-#include "Uteis.h"
-
-
 using namespace std;
 
 class Biblioteca
@@ -57,30 +55,8 @@ class Biblioteca
 		void AlterarLivro(Livro* L);
 		void AlterarLeitor(Leitor* L);
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
-		template <typename LivroTestagem>
-		void listagem_livros()
-		{
-			for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
-			{
-				// dynaminc_cast metodo de polimorfismo para saber o tipo de livro
-				if (dynamic_cast<LivroTestagem*>(*it)) {
-					(*it)->Show();
-					cout << "-------------------------------------" << endl;
-				}
-			}
-		};
-		template <typename LeitorTestagem>
-		void listagem_leitoresTipo()
-		{
-			for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
-			{
-				//dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
-				if (dynamic_cast<LeitorTestagem*>(*it)) {
-					(*it)->Show();
-					cout << "-------------------------------------" << endl;
-				}
-			}
-		};
+		void listagemL(string tipo);
+		void listagemP(string tipo);
 };
 
 #endif 

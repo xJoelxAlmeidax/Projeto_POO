@@ -14,3 +14,7 @@ string LeitorComum::get_Email() {
 void LeitorComum::mudaremail(string new_email) {
 	EMAIL = new_email;
 }
+
+string LeitorComum::quem_es() {
+	return "LeitorComum";
+}

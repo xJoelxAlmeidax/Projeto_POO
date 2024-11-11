@@ -16,7 +16,7 @@ public:
 	string get_revisor();
 	void mudararea(string new_area);
 	void mudarrevisor(string new_revisor);
-
+	string quem_es();
 };
 
 #endif

@@ -23,6 +23,7 @@ public:
 	virtual void mudartitulo(string new_titulo);
 	virtual void mudarautor(string new_autor);
 	virtual void mudarano(int new_ano);
+	virtual string quem_es();
 };
 
 #endif

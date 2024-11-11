@@ -16,3 +16,7 @@ string LivroFiccao::get_subgenero()
 void LivroFiccao::mudarsubgenero(string new_sub) {
 	SUBGENERO = new_sub;
 }
+
+string LivroFiccao::quem_es() {
+	return "LivroFiccao";
+}

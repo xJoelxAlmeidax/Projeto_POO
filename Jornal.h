@@ -13,6 +13,7 @@ public:
 	void Show();
 	void mudareditor(string new_editor);
 	void mudartipo(string new_tipo);
+	string quem_es();
 };
 
 #endif

@@ -13,6 +13,7 @@ public:
 	void Show();
 	void mudareditora(string new_editora);
 	void mudarfotografo(string new_fotografo);
+	string quem_es();
 };
 
 #endif

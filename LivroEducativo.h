@@ -19,6 +19,7 @@ public:
 	void mudaridade(string new_idade);
 	void mudararea(string new_area);
 	void mudarilustrador(string new_ilustrador);
+	string quem_es();
 };
 
 #endif

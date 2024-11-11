@@ -34,3 +34,7 @@ void LivroEducativo::mudararea(string new_area) {
 void LivroEducativo::mudarilustrador(string new_ilustrador) {
 	ILUSTRADOR = new_ilustrador;
 }
+
+string LivroEducativo::quem_es() {
+	return "LivroEducativo";
+}

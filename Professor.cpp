@@ -22,7 +22,9 @@ void Professor::mudardisciplina(string new_disciplina) {
 	Disciplinas = new_disciplina;
 }
 
-
+string Professor::quem_es() {
+	return "Professor";
+}
 
 
 

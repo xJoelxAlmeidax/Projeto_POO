@@ -13,6 +13,7 @@ public:
 	string get_subgenero();
 	void Show();
 	void mudarsubgenero(string new_sub);
+	string quem_es();
 };
 
 #endif

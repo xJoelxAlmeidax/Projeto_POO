@@ -17,5 +17,6 @@ class Professor : public Leitor
 		string get_Email();
 		void mudaremail(string new_email);
 		void mudardisciplina(string new_disciplina);
+		string quem_es();
 };
 #endif

@@ -4,6 +4,7 @@
 #include <string>
 #include <list>
 using namespace std;
+#include "Emprestimo.h"
 class Leitor
 {
 	string N_CC;
@@ -11,6 +12,7 @@ class Leitor
 	string MORADA;
 	string TELEFONE;
 	int IDADE;
+	list<Emprestimo*> Emp;
 public:
 	Leitor(string _ncc, string _nome, string _morada, string _telefone, int _idade);
 	virtual ~Leitor();
@@ -26,6 +28,7 @@ public:
 	virtual void mudarmorada(string new_morada);
 	virtual void mudartelefone(string new_telefone);
 	virtual void mudaridade(int new_idade);
+	virtual string quem_es();
 };	
 	
 #endif

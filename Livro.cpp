@@ -8,6 +8,10 @@ Livro::~Livro(){
 	cout << "Destruindo Livro..." << endl;
 }
 
+string Livro::quem_es() {
+	return "";
+}
+
 void Livro::Show() {
 	cout << "Título: " << TITULO << endl;
 	cout << "Autor: " << AUTOR << endl;

@@ -24,3 +24,7 @@ void Revista::mudareditora(string new_editora) {
 void Revista::mudarfotografo(string new_fotografo) {
 	FOTOGRAFO_CAPA = new_fotografo;
 }
+
+string Revista::quem_es() {
+	return "Revista";
+}

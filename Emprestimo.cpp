@@ -1,14 +1,16 @@
 #include "Emprestimo.h"
+void DATA::adicionar_dias(int num_dias){
 
-Emprestimo::Emprestimo(DATA _inicio, DATA _max, Leitor* _leitor, Livro* _livro) {
+}
+Emprestimo::Emprestimo(DATA _inicio,Leitor* _leitor, Livro* _livro) {
 	DATA_INICIO = _inicio;
-	DATA_MAX = _max;
 	Leitor_Emp = _leitor;
 	Livro_Emp = _livro;
 }
 
 Emprestimo::~Emprestimo() {
-
+	delete(Leitor_Emp);
+	delete(Livro_Emp);
 }
 
 int Emprestimo::VerMulta(DATA dataInicio, DATA dataFim) { //Data do inicio do emprestimo e fim
@@ -23,10 +25,16 @@ int Emprestimo::VerMulta(DATA dataInicio, DATA dataFim) { //Data do inicio do em
 
 	//Se a DiferencaDataAtual for maior significa que o dia de entrega já passou
 	if (DiferencaDataAtual > DiferencaDataMax) {
-		return (DiferencaDataAtual - DiferencaDataMax) * 5; // leva 5 paus por dia de atraso
+		return (DiferencaDataAtual - DiferencaDataMax) + 5; // leva 5 paus por dia de atraso
 	}
 	else
 	{
 		return 0; // se não for maior significa que ainda tem tempo OUUU tem de entregar hoje, o menes tá de boas
 	}
+}
+
+void Emprestimo::calcularDIAS() {
+	/*if (Livro_Emp.quem_es()=="LivroEducativo" || Livro_Emp.quem_es() == "LivroCientifico") && (dynamic_cast<Professor*>(Leitor_Emp) || dynamic_cast<Estudante*>(Leitor_Emp))) {
+
+	}*/
 }

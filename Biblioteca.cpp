@@ -12,6 +12,7 @@ Livro* Biblioteca::Add_Livros() {
 	int ano; 
 	cout << "Título: ";
 	getline(cin, titulo);
+	if (titulo == "") return NULL;
 	cout << "Autor: ";
 	getline(cin, autor);
 	cout << "Ano: ";
@@ -115,6 +116,7 @@ Leitor* Biblioteca::Add_Leitores() {
 	int idade;
 	cout << "Nome: ";
 	getline(cin, nome);
+	if (nome=="") return NULL;
 	cout << "Número de Cartão de Cidadão: ";
 	getline(cin, ncc);
 	cout << "Morada: ";
@@ -218,6 +220,7 @@ Leitor* Biblioteca::Add_Leitores() {
 
 bool Biblioteca::Add_Livro(Livro* L) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	if (!L) { return false; }
 	Livros.push_back(L);
 	return true;
 }
@@ -243,6 +246,7 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 
 bool Biblioteca::Add_Leitor(Leitor* P) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	if (!P) { return false; }
 	Leitores.push_back(P);
 	return true;
 }
@@ -457,23 +461,23 @@ void Biblioteca::RelatorioCategorias() {
 	cout << "------------------------------------------" << endl;
 	cout << "            LIVROS CIENTIFICOS" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_livros<LivroCientifico>();
+	listagemL("LivroCientifico");
 	cout << "------------------------------------------" << endl;
 	cout << "             LIVROS DE FICÇÃO" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_livros<LivroFiccao>();
+	listagemL("LivroFiccao");
 	cout << "------------------------------------------" << endl;
 	cout << "            LIVROS EDUCATIVOS" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_livros<LivroEducativo>();
+	listagemL("LivroEducativo");
 	cout << "------------------------------------------" << endl;
 	cout << "                REVISTAS" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_livros<Revista>();
+	listagemL("Revista");
 	cout << "------------------------------------------" << endl;
 	cout << "                JORNAIS" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_livros<Jornal>();
+	listagemL("Jornal");
 }
 
 void Biblioteca::RelatorioLeitores() {
@@ -482,19 +486,19 @@ void Biblioteca::RelatorioLeitores() {
 	cout << "------------------------------------------" << endl;
 	cout << "            Leitores Comuns" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_leitoresTipo<LeitorComum>();
+	listagemP("LeitorComum");
 	cout << "------------------------------------------" << endl;
 	cout << "             Professores" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_leitoresTipo<Professor>();
+	listagemP("Professor");
 	cout << "------------------------------------------" << endl;
 	cout << "            Estudantes" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_leitoresTipo<Estudante>();
+	listagemP("Estudante");
 	cout << "------------------------------------------" << endl;
 	cout << "                Seniores" << endl;
 	cout << "------------------------------------------" << endl;
-	listagem_leitoresTipo<Senior>();
+	listagemP("Senior");
 
 }
 
@@ -518,11 +522,36 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 			bool correspondeCategoria = false;
 			switch (abaSelecionada) {
 			case 0: correspondeCategoria = true; break; // Biblioteca inteira
-			case 1: correspondeCategoria = dynamic_cast<LivroFiccao*>(livro); break;
-			case 2: correspondeCategoria = dynamic_cast<LivroCientifico*>(livro); break;
-			case 3: correspondeCategoria = dynamic_cast<LivroEducativo*>(livro); break;
-			case 4: correspondeCategoria = dynamic_cast<Revista*>(livro); break;
-			case 5: correspondeCategoria = dynamic_cast<Jornal*>(livro); break;
+			case 1: {
+				if (livro->quem_es() == "LivroFiccao") {
+					correspondeCategoria = true; 
+				}
+				break;
+			}
+			case 2: {
+				if (livro->quem_es() == "LivroCientifico") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 3: {
+				if (livro->quem_es() == "LivroEducativo") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 4: {
+				if (livro->quem_es() == "Revista") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 5: {
+				if (livro->quem_es() == "Jornal") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
 			}
 			if (correspondeCategoria && livro->get_titulo().find(entrada) != string::npos) {
 				filtrados.push_back(livro);
@@ -650,10 +679,30 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 			bool correspondeCategoria = false;
 			switch (abaSelecionada) {
 			case 0: correspondeCategoria = true; break; // Biblioteca inteira
-			case 1: correspondeCategoria = dynamic_cast<LeitorComum*>(leitor); break;
-			case 2: correspondeCategoria = dynamic_cast<Estudante*>(leitor); break;
-			case 3: correspondeCategoria = dynamic_cast<Professor*>(leitor); break;
-			case 4: correspondeCategoria = dynamic_cast<Senior*>(leitor); break;
+			case 1: {
+				if (leitor->quem_es() == "LeitorComum") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 2: {
+				if (leitor->quem_es() == "Estudante") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 3: {
+				if (leitor->quem_es() == "Professor") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
+			case 4: {
+				if (leitor->quem_es() == "Senior") {
+					correspondeCategoria = true;
+				}
+				break;
+			}
 			}
 			if (correspondeCategoria && leitor->get_nome().find(entrada) != string::npos) {
 				filtrados.push_back(leitor);
@@ -765,4 +814,27 @@ void Biblioteca::Sistema_Not_atraso() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 }
 
+void Biblioteca::listagemL(string tipo) {
 
+	for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
+	{
+		//dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
+		if ((*it)->quem_es()==tipo) {
+			(*it)->Show();
+			cout << "-------------------------------------" << endl;
+		}
+	}
+
+}
+
+void Biblioteca::listagemP(string tipo) {
+
+	for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
+	{
+		//dynaminc_cast metodo de polimorfismo para saber o tipo de leitor
+		if ((*it)->quem_es()==tipo) {
+			(*it)->Show();
+			cout << "-------------------------------------" << endl;
+		}
+	}
+}
