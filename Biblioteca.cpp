@@ -638,14 +638,15 @@ bool Biblioteca::load_file(string nf) {
 		}
 		else if (buffer1 == "Professor") {
 			getline(File, buffer5, '\t');
-			getline(File, buffer6);
-			P = new Professor(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7,buffer8);
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			P = new Professor(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
 		}
 		else if (buffer1 == "Senior") {
 			getline(File, buffer5, '\t');
 			getline(File, buffer6, '\t');
-			getline(File, buffer7, '\t');
-			getline(File, buffer8);
+			getline(File, buffer7);
 			P = new Senior(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7);
 		}
 		else if (buffer1 == "Estudante") {
@@ -678,99 +679,99 @@ bool Biblioteca::save_file(string nf) {
 
 	for (auto livroSave : Livros)
 	{
-		if (LivroCientifico * livroTeste = dynamic_cast<LivroCientifico*>(livroSave)) {
+		if (livroSave->quem_es() == "LivroCientifico") {
 			File << "LivroCientifico\t";
-			File << livroTeste->get_titulo() << "\t";
-			File << livroTeste->get_autor() << "\t";
-			File << livroTeste->get_ano() << "\t";
-			File << livroTeste->get_isbn() << "\t";
-			File << livroTeste->get_area() << "\t";
-			File << livroTeste->get_revisor() << "\n";
+			File << livroSave->get_titulo() << "\t";
+			File << livroSave->get_autor() << "\t";
+			File << livroSave->get_ano() << "\t";
+			File << livroSave->get_isbn() << "\t";
+			File << livroSave->get_area() << "\t";
+			File << livroSave->get_revisor() << "\n";
 		}
-		else if (LivroEducativo* livroTeste = dynamic_cast<LivroEducativo*>(livroSave)) {
+		else if (livroSave->quem_es() == "LivroEducativo") {
 			File << "LivroEducativo\t";
-			File << livroTeste->get_titulo() << "\t";
-			File << livroTeste->get_autor() << "\t";
-			File << livroTeste->get_ano() << "\t";
-			File << livroTeste->get_isbn() << "\t";
-			File << livroTeste->get_idade() << "\t";
-			File << livroTeste->get_area() << "\t";
-			File << livroTeste->get_ilustrador() << "\n";
+			File << livroSave->get_titulo() << "\t";
+			File << livroSave->get_autor() << "\t";
+			File << livroSave->get_ano() << "\t";
+			File << livroSave->get_isbn() << "\t";
+			File << livroSave->get_idade() << "\t";
+			File << livroSave->get_area() << "\t";
+			File << livroSave->get_ilustrador() << "\n";
 		}
-		else if (LivroFiccao* livroTeste = dynamic_cast<LivroFiccao*>(livroSave)) {
+		else if (livroSave->quem_es() == "LivroFiccao") {
 			File << "LivroFiccao\t";
-			File << livroTeste->get_titulo() << "\t";
-			File << livroTeste->get_autor() << "\t";
-			File << livroTeste->get_ano() << "\t";
-			File << livroTeste->get_isbn() << "\t";
-			File << livroTeste->get_subgenero() << "\n";
+			File << livroSave->get_titulo() << "\t";
+			File << livroSave->get_autor() << "\t";
+			File << livroSave->get_ano() << "\t";
+			File << livroSave->get_isbn() << "\t";
+			File << livroSave->get_subgenero() << "\n";
 
 		}
-		else if (Revista* livroTeste = dynamic_cast<Revista*>(livroSave))
+		else if (livroSave->quem_es() == "Revista")
 		{
 			File << "Revista\t";
-			File << livroTeste->get_titulo() << "\t";
-			File << livroTeste->get_autor() << "\t";
-			File << livroTeste->get_ano() << "\t";
-			File << livroTeste->get_issn() << "\t";
-			File << livroTeste->get_edicao() << "\t";
-			File << livroTeste->get_editora() << "\t";
-			File << livroTeste->get_fotografo() << "\n";
+			File << livroSave->get_titulo() << "\t";
+			File << livroSave->get_autor() << "\t";
+			File << livroSave->get_ano() << "\t";
+			File << livroSave->get_issn() << "\t";
+			File << livroSave->get_edicao() << "\t";
+			File << livroSave->get_editora() << "\t";
+			File << livroSave->get_fotografo() << "\n";
 		}
-		else if (Jornal* livroTeste = dynamic_cast<Jornal*>(livroSave))
+		else if (livroSave->quem_es() == "Jornal")
 		{
 			File << "Jornal\t";
-			File << livroTeste->get_titulo() << "\t";
-			File << livroTeste->get_autor() << "\t";
-			File << livroTeste->get_ano() << "\t";
-			File << livroTeste->get_issn() << "\t";
-			File << livroTeste->get_edicao() << "\t";
-			File << livroTeste->get_editor() << "\t";
-			File << livroTeste->get_tipo() << "\n";
+			File << livroSave->get_titulo() << "\t";
+			File << livroSave->get_autor() << "\t";
+			File << livroSave->get_ano() << "\t";
+			File << livroSave->get_issn() << "\t";
+			File << livroSave->get_edicao() << "\t";
+			File << livroSave->get_editor() << "\t";
+			File << livroSave->get_tipo() << "\n";
 		}
 	}
 
 	for (auto leitorSave : Leitores)
 	{
-		if (LeitorComum* LeitorTeste = dynamic_cast<LeitorComum*>(leitorSave)) {
+		if (leitorSave->quem_es()=="LeitorComum") {
 			File << "LeitorComum\t";
-			File << LeitorTeste->get_ncc() << "\t";
-			File << LeitorTeste->get_nome() << "\t";
-			File << LeitorTeste->get_morada() << "\t";
-			File << LeitorTeste->get_telefone() << "\t";
-			File << LeitorTeste->get_idade() << "\t";
-			File << LeitorTeste->get_Email() << "\n";
+			File << leitorSave->get_ncc() << "\t";
+			File << leitorSave->get_nome() << "\t";
+			File << leitorSave->get_morada() << "\t";
+			File << leitorSave->get_telefone() << "\t";
+			File << leitorSave->get_idade() << "\t";
+			File << leitorSave->get_Email() << "\n";
 		}
-		else if (Senior* LeitorTeste = dynamic_cast<Senior*>(leitorSave)) {
+		else if (leitorSave->quem_es() == "Senior") {
 			File << "Senior\t";
-			File << LeitorTeste->get_ncc() << "\t";
-			File << LeitorTeste->get_nome() << "\t";
-			File << LeitorTeste->get_morada() << "\t";
-			File << LeitorTeste->get_telefone() << "\t";
-			File << LeitorTeste->get_idade() << "\t";
-			File << LeitorTeste->get_NecessidadesAcessibilidade() << "\n";
+			File << leitorSave->get_ncc() << "\t";
+			File << leitorSave->get_nome() << "\t";
+			File << leitorSave->get_morada() << "\t";
+			File << leitorSave->get_telefone() << "\t";
+			File << leitorSave->get_idade() << "\t";
+			File << leitorSave->get_NecessidadesAcessibilidade() << "\n";
 		}
-		else if (Professor* LeitorTeste = dynamic_cast<Professor*>(leitorSave)) {
+		else if (leitorSave->quem_es() == "Professor") {
 			File << "Professor\t";
-			File << LeitorTeste->get_ncc() << "\t";
-			File << LeitorTeste->get_nome() << "\t";
-			File << LeitorTeste->get_morada() << "\t";
-			File << LeitorTeste->get_telefone() << "\t";
-			File << LeitorTeste->get_idade() << "\t";
-			File << LeitorTeste->get_Email() << "\t";
-			File << LeitorTeste->get_Departamento() << "\n";
+			File << leitorSave->get_ncc() << "\t";
+			File << leitorSave->get_nome() << "\t";
+			File << leitorSave->get_morada() << "\t";
+			File << leitorSave->get_telefone() << "\t";
+			File << leitorSave->get_idade() << "\t";
+			File << leitorSave->get_Email() << "\t";
+			File << leitorSave->get_Departamento() << "\n";
 
 		}
-		else if (Estudante* LeitorTeste = dynamic_cast<Estudante*>(leitorSave))
+		else if (leitorSave->quem_es() == "Estudante")
 		{
 			File << "Estudante\t";
-			File << LeitorTeste->get_ncc() << "\t";
-			File << LeitorTeste->get_nome() << "\t";
-			File << LeitorTeste->get_morada() << "\t";
-			File << LeitorTeste->get_telefone() << "\t";
-			File << LeitorTeste->get_idade() << "\t";
-			File << LeitorTeste->get_Email() << "\t";
-			File << LeitorTeste->get_curso() << "\n";
+			File << leitorSave->get_ncc() << "\t";
+			File << leitorSave->get_nome() << "\t";
+			File << leitorSave->get_morada() << "\t";
+			File << leitorSave->get_telefone() << "\t";
+			File << leitorSave->get_idade() << "\t";
+			File << leitorSave->get_Email() << "\t";
+			File << leitorSave->get_curso() << "\n";
 		}
 	}
 
