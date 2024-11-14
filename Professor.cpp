@@ -1,14 +1,14 @@
 #include "Professor.h"
-Professor::Professor(string ncc, string nome, string morada, string telefone,int idade, string _email, string _disciplinas) : Leitor(ncc, nome, morada, telefone, idade), EMAIL(_email), Disciplinas(_disciplinas) {}
+Professor::Professor(string ncc, string nome, string morada, string telefone,int idade, string _email, string _Departamento) : Leitor(ncc, nome, morada, telefone, idade), EMAIL(_email), Departamento(_Departamento) {}
 Professor::~Professor() {}
 
 void Professor::Show() {
 	Leitor::Show();
-	cout << "Disciplinas: " << Disciplinas << endl;
+	cout << "Departamento: " << Departamento << endl;
 }
 
-string Professor::get_Disciplinas() {
-	return Disciplinas;
+string Professor::get_Departamento() {
+	return Departamento;
 }
 
 string Professor::get_Email() {
@@ -18,8 +18,8 @@ string Professor::get_Email() {
 void Professor::mudaremail(string new_email) {
 	EMAIL = new_email;
 }
-void Professor::mudardisciplina(string new_disciplina) {
-	Disciplinas = new_disciplina;
+void Professor::mudarDepartamento(string new_Departamento) {
+	Departamento = new_Departamento;
 }
 
 string Professor::quem_es() {

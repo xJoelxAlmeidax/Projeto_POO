@@ -203,10 +203,10 @@ Leitor* Biblioteca::Add_Leitores() {
 					break;
 				}
 			}
-			string _disciplinas;
-			cout << "Disciplinas: ";
-			getline(cin, _disciplinas);
-			L = new Professor(ncc, nome, morada, telefone, idade, email,_disciplinas);
+			string _Departamento;
+			cout << "Departamento: ";
+			getline(cin, _Departamento);
+			L = new Professor(ncc, nome, morada, telefone, idade, email,_Departamento);
 			break;
 		}
 		else {
@@ -235,13 +235,336 @@ void Biblioteca::RemoverLeitor(Leitor* P){
 
 void Biblioteca::AlterarLivro(Livro* L)
 {
-	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	const char** opcoesAlterar = NULL;
+	int numOpcoesAlterar = 0;
+	int opcaoSelecionadaAlterar = 0;
+	if (L->quem_es() == "Jornal") {
+		static const char* opcoesAlterar_here[] = { "Titulo", "Autor", "Ano", "ISSN", "Edição", "Editor Chefe", "Tipo de Dist."};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "LivroCientifico") {
+		const char* opcoesAlterar_here[] = { "Titulo", "Autor", "Ano", "ISBN", "Área de Estudo", "Revisor Científico"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "LivroEducativo") {
+		const char* opcoesAlterar_here[] = { "Titulo", "Autor", "Ano", "ISBN", "Idade Recomendada", "Área", "Ilustrador"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "LivroFiccao") {
+		const char* opcoesAlterar_here[] = { "Titulo", "Autor", "Ano", "ISBN", "Subgenero"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "Revista") {
+		const char* opcoesAlterar_here[] = { "Titulo", "Autor", "Ano", "ISSN", "Edição", "Editora", "Fotógrafo da Capa"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else {
+		cout << "ERRO" << endl;
+		return;
+	}
+
+
+	while (true) {
+		system("cls");
+		cout << "                 ALTERAR DADOS DE " << L->get_titulo() << endl;
+		cout << "---------------------------------------------------------------------" << endl;
+
+		// Exibe o menu de opções para alterar dados
+		for (int i = 0; i < numOpcoesAlterar; ++i) {
+			if (i == opcaoSelecionadaAlterar)
+				cout << " > " << opcoesAlterar[i];
+			else
+				cout << "   " << opcoesAlterar[i];
+
+
+			if (strcmp(opcoesAlterar[i], "Titulo") == 0)
+				cout << "\t\t[" << L->get_titulo() << "]";
+			else if (strcmp(opcoesAlterar[i], "Autor") == 0)
+				cout << "\t\t[" << L->get_autor() << "]";
+			else if (strcmp(opcoesAlterar[i], "Ano") == 0)
+				cout << "\t\t\t[" << L->get_ano() << "]";
+			else if (strcmp(opcoesAlterar[i], "ISBN") == 0)
+				cout << "\t\t\t[" << L->get_isbn() << "]";
+			else if (strcmp(opcoesAlterar[i], "ISSN") == 0)
+				cout << "\t\t\t[" << L->get_issn() << "]";
+			else if (strcmp(opcoesAlterar[i], "Edição") == 0)
+				cout << "\t\t[" << L->get_edicao() << "]";
+			else if (strcmp(opcoesAlterar[i], "Editor Chefe") == 0)
+				cout << "\t\t[" << L->get_editor() << "]";
+			else if (strcmp(opcoesAlterar[i], "Tipo de Dist.") == 0)
+				cout << "\t\t[" << L->get_tipo() << "]";
+			else if (strcmp(opcoesAlterar[i], "Área de Estudo") == 0)
+				cout << "\t[" << L->get_area() << "]";
+			else if (strcmp(opcoesAlterar[i], "Revisor Científico") == 0)
+				cout << "\t[" << L->get_revisor() << "]";
+			else if (strcmp(opcoesAlterar[i], "Idade Recomendada") == 0)
+				cout << "\t[" << L->get_idade() << "]";
+			else if (strcmp(opcoesAlterar[i], "Área") == 0)
+				cout << "\t\t\t[" << L->get_area() << "]";
+			else if (strcmp(opcoesAlterar[i], "Ilustrador") == 0)
+				cout << "\t\t[" << L->get_ilustrador() << "]";
+			else if (strcmp(opcoesAlterar[i], "Subgenero") == 0)
+				cout << "\t\t[" << L->get_subgenero() << "]";
+			else if (strcmp(opcoesAlterar[i], "Editora") == 0)
+				cout << "\t\t[" << L->get_editora() << "]";
+			else if (strcmp(opcoesAlterar[i], "Fotógrafo da Capa") == 0)
+				cout << "\t[" << L->get_fotografo() << "]";
+
+			cout << endl;
+		}
+
+		int tecla = _getch();
+
+		if (tecla == 224) {
+			tecla = _getch();
+			if (tecla == 72) { // Seta para cima
+				opcaoSelecionadaAlterar = (opcaoSelecionadaAlterar - 1 + numOpcoesAlterar) % numOpcoesAlterar;
+			}
+			else if (tecla == 80) { // Seta para baixo
+				opcaoSelecionadaAlterar = (opcaoSelecionadaAlterar + 1) % numOpcoesAlterar;
+			}
+		}
+		else if (tecla == 13) {
+			string buffer;
+			int buffer1;
+			if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Titulo") == 0) {
+				cout << "Titulo:";
+				getline(cin, buffer);
+				L->mudartitulo(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Autor") == 0) {
+				cout << "Autor:";
+				getline(cin, buffer);
+				L->mudarautor(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Ano") == 0) {
+				cout << "Ano:";
+				cin >> buffer1;
+				cin.ignore();
+				L->mudarano(buffer1);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "ISBN") == 0) {
+				cout << "ISBN:";
+				getline(cin, buffer);
+				L->mudarISBN(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "ISSN") == 0) {
+				cout << "ISSN:";
+				getline(cin, buffer);
+				L->mudarISSN(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Edição") == 0) {
+				cout << "Edição:";
+				getline(cin, buffer);
+				L->mudaredicao(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Editor Chefe") == 0) {
+				cout << "Editor Chefe:";
+				getline(cin, buffer);
+				L->mudareditor(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Tipo de Dist.") == 0) {
+				cout << "Tipo de Distribuição:";
+				getline(cin, buffer);
+				L->mudartipo(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Área de Estudo") == 0) {
+				cout << "Área de Estudo:";
+				getline(cin, buffer);
+				L->mudararea(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Revisor Científico") == 0) {
+				cout << "Revisor Científico:";
+				getline(cin, buffer);
+				L->mudarrevisor(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Idade Recomendada") == 0) {
+				cout << "Idade Recomendada:";
+				getline(cin, buffer);
+				L->mudaridade(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Área") == 0) {
+				cout << "Área:";
+				getline(cin, buffer);
+				L->mudararea(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Ilustrador") == 0) {
+				cout << "Ilustrador:";
+				getline(cin, buffer);
+				L->mudarilustrador(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Subgenero") == 0) {
+				cout << "Subgenero:";
+				getline(cin, buffer);
+				L->mudarsubgenero(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Editora") == 0) {
+				cout << "Editora:";
+				getline(cin, buffer);
+				L->mudareditora(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Fotógrafo da Capa") == 0) {
+				cout << "Fotógrafo da Capa:";
+				getline(cin, buffer);
+				L->mudarfotografo(buffer);
+			}
+			system("pause");
+		}
+		else if (tecla == 27) {
+			break;
+		}
+	}
 
 
 }
 
 void Biblioteca::AlterarLeitor(Leitor* L) {
-	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+	const char** opcoesAlterar=NULL;
+	int numOpcoesAlterar=0;
+	int opcaoSelecionadaAlterar=0;
+	if (L->quem_es() == "LeitorComum") {
+		static const char* opcoesAlterar_here[] = { "Nome", "Num. CC", "Morada", "Telefone", "Idade", "Email"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "Estudante") {
+		const char* opcoesAlterar_here[] = { "Nome", "Num. CC", "Morada", "Telefone", "Idade", "Email", "Curso"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if(L->quem_es() == "Professor") {
+		const char* opcoesAlterar_here[] = { "Nome", "Num. CC", "Morada", "Telefone", "Idade", "Email", "Departamento"};
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else if (L->quem_es() == "Senior") {
+		const char* opcoesAlterar_here[] = { "Nome", "Num. CC", "Morada", "Telefone", "Idade", "Necessidades" };
+		opcoesAlterar = opcoesAlterar_here;
+		numOpcoesAlterar = sizeof(opcoesAlterar_here) / sizeof(opcoesAlterar_here[0]);
+		opcaoSelecionadaAlterar = 0;
+	}
+	else {
+		cout << "ERRO" << endl;
+		return;
+	}
+	
+
+	while (true) {
+		system("cls");
+		cout << "                 ALTERAR DADOS DE " << L->get_nome() <<endl;
+		cout << "---------------------------------------------------------------------" << endl;
+
+		// Exibe o menu de opções para alterar dados
+		for (int i = 0; i < numOpcoesAlterar; ++i) {
+			if (i == opcaoSelecionadaAlterar)
+				cout << " > " << opcoesAlterar[i];
+			else
+				cout << "   " << opcoesAlterar[i];
+		
+
+		if (strcmp(opcoesAlterar[i], "Nome") == 0)
+			cout << "\t\t\t[" << L->get_nome()<<"]";
+		else if (strcmp(opcoesAlterar[i], "Num. CC") == 0)
+			cout << "\t\t[" << L->get_ncc() << "]";
+		else if (strcmp(opcoesAlterar[i], "Morada") == 0)
+			cout << "\t\t[" << L->get_morada() << "]";
+		else if (strcmp(opcoesAlterar[i], "Telefone") == 0)
+			cout << "\t\t[" << L->get_telefone() << "]";
+		else if (strcmp(opcoesAlterar[i], "Idade") == 0)
+			cout << "\t\t[" << L->get_idade() << "]";
+		else if (strcmp(opcoesAlterar[i], "Email") == 0)
+			cout << "\t\t[" << L->get_Email() << "]";
+		else if (strcmp(opcoesAlterar[i], "Curso") == 0 && L->quem_es() == "Estudante")
+			cout << "\t\t[" << L->get_curso() << "]";
+		else if (strcmp(opcoesAlterar[i], "Departamento") == 0 && L->quem_es() == "Professor")
+			cout << "\t\t[" << L->get_Departamento() << "]";
+		else if (strcmp(opcoesAlterar[i], "Necessidades") == 0 && L->quem_es() == "Senior")
+			cout << "\t\t[" << L->get_NecessidadesAcessibilidade() << "]";
+
+		cout << endl;
+		}
+
+		int tecla = _getch();
+
+		if (tecla == 224) {
+			tecla = _getch();
+			if (tecla == 72) { // Seta para cima
+				opcaoSelecionadaAlterar = (opcaoSelecionadaAlterar - 1 + numOpcoesAlterar) % numOpcoesAlterar;
+			}
+			else if (tecla == 80) { // Seta para baixo
+				opcaoSelecionadaAlterar = (opcaoSelecionadaAlterar + 1) % numOpcoesAlterar;
+			}
+		}
+		else if (tecla == 13) { 
+			string buffer;
+			int buffer1;
+			if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Nome") == 0) {
+				cout << "Nome: ";
+				getline(cin, buffer);
+				L->mudarnome(buffer);
+			}	
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Num. CC") == 0) {
+				cout << "Número do CC: ";
+				getline(cin, buffer);
+				L->mudarncc(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Morada") == 0) {
+				cout << "Morada: ";
+				getline(cin, buffer);
+				L->mudarmorada(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Telefone") == 0) {
+				cout << "Telefone:";
+				getline(cin, buffer);
+				L->mudartelefone(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Idade") == 0) {
+				cout << "Idade:";
+				cin >> buffer1;
+				cin.ignore();
+				L->mudaridade(buffer1);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Email") == 0) {
+				cout << "Email:";
+				getline(cin, buffer);
+				L->mudaremail(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Curso") == 0 && L->quem_es() == "Estudante") {
+				cout << "Curso:";
+				getline(cin, buffer);
+				L->mudarcurso(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Departamento") == 0 && L->quem_es() == "Professor") {
+				cout << "Departamento:";
+				getline(cin, buffer);
+				L->mudarDepartamento(buffer);
+			}
+			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Necessidades") == 0 && L->quem_es() == "Senior") {
+				cout << "Necessidades:";
+				getline(cin, buffer);
+				L->mudarNecessidades(buffer);
+			}
+			system("pause");
+		}
+		else if (tecla == 27) {
+			break;
+		}
+	}
 }
 
 bool Biblioteca::Add_Leitor(Leitor* P) {
@@ -435,7 +758,7 @@ bool Biblioteca::save_file(string nf) {
 			File << LeitorTeste->get_telefone() << "\t";
 			File << LeitorTeste->get_idade() << "\t";
 			File << LeitorTeste->get_Email() << "\t";
-			File << LeitorTeste->get_Disciplinas() << "\n";
+			File << LeitorTeste->get_Departamento() << "\n";
 
 		}
 		else if (Estudante* LeitorTeste = dynamic_cast<Estudante*>(leitorSave))

@@ -7,16 +7,16 @@
 class Professor : public Leitor
 {
 	string EMAIL;
-	string Disciplinas;
+	string Departamento;
 
 	public:
-		Professor(string ncc, string nome, string morada, string telefone, int idade,string _email, string _Disciplinas);
+		Professor(string ncc, string nome, string morada, string telefone, int idade,string _email, string _Departamento);
 		virtual ~Professor();
 		void Show();
-		string get_Disciplinas();
+		string get_Departamento();
 		string get_Email();
 		void mudaremail(string new_email);
-		void mudardisciplina(string new_disciplina);
+		void mudarDepartamento(string new_Departamento);
 		string quem_es();
 };
 #endif

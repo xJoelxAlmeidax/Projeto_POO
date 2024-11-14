@@ -23,11 +23,19 @@ public:
 	string get_morada();
 	string get_telefone();
 	int get_idade();
-	virtual void mudarncc(string new_ncc);   //Será que faz sentido? R: se calhar NIF faz mais sentido pois é definitivo (2mas)
-	virtual void mudarnome(string new_nome); //Será que faz sentido? pt2 R: pah yh (2mas)
-	virtual void mudarmorada(string new_morada);
-	virtual void mudartelefone(string new_telefone);
-	virtual void mudaridade(int new_idade);
+	virtual string get_NecessidadesAcessibilidade() { return ""; }
+	virtual string get_curso(){return "";}
+	virtual string get_Email() { return ""; }
+	virtual string get_Departamento() { return ""; }
+	void mudarncc(string new_ncc);
+	void mudarnome(string new_nome); 
+	void mudarmorada(string new_morada);
+	void mudartelefone(string new_telefone);
+	void mudaridade(int new_idade);
+	virtual void mudaremail(string new_email) {}	
+	virtual void mudarNecessidades(string new_acessibilidade) {}
+	virtual void mudarcurso(string new_curso){}
+	virtual void mudarDepartamento(string new_Departamento){}
 	virtual string quem_es();
 };	
 	
