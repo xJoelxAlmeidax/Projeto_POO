@@ -1,31 +1,30 @@
 #include "Emprestimo.h"
-void DATA::adicionar_dias(int num_dias){
-
-}
-Emprestimo::Emprestimo(DATA _inicio,Leitor* _leitor, Livro* _livro) {
+#include "Livro.h"
+#include "Leitor.h"
+Emprestimo::Emprestimo(DATA _inicio, Leitor* _leitor, Livro* _livro) {
 	DATA_INICIO = _inicio;
 	Leitor_Emp = _leitor;
 	Livro_Emp = _livro;
+	DIAS = calcularDIAS();
+	DATA_ENTREGA = data_entrega();
 }
 
 Emprestimo::~Emprestimo() {
-	delete(Leitor_Emp);
-	delete(Livro_Emp);
 }
 
-int Emprestimo::VerMulta(DATA dataInicio, DATA dataFim) { //Data do inicio do emprestimo e fim
+int Emprestimo::Valor_Multa(DATA dataInicio, DATA dataFim) { //Data do inicio do emprestimo e fim
 	time_t DATA = time(nullptr);//data atual
 	tm _DataAtual_;
 	localtime_s(&_DataAtual_ ,&DATA); //data atual convertida para dd/mm/yyyy (só dá para ver os dias se converter)
 
 	//Diferença do dia em que foi realizado o emprestimo até hoje
-	int DiferencaDataAtual = abs(ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - ConverterDataDias(_DataAtual_.tm_mday, _DataAtual_.tm_mon + 1, _DataAtual_.tm_year));
+	int DiferencaDataAtual = abs(ConverterDataDias(dataInicio.DIA, dataInicio.MES, dataInicio.ANO) - ConverterDataDias(_DataAtual_.tm_mday, _DataAtual_.tm_mon + 1, _DataAtual_.tm_year)); //Não falta +1900
 	//Tempo Max em dias que pode manter o livro
-	int DiferencaDataMax = abs(ConverterDataDias(dataInicio.dia, dataInicio.mes, dataInicio.ano) - ConverterDataDias(dataFim.dia, dataFim.mes, dataFim.ano));
+	int DiferencaDataMax = abs(ConverterDataDias(dataInicio.DIA, dataInicio.MES, dataInicio.ANO) - ConverterDataDias(dataFim.DIA, dataFim.MES, dataFim.ANO));
 
 	//Se a DiferencaDataAtual for maior significa que o dia de entrega já passou
 	if (DiferencaDataAtual > DiferencaDataMax) {
-		return (DiferencaDataAtual - DiferencaDataMax) + 5; // leva 5 paus por dia de atraso
+		return (DiferencaDataAtual - DiferencaDataMax) + 4; // leva 5 paus pelo primeiro dia, mais 1 por cada dia que passa
 	}
 	else
 	{
@@ -33,8 +32,30 @@ int Emprestimo::VerMulta(DATA dataInicio, DATA dataFim) { //Data do inicio do em
 	}
 }
 
-void Emprestimo::calcularDIAS() {
-	/*if (Livro_Emp.quem_es()=="LivroEducativo" || Livro_Emp.quem_es() == "LivroCientifico") && (dynamic_cast<Professor*>(Leitor_Emp) || dynamic_cast<Estudante*>(Leitor_Emp))) {
+int Emprestimo::calcularDIAS() {
+	if ((Livro_Emp->quem_es()=="LivroEducativo" || Livro_Emp->quem_es() == "LivroCientifico") && (Leitor_Emp->quem_es()=="Professor" || Leitor_Emp->quem_es() == "Estudante")) {
+		return 60;
+	}
+	return 30;
+}
 
-	}*/
+DATA Emprestimo::data_entrega() {
+	DATA D = DATA(DATA_INICIO.DIA, DATA_INICIO.MES, DATA_INICIO.ANO);
+	D.adicionar_dias(DIAS);
+	return D;
+}
+
+void Emprestimo::pedir_prorrogacao(int dias) {
+	if (Leitor_Emp->quem_es() == "Estudante" || Leitor_Emp->quem_es() == "Professor") {
+		DATA D = DATA_INICIO;
+		D.adicionar_dias(60);
+		if (ConverterDataDias(D.DIA, D.MES, D.ANO) < ConverterDataDias(DATA_FIM.DIA, DATA_FIM.MES, DATA_FIM.ANO)) {
+			cout << "Só pode fazer uma prorrogação por empréstimo." << endl;
+			return;
+		}
+		DATA_FIM.adicionar_dias(dias);
+		cout << "Prorrogação bem sucedida!" << endl;
+		return;
+	}
+	cout << "Não tem permissão para prorrogar o empréstimo!" << endl;
 }
