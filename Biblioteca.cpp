@@ -877,7 +877,7 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 				break;
 			}
 			}
-			if (correspondeCategoria && livro->get_titulo().find(entrada) != string::npos) {
+			if (correspondeCategoria && (livro->get_titulo().find(entrada) != string::npos || livro->get_isbn().find(entrada) != string:: npos || livro->get_issn().find(entrada) != string::npos)) {
 				filtrados.push_back(livro);
 			}
 		}
@@ -903,7 +903,13 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 		int count = 0;
 		for (auto it = filtrados.begin(); it != filtrados.end() && count<=20; ++it, count++) {
 			if (it == selecao) cout << " > "; else cout << "   ";
-			cout << (*it)->get_titulo() << endl;
+			cout << (*it)->get_titulo();
+			if ((*it)->quem_es() == "LivroCientifico" || (*it)->quem_es() == "LivroFiccao" || (*it)->quem_es() == "LivroEducativo") {
+				cout << "\t[" << (*it)->get_isbn() << "]" << endl;
+			}
+			else {
+				cout << "\t[" << (*it)->get_issn() << "]" << endl;
+			}
 		}
 		cout << "-------------------------------------------------" << endl;
 		// Captura a tecla pressionada para navegação ou seleção
@@ -1028,7 +1034,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 				break;
 			}
 			}
-			if (correspondeCategoria && leitor->get_nome().find(entrada) != string::npos) {
+			if (correspondeCategoria && (leitor->get_nome().find(entrada) != string::npos || leitor->get_ncc().find(entrada) != string::npos)) {
 				filtrados.push_back(leitor);
 			}
 		}
@@ -1054,7 +1060,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 		int count=0;
 		for (auto it = filtrados.begin(); it != filtrados.end() && count<=20; ++it, count++) {
 			if (it == selecao) cout << " > "; else cout << "   ";
-			cout << (*it)->get_nome() << endl;
+			cout << (*it)->get_nome() << "\t[" << (*it)->get_ncc() << "]" << endl;
 		}
 		cout << "-------------------------------------------------" << endl;
 
