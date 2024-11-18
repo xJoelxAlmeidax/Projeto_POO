@@ -84,7 +84,7 @@ static bool AnoBissexto(int ano) {
     return false;
 }
 
-static int DiasNoMes(int mes, int ano) {
+int DiasNoMes(int mes, int ano) {
     switch (mes) {
     case 4: case 6: case 9: case 11:
         return 30;
