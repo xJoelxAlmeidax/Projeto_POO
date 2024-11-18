@@ -84,9 +84,6 @@
     <ClCompile Include="Emprestimo.cpp">
       <Filter>Arquivos de Origem\Emprestimo/multa</Filter>
     </ClCompile>
-    <ClCompile Include="Multa.cpp">
-      <Filter>Arquivos de Origem\Emprestimo/multa</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Biblioteca.h">
@@ -135,9 +132,6 @@
       <Filter>Arquivos de Cabeçalho\Livros</Filter>
     </ClInclude>
     <ClInclude Include="Emprestimo.h">
-      <Filter>Arquivos de Cabeçalho\Emprestimo/Multa</Filter>
-    </ClInclude>
-    <ClInclude Include="Multa.h">
       <Filter>Arquivos de Cabeçalho\Emprestimo/Multa</Filter>
     </ClInclude>
   </ItemGroup>

@@ -24,24 +24,9 @@ public:
 	}
 	DATA(int _dia, int _mes, int _ano) : DIA(_dia), MES(_mes), ANO(_ano){}
 	~DATA() {}
-	bool isLeapYear(int ano) const {
-		return (ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0);
-	}
-	int dias_mes(int mes, int ano) const {
-		switch (mes) {
-		case 1: case 3: case 5: case 7: case 8: case 10: case 12:
-			return 31;
-		case 4: case 6: case 9: case 11:
-			return 30;
-		case 2:
-			return isLeapYear(ano) ? 29 : 28;
-		default:
-			return 0; // Mês inválido
-		}
-	}
 	void adicionar_dias(int num_dias) {
 		while (num_dias > 0) {
-			int diasNoMesAtual = dias_mes(MES, ANO);
+			int diasNoMesAtual = DiasNoMes(MES, ANO);
 			if (num_dias + DIA <= diasNoMesAtual) {
 				DIA += num_dias;
 				num_dias = 0;
@@ -66,6 +51,7 @@ class Emprestimo
 	int DIAS;
 	DATA DATA_FIM;
 	DATA DATA_ENTREGA;
+	float MULTA;
 	Leitor* Leitor_Emp;
 	Livro* Livro_Emp;
 public:

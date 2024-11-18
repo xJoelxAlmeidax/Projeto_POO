@@ -227,10 +227,12 @@ bool Biblioteca::Add_Livro(Livro* L) {
 
 void Biblioteca::RemoverLivro(Livro* L){
 	Livros.remove(L);
+	delete(L);
 }
 
 void Biblioteca::RemoverLeitor(Leitor* P){
 	Leitores.remove(P);
+	delete(P);
 }
 
 void Biblioteca::AlterarLivro(Livro* L)
@@ -419,7 +421,8 @@ void Biblioteca::AlterarLivro(Livro* L)
 				getline(cin, buffer);
 				L->mudarfotografo(buffer);
 			}
-			system("pause");
+			cout << "Alteração bem-sucedida!" << endl;
+			Sleep(4000);
 		}
 		else if (tecla == 27) {
 			break;
@@ -559,7 +562,8 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 				getline(cin, buffer);
 				L->mudarNecessidades(buffer);
 			}
-			system("pause");
+			cout << "Alteração bem-sucedida!" << endl;
+			Sleep(4000);
 		}
 		else if (tecla == 27) {
 			break;
