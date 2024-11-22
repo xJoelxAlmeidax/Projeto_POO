@@ -36,7 +36,6 @@ void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes
     }
 }
 
-
 //Remover acentos e letras maiusculas para verificações quando é feito um input
 string normalizarString(const string& texto) {
     string textoNormalizado = texto;
@@ -75,6 +74,15 @@ bool validarTelefone(const string& telefone) {
     // Valida os números de telefone com 9 dígitos começando com 9
     const regex formatoTelefone(R"(9[1236]\d{7})");
     return regex_match(telefone, formatoTelefone);
+}
+
+bool validarNCC(const string& ncc) {
+    return ncc.size() == 9 && So_numeros(ncc); //funciona como um ciclo
+}
+
+bool So_numeros(string num) {
+    regex pattern("^[0-9]{1,9}$");
+    return regex_match(num, pattern);
 }
 
 static bool AnoBissexto(int ano) {

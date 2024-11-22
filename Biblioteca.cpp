@@ -117,8 +117,27 @@ Leitor* Biblioteca::Add_Leitores() {
 	cout << "Nome: ";
 	getline(cin, nome);
 	if (nome=="") return NULL;
-	cout << "Número de Cartão de Cidadão: ";
-	getline(cin, ncc);
+
+
+	while (true) {
+		cout << "Número de Cartão de Cidadão: ";
+		getline(cin, ncc);
+
+		if (!validarNCC(ncc)) {
+			cout << "Número de Cartão de Cidadão Inválido" << endl;
+		}
+		else {
+			if (nccDuplicado(ncc))
+			{
+				cout << "Número de Cartão de Cidadão já existente" << endl;
+			}
+			else
+			{
+				break;
+			}
+		}
+	}
+
 	cout << "Morada: ";
 	getline(cin, morada);
 	cout << "Idade: ";
@@ -223,6 +242,15 @@ bool Biblioteca::Add_Livro(Livro* L) {
 	if (!L) { return false; }
 	Livros.push_back(L);
 	return true;
+}
+
+bool Biblioteca::nccDuplicado(const string& ncc) {
+	for (const auto leitor : Leitores) {
+		if (leitor->get_ncc() == ncc) {
+			return true;
+		}
+	}
+	return false;
 }
 
 void Biblioteca::RemoverLivro(Livro* L){

@@ -57,6 +57,7 @@ class Biblioteca
 		// Vai mostrar todos os livros dependendo do tipo que colocar na main quando se chama a funcao
 		void listagemL(string tipo);
 		void listagemP(string tipo);
+		bool nccDuplicado(const string& ncc);
 };
 
 #endif 
