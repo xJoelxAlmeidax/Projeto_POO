@@ -86,7 +86,6 @@ int main() {
                     break;
                 }
                 B->RemoverLeitor(P);
-                delete(P);
             }
                 break;
             case 3:
@@ -128,17 +127,15 @@ int main() {
                 cout << "--------------------------------------" << endl;
             }
                 break;
-
-
                 //segunda aba
             case 10:
+            {
                 system("cls");
                 cout << "Adicionar livro\n";
-                {
-                    Livro* L = B->Add_Livros();
-                    B->Add_Livro(L);
-                }
+                Livro* L = B->Add_Livros();
+                B->Add_Livro(L);
                 break;
+            }
             case 11:
             {
                 system("cls");
@@ -161,9 +158,8 @@ int main() {
                     break;
                 }
                 B->RemoverLivro(L);
-                delete(L);
-            }
                 break;
+            }
             case 13:
                 system("cls");
                 cout << "Mostrar Livros de Ficção\n";
@@ -209,9 +205,13 @@ int main() {
 
                 //terceira aba
             case 20:
+            {
                 system("cls");
                 cout << "Fazer Requisição\n";
+                Emprestimo* E = B->Add_Emprestimos();
+                B->Add_Emprestimo(E);
                 break;
+            }
             case 21:
                 system("cls");
                 cout << "Ver Requisição\n";
@@ -231,6 +231,7 @@ int main() {
             case 25:
                 system("cls");
                 cout << "Pedir prorrogação\n";
+                B->Prorrogacao();
                 break;
             case 26:
                 system("cls");

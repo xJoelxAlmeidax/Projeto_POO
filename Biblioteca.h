@@ -32,11 +32,13 @@ class Biblioteca
 		virtual ~Biblioteca();
 		Livro* Add_Livros();
 		Leitor* Add_Leitores();
+		Emprestimo* Add_Emprestimos();
 		bool Add_Livro(Livro* L);
 		bool Add_Leitor(Leitor* P);
+		bool Add_Emprestimo(Emprestimo* E);
 		void RemoverLivro(Livro* L);
 		void RemoverLeitor(Leitor* P);
-		void Add_Emprestimo();
+		void EntregarLivro(Emprestimo* E);
 		bool load_file(string nf);
 		bool save_file(string nf);
 		list<Livro*> get_Livros() {
@@ -58,6 +60,7 @@ class Biblioteca
 		void listagemL(string tipo);
 		void listagemP(string tipo);
 		bool nccDuplicado(const string& ncc);
+		void Prorrogacao();
 };
 
 #endif 

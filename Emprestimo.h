@@ -61,5 +61,7 @@ public:
 	int calcularDIAS();
 	DATA data_entrega();
 	void pedir_prorrogacao(int dias);
+	string get_livroISBN();
+	string get_livroISSN();
 };
 #endif

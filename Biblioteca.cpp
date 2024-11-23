@@ -2,6 +2,7 @@
 Biblioteca::Biblioteca(string _nome) {
 	NOME = _nome;
 }
+
 Biblioteca::~Biblioteca(){}
 
 Livro* Biblioteca::Add_Livros() {
@@ -237,6 +238,15 @@ Leitor* Biblioteca::Add_Leitores() {
 	return L;
 }
 
+Emprestimo* Biblioteca::Add_Emprestimos() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+
+	DATA DATAINICIO;
+	Emprestimo* E = new Emprestimo(DATAINICIO, ResultadoPesquisaP(), ResultadoPesquisa());
+
+	return E;
+}
+
 bool Biblioteca::Add_Livro(Livro* L) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	if (!L) { return false; }
@@ -261,6 +271,11 @@ void Biblioteca::RemoverLivro(Livro* L){
 void Biblioteca::RemoverLeitor(Leitor* P){
 	Leitores.remove(P);
 	delete(P);
+}
+
+void Biblioteca::EntregarLivro(Emprestimo* E) {
+	Emprestimos.remove(E);
+	delete(E);
 }
 
 void Biblioteca::AlterarLivro(Livro* L)
@@ -544,54 +559,91 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 		else if (tecla == 13) { 
 			string buffer;
 			int buffer1;
+			bool AlteracaoSucesso = false;
 			if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Nome") == 0) {
 				cout << "Nome: ";
 				getline(cin, buffer);
 				L->mudarnome(buffer);
+				AlteracaoSucesso = true;
 			}	
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Num. CC") == 0) {
 				cout << "Número do CC: ";
 				getline(cin, buffer);
-				L->mudarncc(buffer);
+				if (validarNCC(buffer))
+				{
+					L->mudarncc(buffer);
+					AlteracaoSucesso = true;
+				}
+				else
+				{
+					cout << "Número de CC inválido" << endl;
+					Sleep(1500);
+				}
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Morada") == 0) {
 				cout << "Morada: ";
 				getline(cin, buffer);
 				L->mudarmorada(buffer);
+				AlteracaoSucesso = true;
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Telefone") == 0) {
 				cout << "Telefone:";
 				getline(cin, buffer);
-				L->mudartelefone(buffer);
+				if (validarTelefone(buffer))
+				{
+					L->mudartelefone(buffer);
+					AlteracaoSucesso = true;
+				}
+				else
+				{
+					cout << "Telefone inválido! Tente novamente." << endl;
+					Sleep(1500);
+				}
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Idade") == 0) {
 				cout << "Idade:";
 				cin >> buffer1;
 				cin.ignore();
 				L->mudaridade(buffer1);
+				AlteracaoSucesso = true;
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Email") == 0) {
 				cout << "Email:";
 				getline(cin, buffer);
-				L->mudaremail(buffer);
+				if(validarEmail(buffer))
+				{	
+					L->mudaremail(buffer);
+					AlteracaoSucesso = true;
+				}
+				else
+				{
+					cout << "Email inválido! Tente novamente." << endl;
+					Sleep(1500);
+				}
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Curso") == 0 && L->quem_es() == "Estudante") {
 				cout << "Curso:";
 				getline(cin, buffer);
 				L->mudarcurso(buffer);
+				AlteracaoSucesso = true;
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Departamento") == 0 && L->quem_es() == "Professor") {
 				cout << "Departamento:";
 				getline(cin, buffer);
 				L->mudarDepartamento(buffer);
+				AlteracaoSucesso = true;
 			}
 			else if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Necessidades") == 0 && L->quem_es() == "Senior") {
 				cout << "Necessidades:";
 				getline(cin, buffer);
 				L->mudarNecessidades(buffer);
+				AlteracaoSucesso = true;
 			}
-			cout << "Alteração bem-sucedida!" << endl;
-			Sleep(4000);
+			if(AlteracaoSucesso)
+			{ 
+				cout << "Alteração bem-sucedida!" << endl;
+				Sleep(4000);
+			}
 		}
 		else if (tecla == 27) {
 			break;
@@ -606,8 +658,12 @@ bool Biblioteca::Add_Leitor(Leitor* P) {
 	return true;
 }
 
-void Biblioteca::Add_Emprestimo() {
+bool Biblioteca::Add_Emprestimo(Emprestimo *E) {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+
+	if (!E) { return false; }
+	Emprestimos.push_back(E);
+	return true;
 
 }
 
@@ -1197,6 +1253,29 @@ void Biblioteca::listagemP(string tipo) {
 		if ((*it)->quem_es()==tipo) {
 			(*it)->Show();
 			cout << "-------------------------------------" << endl;
+		}
+	}
+}
+
+void Biblioteca::Prorrogacao()
+{
+	int dias = 0;
+
+	cout << "Dias: ";
+	cin >> dias;
+	cin.ignore();
+
+	Livro* L = ResultadoPesquisa();
+	for (const auto emprestimoTeste : Emprestimos) {
+		if (emprestimoTeste->get_livroISBN() == L->get_isbn() || emprestimoTeste->get_livroISSN() == L->get_issn()) {
+			emprestimoTeste->pedir_prorrogacao(dias);
+			cout << "Data de entrega alterada" << endl;
+			break;
+		}
+		else
+		{
+			cout << "emprestimo nao encontrado" << endl;
+			break;
 		}
 	}
 }

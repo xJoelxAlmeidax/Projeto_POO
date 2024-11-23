@@ -223,3 +223,4 @@ Senior	12312322	Senior Exemplo 22	rua la 22	9651231222	2042	necessidade 22
 Senior	12312323	Senior Exemplo 23	rua la 23	9651231223	2043	necessidade 23
 Senior	12312324	Senior Exemplo 24	rua la 24	9651231224	2044	necessidade 24
 Senior	12312325	Senior Exemplo 25	rua la 25	9651231225	2045	necessidade 25
+Estudante	654354234	teste	asd		12	2@2.c	asd

@@ -59,3 +59,13 @@ void Emprestimo::pedir_prorrogacao(int dias) {
 	}
 	cout << "Não tem permissão para prorrogar o empréstimo!" << endl;
 }
+
+string Emprestimo::get_livroISBN()
+{
+	return Livro_Emp->get_isbn();
+}
+
+string Emprestimo::get_livroISSN()
+{
+	return Livro_Emp->get_issn();
+}
