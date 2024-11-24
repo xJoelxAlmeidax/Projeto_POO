@@ -65,6 +65,7 @@ public:
 	DATA get_dataFim();
 	Livro* get_livro();
 	Leitor* get_leitor();
+	void Show();
 
 };
 #endif

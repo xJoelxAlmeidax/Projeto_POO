@@ -209,7 +209,7 @@ int main() {
                 system("cls");
                 cout << "Fazer Requisição\n";
                 Emprestimo* E = B->Add_Emprestimos();
-                B->Add_Emprestimo(E);
+                B->Add_Emprestimo_Reserva(E);
                 break;
             }
             case 21:
@@ -220,6 +220,7 @@ int main() {
             case 22:
                 system("cls");
                 cout << "Entregar Livro\n";
+                B->EntregarLivro(B->ResultadoPesquisaE());
                 break;
             case 23:
                 system("cls");

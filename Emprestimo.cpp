@@ -75,3 +75,15 @@ DATA Emprestimo::get_dataInicio()
 {
 	return DATA_INICIO;
 }
+
+void Emprestimo::Show()
+{
+	DATA DATA_FIM = data_entrega();
+	MULTA = Valor_Multa(DATA_INICIO, DATA_FIM);
+
+	cout << Livro_Emp->get_titulo() << '\n';
+	cout << Leitor_Emp->get_nome() << '\n';
+	cout << "Data: " << DATA_INICIO.DIA << "/" << DATA_INICIO.MES << "/" << DATA_INICIO.ANO << " - " << DATA_FIM.DIA << "/" << DATA_FIM.MES << "/" << DATA_FIM.ANO << '\n';
+	cout << "Multa: " << MULTA << " euros" << '\n';
+
+}

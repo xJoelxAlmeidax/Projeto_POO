@@ -27,6 +27,8 @@ class Biblioteca
 	list<Livro*> Livros;
 	list<Leitor*> Leitores;
 	list<Emprestimo*> Emprestimos;
+	list<Emprestimo*> Reservas;
+
 	public:
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
@@ -47,7 +49,7 @@ class Biblioteca
 
 		//EMPRESTIMO
 		Emprestimo* Add_Emprestimos();
-		bool Add_Emprestimo(Emprestimo* E);
+		bool Add_Emprestimo_Reserva(Emprestimo* E);
 		void EntregarLivro(Emprestimo* E);
 		void Prorrogacao();
 		void MostrarEmprestimo();
