@@ -215,6 +215,7 @@ int main() {
             case 21:
                 system("cls");
                 cout << "Ver Requisição\n";
+                B->MostrarEmprestimo();
                 break;
             case 22:
                 system("cls");
@@ -236,6 +237,7 @@ int main() {
             case 26:
                 system("cls");
                 cout << "Ver Multas pendentes\n";
+                B->MultasPendentes();
                 break;
 
                 //quarta aba
