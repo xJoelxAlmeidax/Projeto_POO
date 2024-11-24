@@ -18,13 +18,14 @@ int Emprestimo::Valor_Multa(DATA dataInicio, DATA dataFim) { //Data do inicio do
 	localtime_s(&_DataAtual_ ,&DATA); //data atual convertida para dd/mm/yyyy (só dá para ver os dias se converter)
 
 	//Diferença do dia em que foi realizado o emprestimo até hoje
-	int DiferencaDataAtual = abs(ConverterDataDias(dataInicio.DIA, dataInicio.MES, dataInicio.ANO) - ConverterDataDias(_DataAtual_.tm_mday, _DataAtual_.tm_mon + 1, _DataAtual_.tm_year)); //Não falta +1900
+	int DiferencaDataAtual = abs(ConverterDataDias(dataInicio.DIA, dataInicio.MES, dataInicio.ANO) - ConverterDataDias(_DataAtual_.tm_mday, _DataAtual_.tm_mon + 1, _DataAtual_.tm_year + 1900));
 	//Tempo Max em dias que pode manter o livro
 	int DiferencaDataMax = abs(ConverterDataDias(dataInicio.DIA, dataInicio.MES, dataInicio.ANO) - ConverterDataDias(dataFim.DIA, dataFim.MES, dataFim.ANO));
 
 	//Se a DiferencaDataAtual for maior significa que o dia de entrega já passou
 	if (DiferencaDataAtual > DiferencaDataMax) {
-		return (DiferencaDataAtual - DiferencaDataMax) + 4; // leva 5 paus pelo primeiro dia, mais 1 por cada dia que passa
+		int teste = (DiferencaDataAtual - DiferencaDataMax) + 4;
+		return  teste; // leva 5 paus pelo primeiro dia, mais 1 por cada dia que passa
 	}
 	else
 	{

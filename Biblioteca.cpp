@@ -702,7 +702,8 @@ void Biblioteca::MostrarEmprestimo()
 void Biblioteca::MultasPendentes()
 {
 	for (const auto emprestimoTeste : Emprestimos) {
-		if (int valorMulta = emprestimoTeste->Valor_Multa(emprestimoTeste->get_dataInicio(), emprestimoTeste->data_entrega()) != 0)
+		int valorMulta = emprestimoTeste->Valor_Multa(emprestimoTeste->get_dataInicio(), emprestimoTeste->data_entrega());
+		if (valorMulta != 0)
 		{
 			cout << emprestimoTeste->get_leitor()->get_nome() << '\t' << valorMulta << " euros" << endl;
 		}
