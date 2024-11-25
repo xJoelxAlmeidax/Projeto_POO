@@ -49,22 +49,24 @@ class Emprestimo
 {
 	DATA DATA_INICIO;
 	int DIAS;
-	DATA DATA_FIM;
 	DATA DATA_ENTREGA;
+	DATA DATA_FIM;
 	float MULTA;
 	Leitor* Leitor_Emp;
 	Livro* Livro_Emp;
 public:
-	Emprestimo(DATA _inicio, Leitor* _leitor, Livro* _livro);
+	Emprestimo(DATA _inicio, Leitor* _leitor, Livro* _livro, int _dias, DATA _entrega);
 	~Emprestimo();
-	int Valor_Multa(DATA dataInicio, DATA dataFim);
-	int calcularDIAS();
-	DATA data_entrega();
+	int Valor_Multa();
+	void AdicionarMulta();
+	int calcularDIAS(int dias);
+	DATA data_fim();
 	void pedir_prorrogacao(int dias);
 	DATA get_dataInicio();
 	DATA get_dataFim();
 	Livro* get_livro();
 	Leitor* get_leitor();
+	int get_dias();
 	void Show();
 
 };

@@ -12,7 +12,7 @@ class Leitor
 	string MORADA;
 	string TELEFONE;
 	int IDADE;
-	list<Emprestimo*> Emp;
+	list<Emprestimo*> Historico_Emp;  
 public:
 	Leitor(string _ncc, string _nome, string _morada, string _telefone, int _idade);
 	virtual ~Leitor();

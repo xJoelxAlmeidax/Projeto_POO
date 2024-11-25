@@ -27,7 +27,6 @@ class Biblioteca
 	list<Livro*> Livros;
 	list<Leitor*> Leitores;
 	list<Emprestimo*> Emprestimos;
-	list<Emprestimo*> Reservas;
 
 	public:
 		Biblioteca(string _nome);

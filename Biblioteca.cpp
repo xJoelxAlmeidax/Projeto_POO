@@ -116,8 +116,7 @@ bool Biblioteca::Add_Livro(Livro* L) {
 	return true;
 }
 
-void Biblioteca::AlterarLivro(Livro* L)
-{
+void Biblioteca::AlterarLivro(Livro* L) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	const char** opcoesAlterar = NULL;
 	int numOpcoesAlterar = 0;
@@ -655,7 +654,11 @@ Emprestimo* Biblioteca::Add_Emprestimos() {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 
 	DATA DATAINICIO;
-	Emprestimo* E = new Emprestimo(DATAINICIO, ResultadoPesquisaP(), ResultadoPesquisa());
+	DATA ENTREGA;
+	ENTREGA.DIA = 0;
+	ENTREGA.MES = 0;
+	ENTREGA.ANO = 0;
+	Emprestimo* E = new Emprestimo(DATAINICIO, ResultadoPesquisaP(), ResultadoPesquisa(), 0 ,ENTREGA);
 
 	return E;
 }
@@ -664,7 +667,7 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 
 	if (!E) { return false; }
-	else if (Emprestimos.empty()) { Emprestimos.push_back(E); return true; }
+	/*else if (Emprestimos.empty()) { Emprestimos.push_back(E); return true; }
 
 	for (Emprestimo* emprestimo : Emprestimos)
 	{
@@ -678,7 +681,9 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 			Emprestimos.push_back(E);
 			break;
 		}
-	}
+	}*/
+
+	Emprestimos.push_back(E);
 
 	return true;
 }
@@ -688,8 +693,7 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 	delete(E);
 }
 
-void Biblioteca::Prorrogacao()
-{
+void Biblioteca::Prorrogacao() {
 	int dias = 0;
 
 	cout << "Dias: ";
@@ -700,16 +704,14 @@ void Biblioteca::Prorrogacao()
 	E->pedir_prorrogacao(dias);
 }
 
-void Biblioteca::MostrarEmprestimo() 
-{
+void Biblioteca::MostrarEmprestimo() {
 	Emprestimo* E = ResultadoPesquisaE();
 	E->Show();
 }
 
-void Biblioteca::MultasPendentes()
-{
+void Biblioteca::MultasPendentes() {
 	for (const auto emprestimoTeste : Emprestimos) {
-		int valorMulta = emprestimoTeste->Valor_Multa(emprestimoTeste->get_dataInicio(), emprestimoTeste->data_entrega());
+		int valorMulta = emprestimoTeste->Valor_Multa();
 		if (valorMulta != 0)
 		{
 			cout << emprestimoTeste->get_leitor()->get_nome() << '\t' << valorMulta << " euros" << endl;
@@ -799,8 +801,12 @@ bool Biblioteca::load_file(string nf) {
 			getline(File, buffer8);
 			P = new Estudante(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
 		}
-		else if (buffer1 == "Emprestimo" || buffer1 == "Reserva") {
+		else if (buffer1 == "Emprestimo") {
 			DATA data;
+			DATA entrega;
+			entrega.DIA = 0;
+			entrega.MES = 0;
+			entrega.ANO = 0;
 			Livro* L_EMP = NULL;
 			Leitor* P_EMP = NULL;
 			bool leitor = false, livro = false;
@@ -810,7 +816,8 @@ bool Biblioteca::load_file(string nf) {
 			data.ANO = stoi(buffer4);
 
 			getline(File, buffer5, '\t');
-			getline(File, buffer6);
+			getline(File, buffer6, '\t');
+			getline(File, buffer7);
 
 			for (auto leitorLoad : Leitores)
 			{
@@ -824,7 +831,7 @@ bool Biblioteca::load_file(string nf) {
 
 			for (auto livroLoad : Livros)
 			{
-				if (livroLoad->get_isbn() == buffer6 || livroLoad->get_isbn() == buffer6)
+				if (livroLoad->get_isbn() == buffer6 || livroLoad->get_issn() == buffer6)
 				{
 					L_EMP = livroLoad;
 					livro = true;
@@ -833,7 +840,7 @@ bool Biblioteca::load_file(string nf) {
 
 			}
 			if (livro == true && leitor == true)
-				E = new Emprestimo(data, P_EMP, L_EMP);
+				E = new Emprestimo(data, P_EMP, L_EMP,stoi(buffer7),entrega);
 
 		}
 		if (L != NULL)
@@ -968,16 +975,18 @@ bool Biblioteca::save_file(string nf) {
 		File << emprestimoSave->get_leitor()->get_ncc() << "\t";
 		if ((emprestimoSave->get_livro())->quem_es() == "LivroEducativo" || (emprestimoSave->get_livro())->quem_es() == "LivroCientifico" || (emprestimoSave->get_livro())->quem_es() == "LivroFiccao")
 		{
-			File << emprestimoSave->get_livro()->get_isbn() << "\n";
+			File << emprestimoSave->get_livro()->get_isbn() << "\t";
 		}
 		else
 		{
-			File << emprestimoSave->get_livro()->get_issn() << "\n";
+			File << emprestimoSave->get_livro()->get_issn() << "\t";
 		}
+		File << emprestimoSave->get_dias() << "\n";
+		
 		
 	}
 
-	for (auto reservaSave : Reservas)
+	/*for (auto reservaSave : Reservas)
 	{
 		File << "Reserva\t";
 		File << reservaSave->get_dataInicio().DIA << "\t";
@@ -993,7 +1002,7 @@ bool Biblioteca::save_file(string nf) {
 			File << reservaSave->get_livro()->get_issn() << "\n";
 		}
 
-	}
+	}*/
 
 	File.close();
 	return true;

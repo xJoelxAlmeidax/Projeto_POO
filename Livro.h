@@ -15,6 +15,7 @@ class Livro
 		Livro(string titulo, string autor, int ano);
 		virtual ~Livro();
 		virtual void Show();
+		list<Leitor*> Reservas;
 
 		//get
 		virtual string get_titulo();

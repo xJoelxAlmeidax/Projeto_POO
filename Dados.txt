@@ -178,6 +178,5 @@ Estudante	123123150	Estudante Exemplo 2	rua la 2	965123122	2022	estudante2@gmail
 Estudante	123123151	Estudante Exemplo 3	rua la 3	965123123	2023	estudante3@gmail.com	Curso3
 Estudante	123123152	Estudante Exemplo 4	rua la 4	965123124	2024	estudante4@gmail.com	Curso4
 Estudante	123123153	Estudante Exemplo 5	rua la 5	965123125	2025	estudante5@gmail.c	Curso4
-Emprestimo	24	11	2024	123123100	1234-5679
-Reserva	24	11	2024	123123100	1234-5679
-Reserva	24	11	2024	123123104	1234-5679
+Emprestimo	1	12	2024	123123103	1234-5679	89
+Emprestimo	25	11	2023	123123107	4321-8765	30
