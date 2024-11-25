@@ -1363,42 +1363,6 @@ Leitor* Biblioteca::ResultadoPesquisaP() {
 	return NULL;
 }
 
-void Biblioteca::listagemL(string tipo) {
-
-	for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
-	{
-		//metodo de polimorfismo para saber o tipo de leitor
-		if ((*it)->quem_es() == tipo) {
-			(*it)->Show();
-			cout << "-------------------------------------" << endl;
-		}
-	}
-
-}
-
-void Biblioteca::listagemP(string tipo) {
-
-	for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
-	{
-		//metodo de polimorfismo para saber o tipo de leitor
-		if ((*it)->quem_es() == tipo) {
-			(*it)->Show();
-			cout << "-------------------------------------" << endl;
-		}
-	}
-}
-
-
-
-
-void Biblioteca::Sistema_Not_atraso() {
-	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
-}
-
-
-
-
-// perguntar para fazer func generica para mostrar em vez de fazer varias quase iguais
 Emprestimo* Biblioteca::Pesquisar_E(const list<Emprestimo*>& emprestimos, int abaSelecionada, const char* tabs[], int num_tabs) {
 	string entrada;
 	list<Emprestimo*> filtrados;
@@ -1519,3 +1483,39 @@ Emprestimo* Biblioteca::ResultadoPesquisaE() {
 	}
 	return NULL;
 }
+
+void Biblioteca::listagemL(string tipo) {
+
+	for (list<Livro*>::iterator it = Livros.begin(); it != Livros.end(); ++it)
+	{
+		//metodo de polimorfismo para saber o tipo de leitor
+		if ((*it)->quem_es() == tipo) {
+			(*it)->Show();
+			cout << "-------------------------------------" << endl;
+		}
+	}
+
+}
+
+void Biblioteca::listagemP(string tipo) {
+
+	for (list<Leitor*>::iterator it = Leitores.begin(); it != Leitores.end(); ++it)
+	{
+		//metodo de polimorfismo para saber o tipo de leitor
+		if ((*it)->quem_es() == tipo) {
+			(*it)->Show();
+			cout << "-------------------------------------" << endl;
+		}
+	}
+}
+
+
+
+
+void Biblioteca::Sistema_Notif_atraso() {
+	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+}
+
+
+
+

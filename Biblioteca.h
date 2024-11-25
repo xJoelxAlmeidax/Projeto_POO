@@ -85,7 +85,7 @@ class Biblioteca
 		}
 
 
-		void Sistema_Not_atraso();
+		void Sistema_Notif_atraso();
 
 
 

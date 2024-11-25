@@ -9,7 +9,7 @@ int main() {
 
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
     B->load_file("Dados.txt");
-    B->Sistema_Not_atraso();
+    B->Sistema_Notif_atraso();
     system("pause"); system("cls");
     const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover","Mostrar Leitores Comuns", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Seniores", "Mostrar todos", "Procurar Utilizador"}; // 7 opções
     const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Científicos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
