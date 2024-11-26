@@ -53,6 +53,13 @@ class Biblioteca
 		void Prorrogacao();
 		void MostrarEmprestimo();
 		void MultasPendentes();
+		void Ver_HistoricoPessoa();
+
+
+
+		//RESERVAS
+		void Ver_Reservas();
+
 		
 		
 		//LER E GUARDAR NO FICHEIRO

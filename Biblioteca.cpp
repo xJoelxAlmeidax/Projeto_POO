@@ -344,10 +344,6 @@ Leitor* Biblioteca::Add_Leitores() {
 			{
 				cout << "Número de Cartão de Cidadão já existente" << endl;
 			}
-			else
-			{
-				break;
-			}
 		}
 	}
 
@@ -667,13 +663,14 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 
 	if (!E) { return false; }
-	/*else if (Emprestimos.empty()) { Emprestimos.push_back(E); return true; }
+	else if (Emprestimos.empty()) { Emprestimos.push_back(E); return true; }
 
 	for (Emprestimo* emprestimo : Emprestimos)
 	{
 		if (emprestimo->get_livro()->get_isbn() != "" && E->get_livro()->get_isbn() != "" &&  emprestimo->get_livro()->get_isbn() == E->get_livro()->get_isbn() || emprestimo->get_livro()->get_issn() != "" && E->get_livro()->get_issn() != "" && emprestimo->get_livro()->get_issn() == E->get_livro()->get_issn())
 		{
-			Reservas.push_back(E);
+			E->get_livro()->AddReserva(E->get_leitor());
+			delete(E);
 			break;
 		}
 		else
@@ -681,16 +678,36 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 			Emprestimos.push_back(E);
 			break;
 		}
-	}*/
-
-	Emprestimos.push_back(E);
-
+	}
 	return true;
 }
 
 void Biblioteca::EntregarLivro(Emprestimo* E) {
+
+	string opc;
+
+	if (E->Valor_Multa() != 0)
+	{
+		cout << "Pagar Multa(S/N)" << endl;
+		cin >> opc;
+
+		if (opc == "N")
+		{
+			return;
+		}
+	}
+
+	// Falta alterar data entrega
+
+	for (Leitor* LeitorAddHist : Leitores)
+	{
+		if (LeitorAddHist->get_ncc() == E->get_leitor()->get_ncc())
+		{
+			LeitorAddHist->AddHistEmprestimo(E);
+		}
+	}
+
 	Emprestimos.remove(E);
-	delete(E);
 }
 
 void Biblioteca::Prorrogacao() {
@@ -719,7 +736,19 @@ void Biblioteca::MultasPendentes() {
 	}
 }
 
+void Biblioteca::Ver_HistoricoPessoa()
+{
+	Leitor* P = ResultadoPesquisaP();
+	P->Mostrar_HistEmprestimo();
+}
 
+
+//RESERVAS
+void Biblioteca::Ver_Reservas()
+{
+	Livro* L = ResultadoPesquisa();
+	L->Mostrar_Reserva();
+}
 
 
 //LER E GUARDAR NO FICHEIRO
@@ -738,12 +767,41 @@ bool Biblioteca::load_file(string nf) {
 		Livro* L = NULL;
 		Leitor* P = NULL;
 		Emprestimo* E = NULL;
+		Leitor* R = NULL;
+		Leitor* P_EMP = NULL;
+
 
 		getline(File, buffer2, '\t');
 		getline(File, buffer3, '\t');
 		getline(File, buffer4, '\t');
 
-		if (buffer1 == "LivroCientifico") {
+		if (buffer1 == "LeitorComum") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7);
+			P = new LeitorComum(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7);
+		}
+		else if (buffer1 == "Professor") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			P = new Professor(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
+		}
+		else if (buffer1 == "Senior") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7);
+			P = new Senior(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7);
+		}
+		else if (buffer1 == "Estudante") {
+			getline(File, buffer5, '\t');
+			getline(File, buffer6, '\t');
+			getline(File, buffer7, '\t');
+			getline(File, buffer8);
+			P = new Estudante(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
+		}
+		else if (buffer1 == "LivroCientifico") {
 			getline(File, buffer5, '\t');
 			getline(File, buffer6, '\t');
 			getline(File, buffer7);
@@ -775,40 +833,13 @@ bool Biblioteca::load_file(string nf) {
 			getline(File, buffer8);
 			L = new Jornal(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7, buffer8);
 		}
-		else if (buffer1 == "LeitorComum") {
-			getline(File, buffer5, '\t');
-			getline(File, buffer6, '\t');
-			getline(File, buffer7);
-			P = new LeitorComum(buffer2,buffer3,buffer4,buffer5,stoi(buffer6),buffer7);
-		}
-		else if (buffer1 == "Professor") {
-			getline(File, buffer5, '\t');
-			getline(File, buffer6, '\t');
-			getline(File, buffer7, '\t');
-			getline(File, buffer8);
-			P = new Professor(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
-		}
-		else if (buffer1 == "Senior") {
-			getline(File, buffer5, '\t');
-			getline(File, buffer6, '\t');
-			getline(File, buffer7);
-			P = new Senior(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7);
-		}
-		else if (buffer1 == "Estudante") {
-			getline(File, buffer5, '\t');
-			getline(File, buffer6, '\t');
-			getline(File, buffer7, '\t');
-			getline(File, buffer8);
-			P = new Estudante(buffer2, buffer3, buffer4, buffer5, stoi(buffer6), buffer7, buffer8);
-		}
-		else if (buffer1 == "Emprestimo") {
+		else if (buffer1 == "Emprestimo" || buffer1 == "Historico") {
 			DATA data;
 			DATA entrega;
 			entrega.DIA = 0;
 			entrega.MES = 0;
 			entrega.ANO = 0;
 			Livro* L_EMP = NULL;
-			Leitor* P_EMP = NULL;
 			bool leitor = false, livro = false;
 
 			data.DIA = stoi(buffer2);
@@ -841,7 +872,6 @@ bool Biblioteca::load_file(string nf) {
 			}
 			if (livro == true && leitor == true)
 				E = new Emprestimo(data, P_EMP, L_EMP,stoi(buffer7),entrega);
-
 		}
 		if (L != NULL)
 		{
@@ -853,10 +883,53 @@ bool Biblioteca::load_file(string nf) {
 		}
 		if (E != NULL)
 		{
-			Add_Emprestimo_Reserva(E);
+			if (buffer1 == "Emprestimo")
+				Add_Emprestimo_Reserva(E);
+			else
+				P_EMP->AddHistEmprestimo(E);
 		}
 	}
 
+	// Limpa e posiciona para o inicio do ficheiro
+	File.clear();    
+	File.seekg(0);
+
+	while (getline(File, buffer1, '\t'))
+	{
+		getline(File, buffer2, '\t');
+		getline(File, buffer3);
+
+		if (buffer1 == "Reserva") {
+
+			Leitor* P_R = NULL;
+			bool R_leitor = false;
+
+			
+			for (auto leitorLoad : Leitores)
+			{
+				if (leitorLoad->get_ncc() == buffer3)
+				{
+					R_leitor = true;
+					P_R = leitorLoad;		
+					break;
+				}
+					
+			}
+
+			for (auto livroLoad : Livros)
+			{
+				if (livroLoad->get_isbn() == buffer2 || livroLoad->get_issn() == buffer2)
+				{
+					if (R_leitor == true)
+					{
+						livroLoad->AddReserva(P_R);
+					}
+					break;
+				}
+			}
+		}
+	}
+	File.close();
 	return true;
 }
 
@@ -964,6 +1037,23 @@ bool Biblioteca::save_file(string nf) {
 			File << leitorSave->get_Email() << "\t";
 			File << leitorSave->get_curso() << "\n";
 		}
+
+		list <Emprestimo*> Emp_Hist = leitorSave->get_Emp();
+		if(!Emp_Hist.empty()){
+			for (auto Emp_HistSave : Emp_Hist)
+			{
+				File << "Historico\t";
+				File << Emp_HistSave->get_dataInicio().DIA << "\t";
+				File << Emp_HistSave->get_dataInicio().MES << "\t";
+				File << Emp_HistSave->get_dataInicio().ANO << "\t";
+				File << Emp_HistSave->get_leitor()->get_ncc() << "\t";
+				if (Emp_HistSave->get_livro()->get_isbn() != "")
+					File << Emp_HistSave->get_livro()->get_isbn() << "\t";
+				else
+					File << Emp_HistSave->get_livro()->get_issn() << "\t";
+				File << Emp_HistSave->get_dias() << "\n";
+			}
+		}
 	}
 
 	for (auto emprestimoSave : Emprestimos)
@@ -986,23 +1076,21 @@ bool Biblioteca::save_file(string nf) {
 		
 	}
 
-	/*for (auto reservaSave : Reservas)
+	for (auto livroReserva : Livros)
 	{
-		File << "Reserva\t";
-		File << reservaSave->get_dataInicio().DIA << "\t";
-		File << reservaSave->get_dataInicio().MES << "\t";
-		File << reservaSave->get_dataInicio().ANO << "\t";
-		File << reservaSave->get_leitor()->get_ncc() << "\t";
-		if ((reservaSave->get_livro())->quem_es() == "LivroEducativo" || (reservaSave->get_livro())->quem_es() == "LivroCientifico" || (reservaSave->get_livro())->quem_es() == "LivroFiccao")
-		{
-			File << reservaSave->get_livro()->get_isbn() << "\n";
-		}
-		else
-		{
-			File << reservaSave->get_livro()->get_issn() << "\n";
-		}
 
-	}*/
+		list <Leitor*> LeitorReserva = livroReserva->get_leitores();
+
+		for (auto leitorReservaSave : LeitorReserva)
+		{
+			File << "Reserva\t";
+			if (livroReserva->get_isbn() != "")
+				File << livroReserva->get_isbn() << "\t";
+			else
+				File << livroReserva->get_issn() << "\t";
+			File << leitorReservaSave->get_ncc() << "\n";
+		}
+	}
 
 	File.close();
 	return true;
@@ -1523,6 +1611,28 @@ void Biblioteca::listagemP(string tipo) {
 
 void Biblioteca::Sistema_Notif_atraso() {
 	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
+
+	cout << "---------------------- Multas Pendentes ----------------------" << endl;
+	MultasPendentes();
+	cout << "--------------------------------------------------------------\n\n" << endl;
+
+	cout << "-------------------------- Emprestimos que estão próximos do prazo entrega --------------------------" << endl;
+	for (Emprestimo* emprestimoAcabar : Emprestimos)
+	{
+		time_t DATA_ = time(nullptr);//data atual
+		tm dataAtual;
+		localtime_s(&dataAtual, &DATA_);
+
+		DATA dataFIM = emprestimoAcabar->data_fim();
+
+		if (-3 <= ConverterDataDias(dataAtual.tm_mday, dataAtual.tm_mon + 1, dataAtual.tm_year + 1900) - ConverterDataDias(dataFIM.DIA, dataFIM.MES, dataFIM.ANO) && 0 >= ConverterDataDias(dataAtual.tm_mday, dataAtual.tm_mon + 1, dataAtual.tm_year + 1900) - ConverterDataDias(dataFIM.DIA, dataFIM.MES, dataFIM.ANO))
+		{
+			cout << "Titulo: " << emprestimoAcabar->get_livro()->get_titulo() << " | " << "Nome: " << emprestimoAcabar->get_leitor()->get_nome() << " | CC: " << emprestimoAcabar->get_leitor()->get_ncc() << " | " << "Data de Entrega: " << dataFIM.DIA << "/" << dataFIM.MES << "/" << dataFIM.ANO << endl;
+		}
+	}
+	cout << "---------------------------------------------------------------------------------------------------" << endl;
+
+
 }
 
 

@@ -11,16 +11,22 @@ class Livro
 	string TITULO;
 	string AUTOR;
 	int ANO;
+	list<Leitor*> Reservas;
 	public:
 		Livro(string titulo, string autor, int ano);
+		void AddReserva(Leitor* P);
+		void Mostrar_Reserva();
 		virtual ~Livro();
 		virtual void Show();
-		list<Leitor*> Reservas;
+
 
 		//get
-		virtual string get_titulo();
-		virtual string get_autor();
-		virtual int get_ano();
+		string get_titulo();
+		string get_autor();
+		int get_ano();
+		list<Leitor*> get_leitores();
+
+
 		//gets extra
 		virtual string get_issn() { return ""; }
 		virtual string get_edicao() { return ""; }
@@ -40,6 +46,7 @@ class Livro
 		virtual void mudarautor(string new_autor);
 		virtual void mudarano(int new_ano);
 		virtual string quem_es();
+
 		//Mudar extra
 		virtual void mudarISSN(string new_issn){}
 		virtual void mudaredicao(string new_edicao){}

@@ -13,7 +13,6 @@ Emprestimo::Emprestimo(DATA _inicio, Leitor* _leitor, Livro* _livro,int _dias, D
 	MULTA = 0;
 }
 
-
 Emprestimo::~Emprestimo() {
 }
 

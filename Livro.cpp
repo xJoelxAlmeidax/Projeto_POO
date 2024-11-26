@@ -4,6 +4,29 @@ Livro::Livro(string titulo, string autor, int ano) {
 	AUTOR = autor;
 	ANO = ano;
 }
+
+void Livro::AddReserva(Leitor* P)
+{
+	Reservas.push_back(P);
+}
+
+void Livro::Mostrar_Reserva(){
+	if(Reservas.empty())
+		cout << "Nenhuma reserva para este livro";
+	else
+	{
+		cout << "Pessoas com reserva no livro " << TITULO << "\n";
+		for (auto reserva : Reservas) { 	//Percorre a lista de reservas do livro
+			cout << "Nome: " << reserva->get_nome() << " | CC: " << reserva->get_ncc() << endl;	//Mostra o requesitante do livro
+		}
+	}
+	
+}
+
+list<Leitor*> Livro::get_leitores(){
+	return Reservas;
+}
+
 Livro::~Livro(){
 	cout << "Destruindo Livro..." << endl;
 }

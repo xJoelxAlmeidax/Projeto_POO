@@ -13,10 +13,10 @@ int main() {
     system("pause"); system("cls");
     const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover","Mostrar Leitores Comuns", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Seniores", "Mostrar todos", "Procurar Utilizador"}; // 7 opções
     const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Científicos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
-    const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Pagar Multa", "Pedir prorrogação de Requisição", "Ver multas pendentes" }; // 1 opção
+    const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Ver Historico de uma Pessoa" , "Ver reservas de um Livro", "Pedir prorrogação de Requisição", "Ver multas pendentes"}; // 1 opção
     const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
-    int numOpcoes[NUM_TABS] = { 9, 10, 7, 2 };
+    int numOpcoes[NUM_TABS] = { 9, 10, 8, 2 };
     const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "Ficheiros" };
     int abaSelecionada = 0;
     int opcaoSelecionada = 0;
@@ -225,17 +225,24 @@ int main() {
             case 23:
                 system("cls");
                 cout << "Ver Notificações\n";
+                B->Sistema_Notif_atraso();
                 break;
             case 24:
                 system("cls");
-                cout << "Pagar Multa\n";
+                cout << "Ver Historico de uma Pessoa\n";
+                B->Ver_HistoricoPessoa();
                 break;
             case 25:
+                system("cls");
+                cout << "Ver Reservas de um Livro\n";
+                B->Ver_Reservas();
+                break;
+            case 26:
                 system("cls");
                 cout << "Pedir prorrogação\n";
                 B->Prorrogacao();
                 break;
-            case 26:
+            case 27:
                 system("cls");
                 cout << "Ver Multas pendentes\n";
                 B->MultasPendentes();

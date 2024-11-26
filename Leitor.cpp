@@ -62,3 +62,30 @@ void Leitor::mudartelefone(string new_telefone) {
 void Leitor::mudaridade(int new_idade) {
 	IDADE = new_idade;
 }
+
+void Leitor::AddHistEmprestimo(Emprestimo* E)
+{
+	Historico_Emp.push_back(E);
+}
+
+list<Emprestimo*> Leitor::get_Emp()
+{
+	return Historico_Emp;
+}
+
+void Leitor::Mostrar_HistEmprestimo()
+{
+	if (Historico_Emp.empty())
+		cout << "Nenhum Emprestimo realizado ate ao momento" << endl;
+	else
+	{
+		int teste = 0;
+		cout << "Emprestimos Já Feitos pelo " << NOME << "\n";
+		for (auto hist_emp : Historico_Emp) { 	//Percorre a lista de reservas do livro
+			// mostrar os livros ja requisitados
+			teste++;
+		}
+
+		cout << "Num de livros Requisitados: " << teste;
+	}
+}

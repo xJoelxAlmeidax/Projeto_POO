@@ -15,6 +15,8 @@ class Leitor
 	list<Emprestimo*> Historico_Emp;  
 public:
 	Leitor(string _ncc, string _nome, string _morada, string _telefone, int _idade);
+	void AddHistEmprestimo(Emprestimo* E);
+	void Mostrar_HistEmprestimo();
 	virtual ~Leitor();
 	void virtual Show();
 
@@ -22,6 +24,7 @@ public:
 	string get_nome();
 	string get_morada();
 	string get_telefone();
+	list<Emprestimo*> get_Emp();
 	int get_idade();
 	virtual string get_NecessidadesAcessibilidade() { return ""; }
 	virtual string get_curso(){return "";}
