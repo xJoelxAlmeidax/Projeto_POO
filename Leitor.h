@@ -22,19 +22,23 @@ public:
 
 	string get_ncc();
 	string get_nome();
+	string get_nomenormalizado();
 	string get_morada();
 	string get_telefone();
 	list<Emprestimo*> get_Emp();
 	int get_idade();
+
 	virtual string get_NecessidadesAcessibilidade() { return ""; }
 	virtual string get_curso(){return "";}
 	virtual string get_Email() { return ""; }
 	virtual string get_Departamento() { return ""; }
+
 	void mudarncc(string new_ncc);
 	void mudarnome(string new_nome); 
 	void mudarmorada(string new_morada);
 	void mudartelefone(string new_telefone);
 	void mudaridade(int new_idade);
+
 	virtual void mudaremail(string new_email) {}	
 	virtual void mudarNecessidades(string new_acessibilidade) {}
 	virtual void mudarcurso(string new_curso){}

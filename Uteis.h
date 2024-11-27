@@ -6,6 +6,7 @@
 #include <windows.h> 
 #include <algorithm>
 #include <cctype>
+#include <regex>
 using namespace std;
 
 void mostrarMenuTabs(int abaSelecionada, const char* tabs[], int num_tabs);
@@ -15,10 +16,9 @@ bool validarEmail(const string& email);
 bool validarTelefone(const string& telefone);
 bool validarNCC(const string& ncc);
 bool So_numeros(string num);
-bool AnoBisexto(int Ano);
+bool AnoBissexto(int Ano);
 int DiasNoMes(int Mes, int Ano);
 int ConverterDataDias(int dia, int mes, int ano);
-
 
 class Uteis
 {

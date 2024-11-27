@@ -32,6 +32,11 @@ string Leitor::get_nome()
 	return NOME;
 }
 
+string Leitor::get_nomenormalizado()
+{
+	return normalizarString(NOME);
+}
+
 string Leitor::get_morada()
 {
 	return MORADA;

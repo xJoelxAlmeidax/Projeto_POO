@@ -44,6 +44,11 @@ void Livro::Show() {
 string Livro::get_titulo() {
 	return TITULO;
 }
+
+string Livro::get_titulonormalizado() {
+	return normalizarString(TITULO);
+}
+
 string Livro::get_autor() {
 	return AUTOR;
 }

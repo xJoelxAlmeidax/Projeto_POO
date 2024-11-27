@@ -22,6 +22,7 @@ class Livro
 
 		//get
 		string get_titulo();
+		string get_titulonormalizado();
 		string get_autor();
 		int get_ano();
 		list<Leitor*> get_leitores();
@@ -40,6 +41,7 @@ class Livro
 		virtual string get_revisor() { return ""; }
 		virtual string get_editor() { return ""; }
 		virtual string get_tipo() { return ""; }
+
 
 		//Mudar
 		virtual void mudartitulo(string new_titulo);

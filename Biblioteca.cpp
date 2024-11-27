@@ -1235,7 +1235,7 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 				break;
 			}
 			}
-			if (correspondeCategoria && (livro->get_titulo().find(entrada) != string::npos || livro->get_isbn().find(entrada) != string:: npos || livro->get_issn().find(entrada) != string::npos)) {
+			if (correspondeCategoria && (livro->get_titulonormalizado().find(normalizarString(entrada)) != string::npos || livro->get_isbn().find(entrada) != string:: npos || livro->get_issn().find(entrada) != string::npos)) {
 				filtrados.push_back(livro);
 			}
 		}
@@ -1392,7 +1392,7 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 				break;
 			}
 			}
-			if (correspondeCategoria && (leitor->get_nome().find(entrada) != string::npos || leitor->get_ncc().find(entrada) != string::npos)) {
+			if (correspondeCategoria && (leitor->get_nomenormalizado().find(normalizarString(entrada)) != string::npos || leitor->get_ncc().find(entrada) != string::npos)) {
 				filtrados.push_back(leitor);
 			}
 		}
