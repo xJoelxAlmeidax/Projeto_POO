@@ -749,13 +749,13 @@ void Biblioteca::Prorrogacao() {
 	cin >> dias;
 	cin.ignore();
 
-	Emprestimo* E = ResultadoPesquisaE();
+	Emprestimo* E = Pesquisar_E();
 	if(E)
 		E->pedir_prorrogacao(dias);
 }
 
 void Biblioteca::MostrarEmprestimo() {
-	Emprestimo* E = ResultadoPesquisaE();
+	Emprestimo* E = Pesquisar_E();
 	if(E)
 		E->Show();
 }
@@ -1498,7 +1498,8 @@ Leitor* Biblioteca::ResultadoPesquisaP() {
 	return NULL;
 }
 
-Emprestimo* Biblioteca::Pesquisar_E(const list<Emprestimo*>& emprestimos, int abaSelecionada, const char* tabs[], int num_tabs) {
+Emprestimo* Biblioteca::Pesquisar_E() {
+	const list<Emprestimo*>& emprestimos = Emprestimos;
 	string entrada;
 	list<Emprestimo*> filtrados;
 	list<Emprestimo*>::iterator selecao = filtrados.end(); // Inicializa seleção como vazia
@@ -1515,7 +1516,9 @@ Emprestimo* Biblioteca::Pesquisar_E(const list<Emprestimo*>& emprestimos, int ab
 
 		// Filtra os livros com base na aba selecionada e na entrada do usuário
 		for (Emprestimo* emprestimo : Emprestimos) {
-			filtrados.push_back(emprestimo);
+
+			if(emprestimo->get_leitor()->get_nomenormalizado().find(normalizarString(entrada)) != string::npos || emprestimo->get_livro()->get_titulonormalizado().find(normalizarString(entrada)) != string::npos)
+				filtrados.push_back(emprestimo);
 		}
 
 		// Atualiza a seleção com base no índice armazenado
@@ -1533,7 +1536,6 @@ Emprestimo* Biblioteca::Pesquisar_E(const list<Emprestimo*>& emprestimos, int ab
 
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
-		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
 		cout << "Pesquisa: " << entrada << endl;
 		cout << "-------------------------------------------------" << endl;
 		int count = 0;
@@ -1578,46 +1580,6 @@ Emprestimo* Biblioteca::Pesquisar_E(const list<Emprestimo*>& emprestimos, int ab
 	}
 }
 
-Emprestimo* Biblioteca::ResultadoPesquisaE() {
-	const char* tabs_p[] = { "Emprestimos" };
-	int abaSelecionada_p = 0;
-
-	system("CLS");
-	cout << "Pesquisar Emprestimo\n";
-
-	while (true) {
-		// Limpa a tela apenas uma vez antes de mostrar o menu
-		system("CLS");
-
-		// Exibe o menu de abas
-		mostrarMenuTabs(abaSelecionada_p, tabs_p, 1);
-		cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
-
-		// Espera pela tecla pressionada para navegar entre as abas
-		int tecla = _getch();
-
-		if (tecla == 224) { // Tecla especial (setas)
-			switch (_getch()) {
-			case 75: // Seta esquerda
-				abaSelecionada_p = (abaSelecionada_p > 0) ? abaSelecionada_p - 1 : 5;
-				break;
-			case 77: // Seta direita
-				abaSelecionada_p = (abaSelecionada_p < 5) ? abaSelecionada_p + 1 : 0;
-				break;
-			}
-		}
-		else if (tecla == 27) { // ESC
-			return NULL; // Retorna nullptr para indicar cancelamento
-		}
-		else if (tecla == '\r') { // Enter para iniciar a pesquisa
-			// Inicia a pesquisa de emprestimos, considerando a aba selecionada
-			Emprestimo* EmprestimoSelecionado = Pesquisar_E(get_Emprestimos(), abaSelecionada_p, tabs_p, 1);
-			if (EmprestimoSelecionado)
-				return EmprestimoSelecionado;
-		}
-	}
-	return NULL;
-}
 
 void Biblioteca::listagemL(string tipo) {
 

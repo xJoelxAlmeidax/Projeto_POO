@@ -74,8 +74,7 @@ class Biblioteca
 		Livro* ResultadoPesquisa();
 		Leitor* Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionada, const char* tabs[], int num_tabs);
 		Leitor* ResultadoPesquisaP();
-		Emprestimo* Pesquisar_E(const list<Emprestimo*>& emprestimos, int abaSelecionada, const char* tabs[], int num_tabs);
-		Emprestimo* ResultadoPesquisaE();
+		Emprestimo* Pesquisar_E();
 		void listagemL(string tipo); // Vai mostrar todos os livros dependendo do tipo de livro que colocar na main quando se chama a funcao
 		void listagemP(string tipo); // Vai mostrar todos os livros dependendo do tipo de livro que colocar na main quando se chama a funcao
 	

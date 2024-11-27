@@ -215,12 +215,12 @@ int main() {
             case 21:
                 system("cls");
                 cout << "Ver Requisição\n";
-                B->MostrarEmprestimo();
+                B->Pesquisar_E();
                 break;
             case 22:
                 system("cls");
                 cout << "Entregar Livro\n";
-                B->EntregarLivro(B->ResultadoPesquisaE());
+                B->EntregarLivro(B->Pesquisar_E());
                 break;
             case 23:
                 system("cls");
