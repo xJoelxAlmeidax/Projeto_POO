@@ -697,17 +697,38 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 		}
 	}
 
-	// Falta alterar data entrega
 
 	for (Leitor* LeitorAddHist : Leitores)
 	{
 		if (LeitorAddHist->get_ncc() == E->get_leitor()->get_ncc())
 		{
+			DATA dataEntrega;
+			E->Alterar_dataEntrega(dataEntrega);
+
 			LeitorAddHist->AddHistEmprestimo(E);
+			break;
 		}
 	}
 
-	Emprestimos.remove(E);
+
+	list <Leitor*> reserva = E->get_livro()->get_leitores();
+
+	if (!reserva.empty())
+	{
+		for (Leitor* reservaNovoEmp : reserva)
+		{
+			DATA DATAINICIO;
+			DATA ENTREGA;
+			ENTREGA.DIA = 0;
+			ENTREGA.MES = 0;
+			ENTREGA.ANO = 0;
+			Emprestimo* E_NovoEmp = new Emprestimo(DATAINICIO, reservaNovoEmp, E->get_livro(), 0, ENTREGA);
+			Emprestimos.remove(E);
+			delete(E);
+			Add_Emprestimo_Reserva(E_NovoEmp);
+			break;
+		}
+	}
 }
 
 void Biblioteca::Prorrogacao() {
@@ -1052,6 +1073,8 @@ bool Biblioteca::save_file(string nf) {
 				else
 					File << Emp_HistSave->get_livro()->get_issn() << "\t";
 				File << Emp_HistSave->get_dias() << "\n";
+
+				// guardar data entrega
 			}
 		}
 	}

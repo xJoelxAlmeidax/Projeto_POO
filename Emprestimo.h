@@ -68,6 +68,7 @@ public:
 	Leitor* get_leitor();
 	int get_dias();
 	void Show();
+	DATA Alterar_dataEntrega(DATA entrega);
 
 };
 #endif

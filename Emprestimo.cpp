@@ -88,6 +88,15 @@ DATA Emprestimo::get_dataInicio()
 	return DATA_INICIO;
 }
 
+DATA Emprestimo::Alterar_dataEntrega(DATA entrega)
+{
+	DATA_ENTREGA.DIA = entrega.DIA;
+	DATA_ENTREGA.MES = entrega.MES;
+	DATA_ENTREGA.ANO = entrega.ANO;
+
+	return DATA_ENTREGA;
+}
+
 int Emprestimo::get_dias()
 {
 	return DIAS;

@@ -65,7 +65,7 @@ void Leitor::mudaridade(int new_idade) {
 
 void Leitor::AddHistEmprestimo(Emprestimo* E)
 {
-	Historico_Emp.push_back(E);
+	Historico_Emp.push_front(E);
 }
 
 list<Emprestimo*> Leitor::get_Emp()
