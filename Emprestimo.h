@@ -57,7 +57,7 @@ class Emprestimo
 public:
 	Emprestimo(DATA _inicio, Leitor* _leitor, Livro* _livro, int _dias, DATA _entrega);
 	~Emprestimo();
-	int Valor_Multa();
+	float Valor_Multa();
 	void AdicionarMulta();
 	int calcularDIAS(int dias);
 	DATA data_fim();
@@ -69,6 +69,7 @@ public:
 	int get_dias();
 	void Show();
 	DATA Alterar_dataEntrega(DATA entrega);
+	float AplicarDesconto(float multa);
 
 };
 #endif

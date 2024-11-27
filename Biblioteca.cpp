@@ -654,9 +654,13 @@ Emprestimo* Biblioteca::Add_Emprestimos() {
 	ENTREGA.DIA = 0;
 	ENTREGA.MES = 0;
 	ENTREGA.ANO = 0;
-	Emprestimo* E = new Emprestimo(DATAINICIO, ResultadoPesquisaP(), ResultadoPesquisa(), 0 ,ENTREGA);
-
-	return E;
+	Livro* B = ResultadoPesquisa();
+	Leitor* A = ResultadoPesquisaP();
+	if (B && A) {
+		Emprestimo* E = new Emprestimo(DATAINICIO, A, B, 0, ENTREGA);
+		return E;
+	}
+	return NULL;
 }
 
 bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
@@ -683,11 +687,17 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 }
 
 void Biblioteca::EntregarLivro(Emprestimo* E) {
-
+	if (!E) { return; }
 	string opc;
 
-	if (E->Valor_Multa() != 0)
+	float multa = E->Valor_Multa();
+	if (multa != 0)
 	{
+		cout << "Tem uma multa de " << multa << " euros" << endl;
+		if (multa != E->AplicarDesconto(multa)) {
+			cout << "BENEFICIO DE ESTUDANTE/PROFESSOR: 50% OFF" << endl;
+			cout << "Valor de multa a pagar: " << E->AplicarDesconto(multa) << endl;
+		}
 		cout << "Pagar Multa(S/N)" << endl;
 		cin >> opc;
 
@@ -696,6 +706,7 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 			return;
 		}
 	}
+
 
 
 	for (Leitor* LeitorAddHist : Leitores)
@@ -739,12 +750,14 @@ void Biblioteca::Prorrogacao() {
 	cin.ignore();
 
 	Emprestimo* E = ResultadoPesquisaE();
-	E->pedir_prorrogacao(dias);
+	if(E)
+		E->pedir_prorrogacao(dias);
 }
 
 void Biblioteca::MostrarEmprestimo() {
 	Emprestimo* E = ResultadoPesquisaE();
-	E->Show();
+	if(E)
+		E->Show();
 }
 
 void Biblioteca::MultasPendentes() {
@@ -760,7 +773,8 @@ void Biblioteca::MultasPendentes() {
 void Biblioteca::Ver_HistoricoPessoa()
 {
 	Leitor* P = ResultadoPesquisaP();
-	P->Mostrar_HistEmprestimo();
+	if(P)
+		P->Mostrar_HistEmprestimo();
 }
 
 
@@ -768,7 +782,8 @@ void Biblioteca::Ver_HistoricoPessoa()
 void Biblioteca::Ver_Reservas()
 {
 	Livro* L = ResultadoPesquisa();
-	L->Mostrar_Reserva();
+	if(L)
+		L->Mostrar_Reserva();
 }
 
 

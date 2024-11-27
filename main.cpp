@@ -261,7 +261,7 @@ int main() {
                 return 0;
             }
 
-            Sleep(4000); // Pausa para testes
+            system("pause"); // Pausa para testes
         }
         system("cls"); // Limpa a tela para atualizar a interface
     }
