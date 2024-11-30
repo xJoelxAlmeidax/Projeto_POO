@@ -215,7 +215,7 @@ int main() {
             case 21:
                 system("cls");
                 cout << "Ver Requisição\n";
-                B->Pesquisar_E();
+                B->MostrarEmprestimo();
                 break;
             case 22:
                 system("cls");

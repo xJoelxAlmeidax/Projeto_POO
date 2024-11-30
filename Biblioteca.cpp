@@ -669,20 +669,28 @@ bool Biblioteca::Add_Emprestimo_Reserva(Emprestimo* E) {
 	if (!E) { return false; }
 	else if (Emprestimos.empty()) { Emprestimos.push_back(E); return true; }
 
+	bool encontrado = false;
+
 	for (Emprestimo* emprestimo : Emprestimos)
 	{
-		if (emprestimo->get_livro()->get_isbn() != "" && E->get_livro()->get_isbn() != "" &&  emprestimo->get_livro()->get_isbn() == E->get_livro()->get_isbn() || emprestimo->get_livro()->get_issn() != "" && E->get_livro()->get_issn() != "" && emprestimo->get_livro()->get_issn() == E->get_livro()->get_issn())
+		if (emprestimo->get_livro()->get_isbn() != "" && E->get_livro()->get_isbn() != "" && emprestimo->get_livro()->get_isbn() == E->get_livro()->get_isbn() || emprestimo->get_livro()->get_issn() != "" && E->get_livro()->get_issn() != "" && emprestimo->get_livro()->get_issn() == E->get_livro()->get_issn())
 		{
-			E->get_livro()->AddReserva(E->get_leitor());
-			delete(E);
-			break;
-		}
-		else
-		{
-			Emprestimos.push_back(E);
+			encontrado = true;
 			break;
 		}
 	}
+
+
+	if (encontrado == true)
+	{
+		E->get_livro()->AddReserva(E->get_leitor());
+		delete(E);
+	}
+	else
+	{
+		Emprestimos.push_back(E);
+	}
+
 	return true;
 }
 
@@ -706,8 +714,6 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 			return;
 		}
 	}
-
-
 
 	for (Leitor* LeitorAddHist : Leitores)
 	{

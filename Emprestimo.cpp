@@ -41,11 +41,10 @@ float Emprestimo::Valor_Multa(){
 	return MULTA;
 }
 float Emprestimo::AplicarDesconto(float multa) {
-	float multa_descontada;
 	if ((get_leitor()->quem_es() == "Estudante" || get_leitor()->quem_es() == "Professor") && (get_livro()->quem_es() == "LivroCientifico" || get_livro()->quem_es() == "LivroEducativo")) {
-		multa_descontada = 0.5 * multa;
+		return 0.5 * multa;
 	}
-	return multa_descontada;
+	return multa;
 }
 
 int Emprestimo::calcularDIAS(int dias) {
