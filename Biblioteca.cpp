@@ -313,6 +313,33 @@ void Biblioteca::AlterarLivro(Livro* L) {
 }
 
 void Biblioteca::RemoverLivro(Livro* L) {
+
+
+	// ver esta parte da erro quando se quer apagar o ultimo do emprestimo, leitor, etc
+
+	for (Emprestimo* emprestimo : Emprestimos)
+	{
+		if (emprestimo->get_livro()->get_isbn() != "" && L->get_isbn() != "" && emprestimo->get_livro()->get_isbn() == L->get_isbn() || emprestimo->get_livro()->get_issn() != "" && L->get_issn() != "" && emprestimo->get_livro()->get_issn() == L->get_issn())
+		{
+			Emprestimos.remove(emprestimo);
+			delete(emprestimo);
+		}
+	}
+
+	for (Leitor* leitor : Leitores)
+	{
+		list <Emprestimo*> Emp_Hist = leitor->get_Emp();
+		if (!Emp_Hist.empty()) {
+			for (Emprestimo* Emp_Hist_remove : Emp_Hist)
+			{
+				if (Emp_Hist_remove->get_livro()->get_isbn() != "" && L->get_isbn() != "" && Emp_Hist_remove->get_livro()->get_isbn() == L->get_isbn() || Emp_Hist_remove->get_livro()->get_issn() != "" && L->get_issn() != "" && Emp_Hist_remove->get_livro()->get_issn() == L->get_issn())
+				{
+					Emp_Hist.remove(Emp_Hist_remove);
+				}
+			}
+		}
+	}
+
 	Livros.remove(L);
 	delete(L);
 }

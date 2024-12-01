@@ -40,6 +40,7 @@ float Emprestimo::Valor_Multa(){
 	AdicionarMulta(); //Isto salta fora 
 	return MULTA;
 }
+
 float Emprestimo::AplicarDesconto(float multa) {
 	if ((get_leitor()->quem_es() == "Estudante" || get_leitor()->quem_es() == "Professor") && (get_livro()->quem_es() == "LivroCientifico" || get_livro()->quem_es() == "LivroEducativo")) {
 		return 0.5 * multa;
