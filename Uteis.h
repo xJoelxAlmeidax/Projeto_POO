@@ -15,6 +15,8 @@ string normalizarString(const string& texto);
 bool validarEmail(const string& email);
 bool validarTelefone(const string& telefone);
 bool validarNCC(const string& ncc);
+bool ValidarISBN(const string& ISSN);
+bool ValidarISSN(const string& ISSN);
 bool So_numeros(string num);
 bool AnoBissexto(int Ano);
 int DiasNoMes(int Mes, int Ano);

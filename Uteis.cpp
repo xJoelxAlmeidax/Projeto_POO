@@ -85,9 +85,9 @@ bool So_numeros(string num) {
     return regex_match(num, pattern);
 }
 
-bool ValidarISBN(const string& ISSN) {
-    regex pattern("^^\d{13}$");
-    return regex_match(ISSN, pattern);
+bool ValidarISBN(const string& ISBN) {
+    regex pattern(R"((\d{1,5}-\d{1,7}-\d{1,7}-[\dX])|(\d{13}))");
+    return regex_match(ISBN, pattern);
 }
 
 bool ValidarISSN(const string& ISSN) {

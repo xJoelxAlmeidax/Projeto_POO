@@ -11,6 +11,7 @@ Livro* Biblioteca::Add_Livros() {
 	string tipo_uti;
 	string titulo;
 	string autor;
+	string in;
 	int ano; 
 	cout << "Título: ";
 	getline(cin, titulo);
@@ -18,7 +19,13 @@ Livro* Biblioteca::Add_Livros() {
 	cout << "Autor: ";
 	getline(cin, autor);
 	cout << "Ano: ";
-	cin >> ano;
+	cin >> in;
+	while (!So_numeros(in))
+	{
+		cout << "Ano incorreto!!\n";
+		cin >> in;
+	}
+	ano = stoi(in);
 	cin.ignore();
 	Livro* L = NULL;
 	do {
@@ -35,20 +42,28 @@ Livro* Biblioteca::Add_Livros() {
 					cout << "ISBN inválido" << endl;
 				else if (isbnDuplicado(_ISBN))
 					cout << "Já existe um livro com esse ISBN" << endl;
-			} while (!ValidarISBN(_ISBN) || isbnDuplicado(_ISBN));
+				else
+					break;
+			} while (true);
 			cout << "Subgénero: ";
 			getline(cin, _subgenero);
-			if(ValidarISBN(_ISBN))
-				L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
+			L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
 			break;
 		}
 		else if (tipo_uti == "cientifico") {
 			string _ISBN;
 			string _areaestudo;
 			string _revisor;
-			cout << "ISBN: ";
-			cin >> _ISBN;
-			cin.ignore();
+			do {
+				cout << "ISBN: ";
+				getline(cin, _ISBN);
+				if (!ValidarISBN(_ISBN))
+					cout << "ISBN inválido" << endl;
+				else if (isbnDuplicado(_ISBN))
+					cout << "Já existe um livro com esse ISBN" << endl;
+				else
+					break;
+			} while (true);
 			cout << "Area Estudo: ";
 			getline(cin, _areaestudo);
 			cout << "Revisor Cientifico: ";
@@ -61,9 +76,16 @@ Livro* Biblioteca::Add_Livros() {
 			string _idaderec;
 			string _area;
 			string _ilustrador;
-			cout << "ISBN: ";
-			cin >> _ISBN;
-			cin.ignore();
+			do {
+				cout << "ISBN: ";
+				getline(cin, _ISBN);
+				if (!ValidarISBN(_ISBN))
+					cout << "ISBN inválido" << endl;
+				else if (isbnDuplicado(_ISBN))
+					cout << "Já existe um livro com esse ISBN" << endl;
+				else
+					break;
+			} while (true);
 			cout << "Idade Recomendada: ";
 			getline(cin, _idaderec);
 			cout << "Area: ";
@@ -78,9 +100,16 @@ Livro* Biblioteca::Add_Livros() {
 			string _edicao;
 			string _editor_boss;
 			string _tipo_dis;
-			cout << "ISSN: ";
-			cin >> _issn;
-			cin.ignore();
+			do {
+				cout << "ISSN: ";
+				getline(cin, _issn);
+				if (!ValidarISSN(_issn))
+					cout << "ISSN inválido" << endl;
+				else if (issnDuplicado(_issn))
+					cout << "Já existe um livro com esse ISSN" << endl;
+				else
+					break;
+			} while (true);
 			cout << "Edição: ";
 			getline(cin, _edicao);
 			cout << "Editor Chefe: ";
@@ -95,9 +124,16 @@ Livro* Biblioteca::Add_Livros() {
 			string _edicao;
 			string _editora;
 			string _fotografo;
-			cout << "ISSN: ";
-			cin >> _issn;
-			cin.ignore();
+			do {
+				cout << "ISSN: ";
+				getline(cin, _issn);
+				if (!ValidarISSN(_issn))
+					cout << "ISSN inválido" << endl;
+				else if (issnDuplicado(_issn))
+					cout << "Já existe um livro com esse ISSN" << endl;
+				else
+					break;
+			} while (true);
 			cout << "Edição: ";
 			getline(cin, _edicao);
 			cout << "Editora: ";
@@ -117,7 +153,7 @@ Livro* Biblioteca::Add_Livros() {
 
 bool Biblioteca::Add_Livro(Livro* L) {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
-	if (!L) { return false; }
+	if (!L) { return false; }\
 	Livros.push_back(L);
 	return true;
 }
@@ -402,6 +438,10 @@ Leitor* Biblioteca::Add_Leitores() {
 			{
 				cout << "Número de Cartão de Cidadão já existente" << endl;
 			}
+			else
+			{
+				break;
+			}
 		}
 	}
 
@@ -596,6 +636,7 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 			string buffer;
 			int buffer1;
 			bool AlteracaoSucesso = false;
+
 			if (strcmp(opcoesAlterar[opcaoSelecionadaAlterar], "Nome") == 0) {
 				cout << "Nome: ";
 				getline(cin, buffer);
@@ -678,8 +719,9 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 			if (AlteracaoSucesso)
 			{
 				cout << "Alteração bem-sucedida!" << endl;
-				Sleep(4000);
+				Sleep(2000);
 			}
+
 		}
 		else if (tecla == 27) {
 			break;
