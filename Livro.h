@@ -41,13 +41,12 @@ class Livro
 		virtual string get_revisor() { return ""; }
 		virtual string get_editor() { return ""; }
 		virtual string get_tipo() { return ""; }
-
+		virtual string quem_es();
 
 		//Mudar
-		virtual void mudartitulo(string new_titulo);
-		virtual void mudarautor(string new_autor);
-		virtual void mudarano(int new_ano);
-		virtual string quem_es();
+		void mudartitulo(string new_titulo);
+		void mudarautor(string new_autor);
+		void mudarano(int new_ano);
 
 		//Mudar extra
 		virtual void mudarISSN(string new_issn){}
