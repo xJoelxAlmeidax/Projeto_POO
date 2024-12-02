@@ -317,12 +317,15 @@ void Biblioteca::RemoverLivro(Livro* L) {
 
 	// ver esta parte da erro quando se quer apagar o ultimo do emprestimo, leitor, etc
 
-	for (Emprestimo* emprestimo : Emprestimos)
-	{
-		if (emprestimo->get_livro()->get_isbn() != "" && L->get_isbn() != "" && emprestimo->get_livro()->get_isbn() == L->get_isbn() || emprestimo->get_livro()->get_issn() != "" && L->get_issn() != "" && emprestimo->get_livro()->get_issn() == L->get_issn())
+	for (auto it = Emprestimos.begin(); it != Emprestimos.end();) {
+
+		if ((*it)->get_livro()->get_isbn() != "" && L->get_isbn() != "" && (*it)->get_livro()->get_isbn() == L->get_isbn() || (*it)->get_livro()->get_issn() != "" && L->get_issn() != "" && (*it)->get_livro()->get_issn() == L->get_issn())
 		{
-			Emprestimos.remove(emprestimo);
-			delete(emprestimo);
+			it = Emprestimos.erase(it);
+		}
+		else
+		{
+			++it;
 		}
 	}
 
@@ -330,11 +333,15 @@ void Biblioteca::RemoverLivro(Livro* L) {
 	{
 		list <Emprestimo*> Emp_Hist = leitor->get_Emp();
 		if (!Emp_Hist.empty()) {
-			for (Emprestimo* Emp_Hist_remove : Emp_Hist)
-			{
-				if (Emp_Hist_remove->get_livro()->get_isbn() != "" && L->get_isbn() != "" && Emp_Hist_remove->get_livro()->get_isbn() == L->get_isbn() || Emp_Hist_remove->get_livro()->get_issn() != "" && L->get_issn() != "" && Emp_Hist_remove->get_livro()->get_issn() == L->get_issn())
+			for (auto it_hist = Emp_Hist.begin(); it_hist != Emp_Hist.end();) {
+
+				if ((*it_hist)->get_livro()->get_isbn() != "" && L->get_isbn() != "" && (*it_hist)->get_livro()->get_isbn() == L->get_isbn() || (*it_hist)->get_livro()->get_issn() != "" && L->get_issn() != "" && (*it_hist)->get_livro()->get_issn() == L->get_issn())
 				{
-					Emp_Hist.remove(Emp_Hist_remove);
+					it_hist = Emp_Hist.erase(it_hist);
+				}
+				else
+				{
+					++it_hist;
 				}
 			}
 		}
@@ -657,6 +664,35 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 }
 
 void Biblioteca::RemoverLeitor(Leitor* P) {
+
+	for (auto it = Emprestimos.begin(); it != Emprestimos.end();) {
+
+		if ((*it)->get_leitor()->get_ncc() != "" && P->get_ncc() != "" && (*it)->get_leitor()->get_ncc() == P->get_ncc())
+		{
+			it = Emprestimos.erase(it);
+		}
+		else
+		{
+			++it;
+		}
+	}
+
+	for (Livro* livro : Livros)
+	{
+		list <Leitor*> reserva = livro->get_leitores();
+		for (auto it_reserva = reserva.begin(); it_reserva != reserva.end();)
+		{
+			if ((*it_reserva)->get_ncc() != "" && P->get_ncc() != "" && (*it_reserva)->get_ncc() == P->get_ncc())
+			{
+				it_reserva = reserva.erase(it_reserva);
+			}
+			else
+			{
+				++it_reserva;
+			}
+		}
+	}
+
 	Leitores.remove(P);
 	delete(P);
 }
