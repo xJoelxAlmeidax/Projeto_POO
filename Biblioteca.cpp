@@ -28,12 +28,18 @@ Livro* Biblioteca::Add_Livros() {
 		if (tipo_uti == "ficcao") {
 			string _ISBN;
 			string _subgenero;
-			cout << "ISBN: ";
-			cin >> _ISBN;
-			cin.ignore();
+			do {
+				cout << "ISBN: ";
+				getline(cin, _ISBN);
+				if (!ValidarISBN(_ISBN))
+					cout << "ISBN inválido" << endl;
+				else if (isbnDuplicado(_ISBN))
+					cout << "Já existe um livro com esse ISBN" << endl;
+			} while (!ValidarISBN(_ISBN) || isbnDuplicado(_ISBN));
 			cout << "Subgénero: ";
 			getline(cin, _subgenero);
-			L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
+			if(ValidarISBN(_ISBN))
+				L = new LivroFiccao(titulo, autor, ano, _ISBN, _subgenero);
 			break;
 		}
 		else if (tipo_uti == "cientifico") {
@@ -349,6 +355,24 @@ void Biblioteca::RemoverLivro(Livro* L) {
 
 	Livros.remove(L);
 	delete(L);
+}
+
+bool Biblioteca::isbnDuplicado(const string& ISBN) {
+	for (const auto livro : Livros) {
+		if (livro->get_isbn() == ISBN) {
+			return true;
+		}
+	}
+	return false;
+}
+
+bool Biblioteca::issnDuplicado(const string& ISSN) {
+	for (const auto livro : Livros) {
+		if (livro->get_issn() == ISSN) {
+			return true;
+		}
+	}
+	return false;
 }
 
 

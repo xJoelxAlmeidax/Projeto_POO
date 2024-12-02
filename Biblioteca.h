@@ -36,7 +36,8 @@ class Biblioteca
 		bool Add_Livro(Livro* L);
 		void AlterarLivro(Livro* L);
 		void RemoverLivro(Livro* L);
-
+		bool isbnDuplicado(const string& ISBN);
+		bool issnDuplicado(const string& ISSN);
 
 		//LEITOR
 		Leitor* Add_Leitores();

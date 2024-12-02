@@ -85,6 +85,16 @@ bool So_numeros(string num) {
     return regex_match(num, pattern);
 }
 
+bool ValidarISBN(const string& ISSN) {
+    regex pattern("^^\d{13}$");
+    return regex_match(ISSN, pattern);
+}
+
+bool ValidarISSN(const string& ISSN) {
+    regex pattern("^[0-9]{4}-[0-9]{3}[0-9X]$");
+    return regex_match(ISSN, pattern);
+}
+
 static bool AnoBissexto(int ano) {
     if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
         return true;
