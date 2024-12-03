@@ -344,7 +344,7 @@ void Biblioteca::AlterarLivro(Livro* L) {
 				L->mudarfotografo(buffer);
 			}
 			cout << "Alteração bem-sucedida!" << endl;
-			system("pause");
+			subs_systpause();
 		}
 		else if (tecla == 27) {
 			break;
@@ -719,7 +719,7 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 			if (AlteracaoSucesso)
 			{
 				cout << "Alteração bem-sucedida!" << endl;
-				system("pause");
+				subs_systpause();
 			}
 
 		}
@@ -906,11 +906,15 @@ void Biblioteca::MostrarEmprestimo() {
 }
 
 void Biblioteca::MultasPendentes() {
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 	for (const auto emprestimoTeste : Emprestimos) {
 		int valorMulta = emprestimoTeste->Valor_Multa();
 		if (valorMulta != 0)
 		{
-			cout << emprestimoTeste->get_leitor()->get_nome() << '\t' << valorMulta << " euros" << endl;
+			SetConsoleTextAttribute(hConsole, (4 << 4) | 15);
+			cout << "MULTA PENDENTE:";
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << " " << "Titulo: " << emprestimoTeste->get_livro()->get_titulo() << " | " << "Nome: " << emprestimoTeste->get_leitor()->get_nome() << " | CC: " << emprestimoTeste->get_leitor()->get_ncc() << " | " << "Multa: " << valorMulta << " euros" <<endl;
 		}
 	}
 }
@@ -1400,12 +1404,16 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		cout << "Pesquisa: " << entrada << endl;
-		cout << "-------------------------------------------------" << endl;
+		cout << "---------------------------------------------------------------------------" << endl;
 		int count = 0;
 		for (auto it = filtrados.begin(); it != filtrados.end() && count<=20; ++it, count++) {
-			if (it == selecao) cout << " > "; else cout << "   ";
+			if (it == selecao) { SetConsoleTextAttribute(hConsole, (15 << 4) | 0); cout << " > "; }
+			else { SetConsoleTextAttribute(hConsole, 7); cout << "   "; }
 			cout << (*it)->get_titulo();
 			if ((*it)->quem_es() == "LivroCientifico" || (*it)->quem_es() == "LivroFiccao" || (*it)->quem_es() == "LivroEducativo") {
 				cout << "\t[" << (*it)->get_isbn() << "]" << endl;
@@ -1413,8 +1421,9 @@ Livro* Biblioteca::Pesquisar_L(const list<Livro*>& livros, int abaSelecionada, c
 			else {
 				cout << "\t[" << (*it)->get_issn() << "]" << endl;
 			}
+			SetConsoleTextAttribute(hConsole, 7);
 		}
-		cout << "-------------------------------------------------" << endl;
+		cout << "---------------------------------------------------------------------------" << endl;
 		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
 		if (tecla == 224) {  // Tecla especial (setas)
@@ -1463,7 +1472,9 @@ Livro* Biblioteca::ResultadoPesquisa() {
 		system("CLS");
 
 		// Exibe o menu de abas
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
 		mostrarMenuTabs(abaSelecionada_p, tabs_p, 6);
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
 		cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
 
 		// Espera pela tecla pressionada para navegar entre as abas
@@ -1557,15 +1568,20 @@ Leitor* Biblioteca::Pesquisar_P(const list<Leitor*>& leitores, int abaSelecionad
 
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+		cout << "-----------------------------------------------------------------------------------" << endl;
 		mostrarMenuTabs(abaSelecionada, tabs, num_tabs);
+		cout << "-----------------------------------------------------------------------------------" << endl;
 		cout << "Pesquisa: " << entrada << endl;
-		cout << "-------------------------------------------------" << endl;
+		cout << "-----------------------------------------------------------------------------------" << endl;
 		int count = 0;
 		for (auto it = filtrados.begin(); it != filtrados.end() && count <= 20; ++it, count++) {
-			if (it == selecao) cout << " > "; else cout << "   ";
+			if (it == selecao) { SetConsoleTextAttribute(hConsole, (15 << 4) | 0); cout << " > "; }
+			else { SetConsoleTextAttribute(hConsole, 7); cout << "   "; }
 			cout << (*it)->get_nome() << "\t[" << (*it)->get_ncc() << "]" << endl;
+			SetConsoleTextAttribute(hConsole, 7);
 		}
-		cout << "-------------------------------------------------" << endl;
+		cout << "-----------------------------------------------------------------------------------" << endl;
 
 		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
@@ -1614,7 +1630,9 @@ Leitor* Biblioteca::ResultadoPesquisaP() {
 		system("CLS");
 
 		// Exibe o menu de abas
+		cout << "-----------------------------------------------------------------------------------" << endl;
 		mostrarMenuTabs(abaSelecionada_p, tabs_p, 5);
+		cout << "-----------------------------------------------------------------------------------" << endl;
 		cout << "Pressione a seta para mudar de aba, Enter para pesquisar\n";
 
 		// Espera pela tecla pressionada para navegar entre as abas
@@ -1681,14 +1699,17 @@ Emprestimo* Biblioteca::Pesquisar_E() {
 
 		// Exibe o menu e os livros filtrados com a seleção destacada
 		system("CLS");
+		HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 		cout << "Pesquisa: " << entrada << endl;
-		cout << "-------------------------------------------------" << endl;
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
 		int count = 0;
 		for (auto it = filtrados.begin(); it != filtrados.end() && count <= 20; ++it, count++) {
-			if (it == selecao) cout << " > "; else cout << "   ";
+			if (it == selecao) { SetConsoleTextAttribute(hConsole, (15 << 4) | 0); cout << " > "; }
+			else { SetConsoleTextAttribute(hConsole, 7); cout << "   "; }
 			cout << (*it)->get_livro()->get_titulo() << "\t[" << (*it)->get_leitor()->get_nome() << "]" << endl;
+			SetConsoleTextAttribute(hConsole, 7);
 		}
-		cout << "-------------------------------------------------" << endl;
+		cout << "---------------------------------------------------------------------------------------------------" << endl;
 
 		// Captura a tecla pressionada para navegação ou seleção
 		int tecla = _getch();
@@ -1755,13 +1776,9 @@ void Biblioteca::listagemP(string tipo) {
 
 
 void Biblioteca::Sistema_Notif_atraso() {
-	cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
-
-	cout << "---------------------- Multas Pendentes ----------------------" << endl;
+	HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
 	MultasPendentes();
-	cout << "--------------------------------------------------------------\n\n" << endl;
-
-	cout << "-------------------------- Emprestimos que estão próximos do prazo entrega --------------------------" << endl;
 	for (Emprestimo* emprestimoAcabar : Emprestimos)
 	{
 		time_t DATA_ = time(nullptr);//data atual
@@ -1772,11 +1789,12 @@ void Biblioteca::Sistema_Notif_atraso() {
 
 		if (-3 <= ConverterDataDias(dataAtual.tm_mday, dataAtual.tm_mon + 1, dataAtual.tm_year + 1900) - ConverterDataDias(dataFIM.DIA, dataFIM.MES, dataFIM.ANO) && 0 >= ConverterDataDias(dataAtual.tm_mday, dataAtual.tm_mon + 1, dataAtual.tm_year + 1900) - ConverterDataDias(dataFIM.DIA, dataFIM.MES, dataFIM.ANO))
 		{
-			cout << "Titulo: " << emprestimoAcabar->get_livro()->get_titulo() << " | " << "Nome: " << emprestimoAcabar->get_leitor()->get_nome() << " | CC: " << emprestimoAcabar->get_leitor()->get_ncc() << " | " << "Data de Entrega: " << dataFIM.DIA << "/" << dataFIM.MES << "/" << dataFIM.ANO << endl;
+			SetConsoleTextAttribute(hConsole, (6 << 4) | 0);
+			cout << "TERMINA EM BREVE:";
+			SetConsoleTextAttribute(hConsole, 7);
+			cout << " " << "Titulo: " << emprestimoAcabar->get_livro()->get_titulo() << " | " << "Nome: " << emprestimoAcabar->get_leitor()->get_nome() << " | CC: " << emprestimoAcabar->get_leitor()->get_ncc() << " | " << "Data de Entrega: " << dataFIM.DIA << "/" << dataFIM.MES << "/" << dataFIM.ANO << endl;
 		}
 	}
-	cout << "---------------------------------------------------------------------------------------------------" << endl;
-
 
 }
 

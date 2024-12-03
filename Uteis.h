@@ -21,6 +21,7 @@ bool So_numeros(string num);
 bool AnoBissexto(int Ano);
 int DiasNoMes(int Mes, int Ano);
 int ConverterDataDias(int dia, int mes, int ano);
+void subs_systpause();
 
 class Uteis
 {

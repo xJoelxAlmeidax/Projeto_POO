@@ -31,6 +31,7 @@ class Biblioteca
 	public:
 		Biblioteca(string _nome);
 		virtual ~Biblioteca();
+
 		//LIVRO
 		Livro* Add_Livros();
 		bool Add_Livro(Livro* L);
@@ -93,9 +94,6 @@ class Biblioteca
 
 		void Sistema_Notif_atraso();
 
-
-
-		
 };
 
 #endif 

@@ -10,11 +10,40 @@ int main() {
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
     B->load_file("Dados.txt");
     B->Sistema_Notif_atraso();
-    system("pause"); system("cls");
-    const char* opcoesTab1[] = { "Inscrever", "Alterar Dados", "Remover","Mostrar Leitores Comuns", "Mostrar Estudantes", "Mostrar Professores", "Mostrar Seniores", "Mostrar todos", "Procurar Utilizador"}; // 7 opções
-    const char* opcoesTab2[] = { "Adicionar Livro", "Alterar Livro", "Remover Livro", "Mostrar Livros de Ficção", "Mostrar Livros Científicos", "Mostrar livros educativos", "Mostrar Revistas", "Mostrar Jornais", "Mostrar todos", "Pesquisar Livro"}; // 4 opções
-    const char* opcoesTab3[] = { "Fazer Requisição", "Ver requisições",  "Entregar Livro", "Ver notificações", "Ver Historico de uma Pessoa" , "Ver reservas de um Livro", "Pedir prorrogação de Requisição", "Ver multas pendentes"}; // 1 opção
-    const char* opcoesTab4[] = { "Salvar Ficheiros", "Sair" };
+    subs_systpause(); system("cls");
+    const char* opcoesTab1[] = { 
+        "Inscrever               ", 
+        "Alterar Dados           ", 
+        "Remover                 ",
+        "Mostrar Leitores Comuns ", 
+        "Mostrar Estudantes      ", 
+        "Mostrar Professores     ", 
+        "Mostrar Seniores        ", 
+        "Mostrar todos           ", 
+        "Procurar Utilizador     "}; // 7 opções
+    const char* opcoesTab2[] = { 
+        "Adicionar Livro            ", 
+        "Alterar Livro              ", 
+        "Remover Livro              ", 
+        "Mostrar Livros de Ficção   ", 
+        "Mostrar Livros Científicos ", 
+        "Mostrar livros educativos  ", 
+        "Mostrar Revistas           ", 
+        "Mostrar Jornais            ", 
+        "Mostrar todos              ", 
+        "Pesquisar Livro            "}; // 4 opções
+    const char* opcoesTab3[] = { 
+        "Fazer Requisição                ", 
+        "Ver requisições                 ",  
+        "Entregar Livro                  ", 
+        "Ver notificações                ", 
+        "Ver Historico de uma Pessoa     ", 
+        "Ver reservas de um Livro        ", 
+        "Pedir prorrogação de Requisição ", 
+        "Ver multas pendentes"}; // 1 opção
+    const char* opcoesTab4[] = { 
+        "Salvar Ficheiros ", 
+        "Sair             " };
     const char** opcoes[NUM_TABS] = { opcoesTab1, opcoesTab2, opcoesTab3, opcoesTab4 };
     int numOpcoes[NUM_TABS] = { 9, 10, 8, 2 };
     const char* tabs[NUM_TABS] = { "Leitores", "Livros", "Empréstimos", "Ficheiros" };
@@ -26,7 +55,7 @@ int main() {
         cout << "                             BIBLIOTECA:                             " << endl;
         cout << "---------------------------------------------------------------------" << endl;
         mostrarMenuTabs(abaSelecionada, tabs, 4);
-
+        cout << "---------------------------------------------------------------------" << endl;
         mostrarMenuOpcoes(opcaoSelecionada, opcoes[abaSelecionada], numOpcoes[abaSelecionada]);
 
         int tecla = _getch();
@@ -261,7 +290,7 @@ int main() {
                 return 0;
             }
 
-            system("pause"); // Pausa para testes
+            subs_systpause(); // Pausa para testes
         }
         system("cls"); // Limpa a tela para atualizar a interface
     }

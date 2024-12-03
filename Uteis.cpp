@@ -4,34 +4,31 @@
 const int NUM_TABS = 4; // Número de abas
 
 void mostrarMenuTabs(int abaSelecionada, const char* tabs[], int num_tabs) {
-    
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i = 0; i < num_tabs; i++) {
         if (i == abaSelecionada) {
-            cout << "  > " << tabs[i] << " <  "; // Destaque a aba selecionada
+            SetConsoleTextAttribute(hConsole, (7 << 4) | 0);
+            cout << "    " << tabs[i] << "    "; // Destaque a aba selecionada
+            SetConsoleTextAttribute(hConsole, 7);
         }
         else {
             cout << "    " << tabs[i] << "    ";
         }
     }
     cout << endl;
-    cout << "---------------------------------------------------------------------" << endl;
 }
 
 void mostrarMenuOpcoes(int opcaoSelecionada, const char* opcoes[], int numOpcoes) {
-
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
     for (int i = 0; i < numOpcoes; i++) {
         if (i == opcaoSelecionada) {
-            cout << " > "; // Destaca a opção selecionada
+            SetConsoleTextAttribute(hConsole, (15 << 4) | 0);
+            cout << " > " << opcoes[i] << endl; // Destaca a opção selecionada
+            SetConsoleTextAttribute(hConsole, 7);
         }
         else {
-            cout << "   ";
-        }
-        cout << opcoes[i];
-        if (i == opcaoSelecionada) {
-            cout << " <" << endl; // Destaca a opção selecionada
-        }
-        else {
-            cout << endl;
+            SetConsoleTextAttribute(hConsole, 7);
+            cout << "   " << opcoes[i] << endl;
         }
     }
 }
@@ -131,6 +128,20 @@ int ConverterDataDias(int dia, int mes, int ano) {
     return DiasTotais;
 }
 
+void subs_systpause() {
+    HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+
+    // Alterar a cor do fundo para branco e o texto para preto
+    SetConsoleTextAttribute(hConsole, 14);
+    cout << "Pressione ENTER para continuar..." << endl;
+
+    // Voltar à cor padrão
+    SetConsoleTextAttribute(hConsole, 7); 
+    int tecla;
+    do {
+        tecla = _getch();
+    } while (tecla != 13); // Continua até pressionar o Enter
+}
 
 
 /*cout << R"(
