@@ -344,7 +344,7 @@ void Biblioteca::AlterarLivro(Livro* L) {
 				L->mudarfotografo(buffer);
 			}
 			cout << "Alteração bem-sucedida!" << endl;
-			Sleep(4000);
+			system("pause");
 		}
 		else if (tecla == 27) {
 			break;
@@ -719,7 +719,7 @@ void Biblioteca::AlterarLeitor(Leitor* L) {
 			if (AlteracaoSucesso)
 			{
 				cout << "Alteração bem-sucedida!" << endl;
-				Sleep(2000);
+				system("pause");
 			}
 
 		}

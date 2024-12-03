@@ -86,12 +86,14 @@ bool So_numeros(string num) {
 }
 
 bool ValidarISBN(const string& ISBN) {
-    regex pattern(R"((\d{1,5}-\d{1,7}-\d{1,7}-[\dX])|(\d{13}))");
+    regex pattern(R"(((^\d{1,5}-\d{1,7}-\d{1,7}-[\dX]$)|^\d{10}$)|((^\d{3}-\d{1,5}-\d{1,7}-\d{1,7}-\d$)|^\d{13}$))");
+    //R"()" serve para transformar em string literal bruta OU seja para ser lida exatamente como escrita
     return regex_match(ISBN, pattern);
 }
 
 bool ValidarISSN(const string& ISSN) {
-    regex pattern("^[0-9]{4}-[0-9]{3}[0-9X]$");
+    regex pattern(R"(^\d{4}-\d{3}[\dX]$|^\d{8}$)");
+    //R"()" serve para transformar em string literal bruta OU seja para ser lida exatamente como escrita
     return regex_match(ISSN, pattern);
 }
 
