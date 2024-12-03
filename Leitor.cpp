@@ -91,6 +91,6 @@ void Leitor::Mostrar_HistEmprestimo()
 			teste++;
 		}
 
-		cout << "Num de livros Requisitados: " << teste;
+		cout << "Num de livros Requisitados: " << teste << " \n";
 	}
 }

@@ -131,8 +131,8 @@ Professor	123123104	Professor Exemplo 5	rua la 5	965123125	2025	Professor5@gmail
 Professor	123123105	Professor Exemplo 6	rua la 6	965123126	2026	Professor6@gmail.com	Disciplina6
 Professor	123123106	Professor Exemplo 7	rua la 7	965123127	2027	Professor7@gmail.com	Disciplina7
 Professor	123123107	Professor Exemplo 8	rua la 8	965123128	2028	Professor8@gmail.com	Disciplina8
-Historico	26	11	2024	123123107	8080-6067	30
 Historico	25	10	2023	123123107	4321-8765	30
+Historico	26	11	2024	123123107	8080-6067	30
 Professor	123123108	Professor Exemplo 9	rua la 9	965123129	2029	Professor9@gmail.com	Disciplina9
 Professor	123123109	Professor Exemplo 10	rua la 10	9651231210	2030	Professor10@gmail.com	Disciplina10
 Professor	123123110	Professor Exemplo 11	rua la 11	9651231211	2031	Professor11@gmail.com	Disciplina11
@@ -180,5 +180,5 @@ Estudante	123123150	Estudante Exemplo 2	rua la 2	965123122	2022	estudante2@gmail
 Estudante	123123151	Estudante Exemplo 3	rua la 3	965123123	2023	estudante3@gmail.com	Curso3
 Estudante	123123152	Estudante Exemplo 4	rua la 4	965123124	2024	estudante4@gmail.com	Curso4
 Estudante	123123153	Estudante Exemplo 5	rua la 5	965123125	2025	estudante5@gmail.c	Curso4
-Emprestimo	29	10	2024	123123103	1234-5679	30
+Emprestimo	29	10	2024	123123103	1234-5679	78
 Reserva	1234-5679	123123110

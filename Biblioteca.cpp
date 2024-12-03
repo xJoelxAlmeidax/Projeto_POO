@@ -784,7 +784,13 @@ Emprestimo* Biblioteca::Add_Emprestimos() {
 	ENTREGA.MES = 0;
 	ENTREGA.ANO = 0;
 	Livro* B = ResultadoPesquisa();
+
+	if(!B){
+		return NULL;
+	}
+
 	Leitor* A = ResultadoPesquisaP();
+
 	if (B && A) {
 		Emprestimo* E = new Emprestimo(DATAINICIO, A, B, 0, ENTREGA);
 		return E;
@@ -878,15 +884,19 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 }
 
 void Biblioteca::Prorrogacao() {
-	int dias = 0;
+	string dias;
 
 	cout << "Dias: ";
 	cin >> dias;
-	cin.ignore();
+
+	if (!So_numeros(dias)) {
+		cout << "Formato do dia desconhecido\n";
+		return;
+	}
 
 	Emprestimo* E = Pesquisar_E();
 	if(E)
-		E->pedir_prorrogacao(dias);
+		E->pedir_prorrogacao(stoi(dias));
 }
 
 void Biblioteca::MostrarEmprestimo() {
