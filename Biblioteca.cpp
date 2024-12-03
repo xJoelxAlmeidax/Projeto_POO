@@ -22,7 +22,7 @@ Livro* Biblioteca::Add_Livros() {
 	cin >> in;
 	while (!So_numeros(in))
 	{
-		cout << "Ano incorreto!!\n";
+		cout << "Ano incorreto!!\nAno: ";
 		cin >> in;
 	}
 	ano = stoi(in);
@@ -420,6 +420,7 @@ Leitor* Biblioteca::Add_Leitores() {
 	string nome;
 	string morada;
 	string telefone;
+	string in;
 	int idade;
 	cout << "Nome: ";
 	getline(cin, nome);
@@ -448,7 +449,13 @@ Leitor* Biblioteca::Add_Leitores() {
 	cout << "Morada: ";
 	getline(cin, morada);
 	cout << "Idade: ";
-	cin >> idade;
+	cin >> in;
+	while (!So_numeros(in))
+	{
+		cout << "Idade incorreta!!\nIdade: ";
+		cin >> in;
+	}
+	idade = stoi(in);
 	cin.ignore();
 
 	while (true) {
