@@ -231,14 +231,8 @@ void EncerrarPrograma() {
 )";*/
 
 
-
-
-void clearScreen() {
-    std::cout << "\033[2J\033[1;1H"; // Código para limpar o terminal
-}
-
 void drawEnvelope(int step) {
-    clearScreen();  // Limpa a tela a cada nova fase
+    system("cls");  // Limpa a tela a cada nova fase
     if (step == 0) {
         std::cout << "                                  \n";
         std::cout << "                                  \n";
@@ -655,4 +649,47 @@ void drawEnvelope(int step) {
         std::cout << "=& =?                         ==0%\n";
         std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
         }
+}
+
+void printEnvelope(int offset) {
+    // Cria o envelope deslocado horizontalmente
+    string spaces(offset, '    '); // Espaços para o deslocamento
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "                                  \n";
+    cout << spaces << "       ?????00000%%%%%&&&&&&&&&&@0\n";
+    cout << spaces << "&%%00000?????0???======       =&&0\n";
+    cout << spaces << "&&&0                         ?&=0&\n";
+    cout << spaces << "@% 0@?                      %0  0&\n";
+    cout << spaces << "@%   &&=                  =&=   0&\n";
+    cout << spaces << "&%    =&%                %%     ?&\n";
+    cout << spaces << "&%      ?&0            =&?      ?&\n";
+    cout << spaces << "%%        ?&0   ==?????%&       ?&\n";
+    cout << spaces << "0%         ?0???????=?%?        ?&\n";
+    cout << spaces << "?&       ??            =0?      ?&\n";
+    cout << spaces << "?@     ??                =0?    ?&\n";
+    cout << spaces << "?@   ??                    =?=  ?&\n";
+    cout << spaces << "=& =?                         ==0%\n";
+    cout << spaces << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+}
+
+
+
+void moverparalado() {
+    const int screenWidth = 85;  // Largura do terminal em caracteres
+    const int envelopeWidth = 36; // Largura do envelope em caracteres
+    const int totalSteps = screenWidth + envelopeWidth; // Total de passos do envelope
+
+    for (int i = 0; i <= screenWidth; i += 4) {
+        system("cls");   // Limpa a tela para simular movimento
+        printEnvelope(i); // Desenha o envelope deslocado
+        Sleep(2);       // Pausa para criar efeito de animação (50ms)
+    }
 }

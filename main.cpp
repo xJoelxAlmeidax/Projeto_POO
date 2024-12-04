@@ -293,12 +293,12 @@ int main() {
 
                 int step = 0;
                 while (step <= 15) {
-                    clearScreen();
                     drawEnvelope(step);
-                    Sleep(250);  // Pausa de 500ms
+                    Sleep(50);  // Pausa de 500ms
                     step++;
                 }
-                Sleep(600);
+                Sleep(200);
+                moverparalado();
                 system("cls");
 
 
