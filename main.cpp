@@ -9,6 +9,10 @@ int main() {
 
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
     B->load_file("Dados.txt");
+
+    
+    
+
     B->Sistema_Notif_atraso();
     subs_systpause(); system("cls");
     const char* opcoesTab1[] = { 
@@ -293,15 +297,13 @@ int main() {
 
                 int step = 0;
                 while (step <= 15) {
-                    drawEnvelope(step);
+                    Envelope(step);
                     Sleep(50);  // Pausa de 500ms
                     step++;
                 }
                 Sleep(200);
                 moverparalado();
                 system("cls");
-
-
                 B->save_file("Dados.txt");
                 break;
             }

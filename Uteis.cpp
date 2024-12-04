@@ -74,7 +74,7 @@ bool validarTelefone(const string& telefone) {
 }
 
 bool validarNCC(const string& ncc) {
-    return ncc.size() == 9 && So_numeros(ncc); //funciona como um ciclo
+    return ncc.size() == 8 && So_numeros(ncc); //funciona como um ciclo
 }
 
 bool So_numeros(string num) {
@@ -231,7 +231,7 @@ void EncerrarPrograma() {
 )";*/
 
 
-void drawEnvelope(int step) {
+void Envelope(int step) {
     system("cls");  // Limpa a tela a cada nova fase
     if (step == 0) {
         std::cout << "                                  \n";
@@ -699,3 +699,144 @@ void moverparalado() {
         Sleep(2);     
     }
 }
+
+
+
+
+
+
+
+
+
+unsigned long long indiceTesteNome = 0;
+unsigned long long indiceTesteed = 0;
+
+string gerarNomesJornais() {
+    // Lista de nomes e sobrenomes
+    vector<string> cursos = { "O Panorama Diário", "Jornal Nova Era", "Gazeta do Povo", "A Voz do Povo", "O Observador","Revista Atual","Jornal de Hoje","O Estado em Foco","Informativo Global","Notícias ao Vivo"};
+
+    // Combinar nome e sobrenome
+    return cursos[indiceTesteNome++];
+}
+
+string gerar_nome_autor() {
+    // Listas de primeiros nomes e sobrenomes
+    std::vector<std::string> primeiros_nomes = { "Isabel", "Fernando", "Luana", "Miguel", "Patrícia", "Rodrigo", "Raquel", "Pedro", "Gabriela", "Ricardo" };
+    std::vector<std::string> sobrenomes = { "Gomes", "Martins", "Cardoso", "Vieira", "Campos", "Machado", "Ferreira", "Sousa", "Costa", "Teixeira" };
+
+    // Gerando índices aleatórios para selecionar nomes
+    int indice_primeiro_nome = rand() % primeiros_nomes.size();
+    int indice_sobrenome = rand() % sobrenomes.size();
+
+    // Montando o nome completo
+    return primeiros_nomes[indice_primeiro_nome] + " " + sobrenomes[indice_sobrenome];
+}
+
+int gerar_anos() {
+    // Gerando ano aleatório entre 1950 e 2024
+    int ano = rand() % (2024 - 1950 + 1) + 1950;
+
+    // Montando o nome completo com o ano
+    return ano;
+}
+
+
+
+string gerarNumeroAleatorio(int comprimento) {
+    string numero;
+    for (int i = 0; i < comprimento; ++i) {
+        numero += to_string(rand() % 10);
+    }
+    return numero;
+}
+
+// Função para verificar unicidade no vetor
+bool verificarUnicidadeISBN(const vector<string>& gerados, const string& ISBN) {
+    for (const auto& item : gerados) {
+        if (item == ISBN) {
+            return false; // ISBN já gerado
+        }
+    }
+    return true;
+}
+
+// Função para verificar unicidade no vetor de ISSNs
+bool verificarUnicidadeISSN(const vector<string>& gerados, const string& ISSN) {
+    for (const auto& item : gerados) {
+        if (item == ISSN) {
+            return false; // ISSN já gerado
+        }
+    }
+    return true;
+}
+
+// Função para gerar ISBN único
+string gerarISBNUnico(vector<string>& geradosISBN) {
+    string ISBN;
+    do {
+        // Formato básico de 13 dígitos: 978-1-23456-7890-X
+        string prefixo = "978";         // Prefixo padrão
+        string grupo = gerarNumeroAleatorio(1); // Grupo de 1 dígito
+        string editora = gerarNumeroAleatorio(5); // Código da editora
+        string publicacao = gerarNumeroAleatorio(3); // Código de publicação
+        string digito = to_string(rand() % 10); // Dígito de verificação
+
+        ISBN = prefixo + "-" + grupo + "-" + editora + "-" + publicacao + "-" + digito;
+
+    } while (!verificarUnicidadeISBN(geradosISBN, ISBN) || !ValidarISBN(ISBN));
+
+    geradosISBN.push_back(ISBN); // Armazena o ISBN gerado
+    return ISBN;
+}
+
+// Função para gerar ISSN único
+string gerarISSNUnico(vector<string>& geradosISSN) {
+    string ISSN;
+    do {
+        // Formato básico de 8 dígitos: 1234-567X
+        string parte1 = gerarNumeroAleatorio(4); // Primeira parte
+        string parte2 = gerarNumeroAleatorio(3); // Segunda parte
+        string digito = to_string(rand() % 10);  // Dígito de verificação (ou 'X')
+
+        if (rand() % 2 == 0) {
+            digito = "X"; // 50% de chance de ser 'X'
+        }
+
+        ISSN = parte1 + "-" + parte2 + digito;
+
+    } while (!verificarUnicidadeISSN(geradosISSN, ISSN) || !ValidarISSN(ISSN));
+
+    geradosISSN.push_back(ISSN); // Armazena o ISSN gerado
+    return ISSN;
+}
+
+string gerarEDICAO() {
+    // Lista de nomes e sobrenomes
+    vector<string> ed = { "1 Edição","2 Edição","3 Edição","4 Edição","5 Edição","6 Edição","7 Edição","8 Edição","9 Edição","10 Edição" };
+
+    // Combinar nome e sobrenome
+    return ed[indiceTesteed++];
+}
+
+string gerareditorBoss() {
+    // Lista de nomes e sobrenomes
+    vector<string> editor = { "Ana Beatriz Silva", "Carlos Eduardo Costa", "Luciana Pereira", "Miguel Almeida", "Joana Martins","Felipe Souza","Patrícia Ribeiro","Ricardo Gomes","Fernanda Oliveira","Bruno Rocha" };
+
+    int indice_sobrenome = rand() % editor.size();
+
+    // Combinar nome e sobrenome
+    return editor[indice_sobrenome];
+}
+
+string gerar_tipo_dis() {
+    // Listas de primeiros nomes e sobrenomes
+    std::vector<std::string> tipo = { "Nacional", "Regional", "Local"};
+
+    // Gerando índices aleatórios para selecionar nomes
+    int indice_tipo = rand() % tipo.size();
+
+    // Montando o nome completo
+    return tipo[indice_tipo];
+}
+
+

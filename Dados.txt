@@ -1,185 +1,44 @@
-Jornal	Jornal Exemplo 1	Autor Exemplo 1	2021	1234-5679	1	Editor Chefe 1	Nacional
-Jornal	Jornal Exemplo 2	Autor Exemplo 2	2022	9876-5432	2	Editor Chefe 2	Nacional
-Jornal	Jornal Exemplo 3	Autor Exemplo 3	2023	2468-135X	3	Editor Chefe 3	Nacional
-Jornal	Jornal Exemplo 4	Autor Exemplo 4	2024	5566-7788	4	Editor Chefe 4	Nacional
-Jornal	Jornal Exemplo 5	Autor Exemplo 5	2025	9090-1013	5	Editor Chefe 5	Nacional
-Jornal	Jornal Exemplo 6	Autor Exemplo 6	2026	3141-5926	6	Editor Chefe 6	Nacional
-Jornal	Jornal Exemplo 7	Autor Exemplo 7	2027	2020-3034	7	Editor Chefe 7	Nacional
-Jornal	Jornal Exemplo 8	Autor Exemplo 8	2028	8000-123X	8	Editor Chefe 8	Nacional
-Jornal	Jornal Exemplo 9	Autor Exemplo 9	2029	7654-3210	9	Editor Chefe 9	Nacional
-Jornal	Jornal Exemplo 10	Autor Exemplo 10	2030	1012-345X	10	Editor Chefe 10	Nacional
-Jornal	Jornal Exemplo 11	Autor Exemplo 11	2031	5678-9012	11	Editor Chefe 11	Nacional
-Jornal	Jornal Exemplo 12	Autor Exemplo 12	2032	4321-8765	12	Editor Chefe 12	Nacional
-Jornal	Jornal Exemplo 13	Autor Exemplo 13	2033	1357-2463	13	Editor Chefe 13	Nacional
-Jornal	Jornal Exemplo 14	Autor Exemplo 14	2034	2468-0249	14	Editor Chefe 14	Nacional
-Jornal	Jornal Exemplo 15	Autor Exemplo 15	2035	8080-6067	15	Editor Chefe 15	Nacional
-Jornal	Jornal Exemplo 16	Autor Exemplo 16	2036	3030-202X	16	Editor Chefe 16	Nacional
-Jornal	Jornal Exemplo 17	Autor Exemplo 17	2037	9191-8183	17	Editor Chefe 17	Nacional
-Jornal	Jornal Exemplo 18	Autor Exemplo 18	2038	5567-8904	18	Editor Chefe 18	Nacional
-Jornal	Jornal Exemplo 19	Autor Exemplo 19	2039	1230-4561	19	Editor Chefe 19	Nacional
-Jornal	Jornal Exemplo 20	Autor Exemplo 20	2040	9999-8882	20	Editor Chefe 20	Nacional
-Jornal	Jornal Exemplo 21	Autor Exemplo 21	2041	1123-3348	21	Editor Chefe 21	Nacional
-Jornal	Jornal Exemplo 22	Autor Exemplo 22	2042	4848-5753	22	Editor Chefe 22	Nacional
-Jornal	Jornal Exemplo 23	Autor Exemplo 23	2043	1234-4045	23	Editor Chefe 23	Nacional
-Jornal	Jornal Exemplo 24	Autor Exemplo 24	2044	2929-890X	24	Editor Chefe 24	Nacional
-Jornal	Jornal Exemplo 25	Autor Exemplo 25	2045	6767-5678	25	Editor Chefe 25	Nacional
-LivroCientifico	Livro Cientifico Exemplo 1	Autor Exemplo 1	2021	1234-5671	Area Estudo 1	Revisor 1
-LivroCientifico	Livro Cientifico Exemplo 2	Autor Exemplo 2	2022	1234-5672	Area Estudo 2	Revisor 2
-LivroCientifico	Livro Cientifico Exemplo 3	Autor Exemplo 3	2023	1234-5673	Area Estudo 3	Revisor 3
-LivroCientifico	Livro Cientifico Exemplo 4	Autor Exemplo 4	2024	1234-5674	Area Estudo 4	Revisor 4
-LivroCientifico	Livro Cientifico Exemplo 5	Autor Exemplo 5	2025	1234-5675	Area Estudo 5	Revisor 5
-LivroCientifico	Livro Cientifico Exemplo 6	Autor Exemplo 6	2026	1234-5676	Area Estudo 6	Revisor 6
-LivroCientifico	Livro Cientifico Exemplo 7	Autor Exemplo 7	2027	1234-5677	Area Estudo 7	Revisor 7
-LivroCientifico	Livro Cientifico Exemplo 8	Autor Exemplo 8	2028	1234-5678	Area Estudo 8	Revisor 8
-LivroCientifico	Livro Cientifico Exemplo 9	Autor Exemplo 9	2029	1234-5679	Area Estudo 9	Revisor 9
-LivroCientifico	Livro Cientifico Exemplo 10	Autor Exemplo 10	2030	1234-56710	Area Estudo 10	Revisor 10
-LivroCientifico	Livro Cientifico Exemplo 11	Autor Exemplo 11	2031	1234-56711	Area Estudo 11	Revisor 11
-LivroCientifico	Livro Cientifico Exemplo 12	Autor Exemplo 12	2032	1234-56712	Area Estudo 12	Revisor 12
-LivroCientifico	Livro Cientifico Exemplo 13	Autor Exemplo 13	2033	1234-56713	Area Estudo 13	Revisor 13
-LivroCientifico	Livro Cientifico Exemplo 14	Autor Exemplo 14	2034	1234-56714	Area Estudo 14	Revisor 14
-LivroCientifico	Livro Cientifico Exemplo 15	Autor Exemplo 15	2035	1234-56715	Area Estudo 15	Revisor 15
-LivroCientifico	Livro Cientifico Exemplo 16	Autor Exemplo 16	2036	1234-56716	Area Estudo 16	Revisor 16
-LivroCientifico	Livro Cientifico Exemplo 17	Autor Exemplo 17	2037	1234-56717	Area Estudo 17	Revisor 17
-LivroCientifico	Livro Cientifico Exemplo 18	Autor Exemplo 18	2038	1234-56718	Area Estudo 18	Revisor 18
-LivroCientifico	Livro Cientifico Exemplo 19	Autor Exemplo 19	2039	1234-56719	Area Estudo 19	Revisor 19
-LivroCientifico	Livro Cientifico Exemplo 20	Autor Exemplo 20	2040	1234-56720	Area Estudo 20	Revisor 20
-LivroCientifico	Livro Cientifico Exemplo 21	Autor Exemplo 21	2041	1234-56721	Area Estudo 21	Revisor 21
-LivroCientifico	Livro Cientifico Exemplo 22	Autor Exemplo 22	2042	1234-56722	Area Estudo 22	Revisor 22
-LivroCientifico	Livro Cientifico Exemplo 23	Autor Exemplo 23	2043	1234-56723	Area Estudo 23	Revisor 23
-LivroCientifico	Livro Cientifico Exemplo 24	Autor Exemplo 24	2044	1234-56724	Area Estudo 24	Revisor 24
-LivroCientifico	Livro Cientifico Exemplo 25	Autor Exemplo 25	2045	1234-56725	Area Estudo 25	Revisor 25
-LivroEducativo	Livro Educativo Exemplo 1	Autor Exemplo 1	2021	1234-56726	1	Area 1	Ilustrador1
-LivroEducativo	Livro Educativo Exemplo 2	Autor Exemplo 2	2022	1234-56727	2	Area 2	Ilustrador2
-LivroEducativo	Livro Educativo Exemplo 3	Autor Exemplo 3	2023	1234-56728	3	Area 3	Ilustrador3
-LivroEducativo	Livro Educativo Exemplo 4	Autor Exemplo 4	2024	1234-56729	4	Area 4	Ilustrador4
-LivroEducativo	Livro Educativo Exemplo 5	Autor Exemplo 5	2025	1234-56730	5	Area 5	Ilustrador5
-LivroEducativo	Livro Educativo Exemplo 6	Autor Exemplo 6	2026	1234-56731	6	Area 6	Ilustrador6
-LivroEducativo	Livro Educativo Exemplo 7	Autor Exemplo 7	2027	1234-56732	7	Area 7	Ilustrador7
-LivroEducativo	Livro Educativo Exemplo 8	Autor Exemplo 8	2028	1234-56733	8	Area 8	Ilustrador8
-LivroEducativo	Livro Educativo Exemplo 9	Autor Exemplo 9	2029	1234-56734	9	Area 9	Ilustrador9
-LivroEducativo	Livro Educativo Exemplo 10	Autor Exemplo 10	2030	1234-56735	10	Area 10	Ilustrador10
-LivroEducativo	Livro Educativo Exemplo 11	Autor Exemplo 11	2031	1234-56736	11	Area 11	Ilustrador11
-LivroEducativo	Livro Educativo Exemplo 12	Autor Exemplo 12	2032	1234-56737	12	Area 12	Ilustrador12
-LivroEducativo	Livro Educativo Exemplo 13	Autor Exemplo 13	2033	1234-56738	13	Area 13	Ilustrador13
-LivroEducativo	Livro Educativo Exemplo 14	Autor Exemplo 14	2034	1234-56739	14	Area 14	Ilustrador14
-LivroEducativo	Livro Educativo Exemplo 15	Autor Exemplo 15	2035	1234-56740	15	Area 15	Ilustrador15
-LivroEducativo	Livro Educativo Exemplo 16	Autor Exemplo 16	2036	1234-56741	16	Area 16	Ilustrador16
-LivroEducativo	Livro Educativo Exemplo 17	Autor Exemplo 17	2037	1234-56742	17	Area 17	Ilustrador17
-LivroEducativo	Livro Educativo Exemplo 18	Autor Exemplo 18	2038	1234-56743	18	Area 18	Ilustrador18
-LivroEducativo	Livro Educativo Exemplo 19	Autor Exemplo 19	2039	1234-56744	19	Area 19	Ilustrador19
-LivroEducativo	Livro Educativo Exemplo 20	Autor Exemplo 20	2040	1234-56745	20	Area 20	Ilustrador20
-LivroEducativo	Livro Educativo Exemplo 21	Autor Exemplo 21	2041	1234-56746	21	Area 21	Ilustrador21
-LivroEducativo	Livro Educativo Exemplo 22	Autor Exemplo 22	2042	1234-56747	22	Area 22	Ilustrador22
-LivroEducativo	Livro Educativo Exemplo 23	Autor Exemplo 23	2043	1234-56748	23	Area 23	Ilustrador23
-LivroEducativo	Livro Educativo Exemplo 24	Autor Exemplo 24	2044	1234-56749	24	Area 24	Ilustrador24
-LivroEducativo	Livro Educativo Exemplo 25	Autor Exemplo 25	2045	1234-56750	25	Area 25	Ilustrador25
-LivroFiccao	Livro Ficcao Exemplo 1	Autor Exemplo 1	2021	1234-56751	Subgenero 1
-LivroFiccao	Livro Ficcao Exemplo 2	Autor Exemplo 2	2022	1234-56752	Subgenero 2
-LivroFiccao	Livro Ficcao Exemplo 3	Autor Exemplo 3	2023	1234-56753	Subgenero 3
-LivroFiccao	Livro Ficcao Exemplo 4	Autor Exemplo 4	2024	1234-56754	Subgenero 4
-LivroFiccao	Livro Ficcao Exemplo 5	Autor Exemplo 5	2025	1234-56755	Subgenero 5
-LivroFiccao	Livro Ficcao Exemplo 6	Autor Exemplo 6	2026	1234-56756	Subgenero 6
-LivroFiccao	Livro Ficcao Exemplo 7	Autor Exemplo 7	2027	1234-56757	Subgenero 7
-LivroFiccao	Livro Ficcao Exemplo 8	Autor Exemplo 8	2028	1234-56758	Subgenero 8
-LivroFiccao	Livro Ficcao Exemplo 9	Autor Exemplo 9	2029	1234-56759	Subgenero 9
-LivroFiccao	Livro Ficcao Exemplo 10	Autor Exemplo 10	2030	1234-56760	Subgenero 10
-LivroFiccao	Livro Ficcao Exemplo 11	Autor Exemplo 11	2031	1234-56761	Subgenero 11
-LivroFiccao	Livro Ficcao Exemplo 12	Autor Exemplo 12	2032	1234-56762	Subgenero 12
-LivroFiccao	Livro Ficcao Exemplo 13	Autor Exemplo 13	2033	1234-56763	Subgenero 13
-LivroFiccao	Livro Ficcao Exemplo 14	Autor Exemplo 14	2034	1234-56764	Subgenero 14
-LivroFiccao	Livro Ficcao Exemplo 15	Autor Exemplo 15	2035	1234-56765	Subgenero 15
-LivroFiccao	Livro Ficcao Exemplo 16	Autor Exemplo 16	2036	1234-56766	Subgenero 16
-LivroFiccao	Livro Ficcao Exemplo 17	Autor Exemplo 17	2037	1234-56767	Subgenero 17
-LivroFiccao	Livro Ficcao Exemplo 18	Autor Exemplo 18	2038	1234-56768	Subgenero 18
-LivroFiccao	Livro Ficcao Exemplo 19	Autor Exemplo 19	2039	1234-56769	Subgenero 19
-LivroFiccao	Livro Ficcao Exemplo 20	Autor Exemplo 20	2040	1234-56770	Subgenero 20
-LivroFiccao	Livro Ficcao Exemplo 21	Autor Exemplo 21	2041	1234-56771	Subgenero 21
-LivroFiccao	Livro Ficcao Exemplo 22	Autor Exemplo 22	2042	1234-56772	Subgenero 22
-LivroFiccao	Livro Ficcao Exemplo 23	Autor Exemplo 23	2043	1234-56773	Subgenero 23
-LivroFiccao	Livro Ficcao Exemplo 24	Autor Exemplo 24	2044	1234-56774	Subgenero 24
-LivroFiccao	Livro Ficcao Exemplo 25	Autor Exemplo 25	2045	1234-56775	Subgenero 25
-Revista	Revista Exemplo 1	Autor Exemplo 1	2021	1234-56776	1	Editora 1	Fotografo1
-Revista	Revista Exemplo 2	Autor Exemplo 2	2022	1234-56777	2	Editora 2	Fotografo2
-Revista	Revista Exemplo 3	Autor Exemplo 3	2023	1234-56778	3	Editora 3	Fotografo3
-Revista	Revista Exemplo 4	Autor Exemplo 4	2024	1234-56779	4	Editora 4	Fotografo4
-Revista	Revista Exemplo 5	Autor Exemplo 5	2025	1234-56780	5	Editora 5	Fotografo5
-Revista	Revista Exemplo 6	Autor Exemplo 6	2026	1234-56781	6	Editora 6	Fotografo6
-Revista	Revista Exemplo 7	Autor Exemplo 7	2027	1234-56782	7	Editora 7	Fotografo7
-Revista	Revista Exemplo 8	Autor Exemplo 8	2028	1234-56783	8	Editora 8	Fotografo8
-Revista	Revista Exemplo 9	Autor Exemplo 9	2029	1234-56784	9	Editora 9	Fotografo9
-Revista	Revista Exemplo 10	Autor Exemplo 10	2030	1234-56785	10	Editora 10	Fotografo10
-Revista	Revista Exemplo 11	Autor Exemplo 11	2031	1234-56786	11	Editora 11	Fotografo11
-Revista	Revista Exemplo 12	Autor Exemplo 12	2032	1234-56787	12	Editora 12	Fotografo12
-Revista	Revista Exemplo 13	Autor Exemplo 13	2033	1234-56788	13	Editora 13	Fotografo13
-Revista	Revista Exemplo 14	Autor Exemplo 14	2034	1234-56789	14	Editora 14	Fotografo14
-Revista	Revista Exemplo 15	Autor Exemplo 15	2035	1234-56790	15	Editora 15	Fotografo15
-Revista	Revista Exemplo 16	Autor Exemplo 16	2036	1234-56791	16	Editora 16	Fotografo16
-Revista	Revista Exemplo 17	Autor Exemplo 17	2037	1234-56792	17	Editora 17	Fotografo17
-Revista	Revista Exemplo 18	Autor Exemplo 18	2038	1234-56793	18	Editora 18	Fotografo18
-Revista	Revista Exemplo 19	Autor Exemplo 19	2039	1234-56794	19	Editora 19	Fotografo19
-Revista	Revista Exemplo 20	Autor Exemplo 20	2040	1234-56795	20	Editora 20	Fotografo20
-Revista	Revista Exemplo 21	Autor Exemplo 21	2041	1234-56796	21	Editora 21	Fotografo21
-Revista	Revista Exemplo 22	Autor Exemplo 22	2042	1234-56797	22	Editora 22	Fotografo22
-Revista	Revista Exemplo 23	Autor Exemplo 23	2043	1234-56798	23	Editora 23	Fotografo23
-Revista	Revista Exemplo 24	Autor Exemplo 24	2044	1234-56799	24	Editora 24	Fotografo24
-Revista	Revista Exemplo 25	Autor Exemplo 25	2045	1234-567100	25	Editora 25	Fotografo25
-Professor	123123100	Professor Exemplo 1	rua la 1	965123121	2021	Professor1@gmail.com	Disciplina1
-Professor	123123101	Professor Exemplo 2	rua la 2	965123122	2022	Professor2@gmail.com	Disciplina2
-Professor	123123102	Professor Exemplo 3	rua la 3	965123123	2023	Professor3@gmail.com	Disciplina3
-Professor	123123103	Professor Exemplo 4	rua la 4	965123124	2024	Professor4@gmail.com	Disciplina4
-Professor	123123104	Professor Exemplo 5	rua la 5	965123125	2025	Professor5@gmail.com	Disciplina5
-Professor	123123105	Professor Exemplo 6	rua la 6	965123126	2026	Professor6@gmail.com	Disciplina6
-Professor	123123106	Professor Exemplo 7	rua la 7	965123127	2027	Professor7@gmail.com	Disciplina7
-Professor	123123107	Professor Exemplo 8	rua la 8	965123128	2028	Professor8@gmail.com	Disciplina8
-Historico	3	11	2024	123123107	1012-345X	3	12	2025
-Professor	123123108	Professor Exemplo 9	rua la 9	965123129	2029	Professor9@gmail.com	Disciplina9
-Professor	123123109	Professor Exemplo 10	rua la 10	9651231210	2030	Professor10@gmail.com	Disciplina10
-Professor	123123110	Professor Exemplo 11	rua la 11	9651231211	2031	Professor11@gmail.com	Disciplina11
-Professor	123123111	Professor Exemplo 12	rua la 12	9651231212	2032	Professor12@gmail.com	Disciplina12
-Professor	123123112	Professor Exemplo 13	rua la 13	9651231213	2033	Professor13@gmail.com	Disciplina13
-Professor	123123113	Professor Exemplo 14	rua la 14	9651231214	2034	Professor14@gmail.com	Disciplina14
-Professor	123123113	Professor Exemplo 15	rua la 15	9651231215	2035	Professor15@gmail.com	Disciplina15
-Professor	123123114	Professor Exemplo 16	rua la 16	9651231216	2036	Professor16@gmail.com	Disciplina16
-Professor	123123115	Professor Exemplo 17	rua la 17	9651231217	2037	Professor17@gmail.com	Disciplina17
-Professor	123123116	Professor Exemplo 18	rua la 18	9651231218	2038	Professor18@gmail.com	Disciplina18
-Professor	123123117	Professor Exemplo 19	rua la 19	9651231219	2039	Professor19@gmail.com	Disciplina19
-Professor	123123118	Professor Exemplo 20	rua la 20	9651231220	2040	Professor20@gmail.com	Disciplina20
-Professor	123123119	Professor Exemplo 21	rua la 21	9651231221	2041	Professor21@gmail.com	Disciplina21
-Professor	123123120	Professor Exemplo 22	rua la 22	9651231222	2042	Professor22@gmail.com	Disciplina22
-Professor	123123121	Professor Exemplo 23	rua la 23	9651231223	2043	Professor23@gmail.com	Disciplina23
-Professor	123123122	Professor Exemplo 24	rua la 24	9651231224	2044	Professor24@gmail.com	Disciplina24
-Professor	123123123	Professor Exemplo 25	rua la 25	9651231225	2045	Professor25@gmail.com	Disciplina25
-LeitorComum	123123124	LeitorComum Exemplo 1	rua la 1	965123121	2021	LeitorComum1@gmail.com
-LeitorComum	123123125	LeitorComum Exemplo 2	rua la 2	965123122	2022	LeitorComum2@gmail.com
-LeitorComum	123123126	LeitorComum Exemplo 3	rua la 3	965123123	2023	LeitorComum3@gmail.com
-LeitorComum	123123127	LeitorComum Exemplo 4	rua la 4	965123124	2024	LeitorComum4@gmail.com
-LeitorComum	123123128	LeitorComum Exemplo 5	rua la 5	965123125	2025	LeitorComum5@gmail.com
-LeitorComum	123123129	LeitorComum Exemplo 6	rua la 6	965123126	2026	LeitorComum6@gmail.com
-LeitorComum	123123130	LeitorComum Exemplo 7	rua la 7	965123127	2027	LeitorComum7@gmail.com
-LeitorComum	123123131	LeitorComum Exemplo 8	rua la 8	965123128	2028	LeitorComum8@gmail.com
-LeitorComum	123123132	LeitorComum Exemplo 9	rua la 9	965123129	2029	LeitorComum9@gmail.com
-LeitorComum	123123133	LeitorComum Exemplo 10	rua la 10	9651231210	2030	LeitorComum10@gmail.com
-LeitorComum	123123134	LeitorComum Exemplo 11	rua la 11	9651231211	2031	LeitorComum11@gmail.com
-LeitorComum	123123135	LeitorComum Exemplo 12	rua la 12	9651231212	2032	LeitorComum12@gmail.com
-LeitorComum	123123136	LeitorComum Exemplo 13	rua la 13	9651231213	2033	LeitorComum13@gmail.com
-LeitorComum	123123137	LeitorComum Exemplo 14	rua la 14	9651231214	2034	LeitorComum14@gmail.com
-LeitorComum	123123138	LeitorComum Exemplo 15	rua la 15	9651231215	2035	LeitorComum15@gmail.com
-LeitorComum	123123139	LeitorComum Exemplo 16	rua la 16	9651231216	2036	LeitorComum16@gmail.com
-LeitorComum	123123140	LeitorComum Exemplo 17	rua la 17	9651231217	2037	LeitorComum17@gmail.com
-LeitorComum	123123141	LeitorComum Exemplo 18	rua la 18	9651231218	2038	LeitorComum18@gmail.com
-LeitorComum	123123142	LeitorComum Exemplo 19	rua la 19	9651231219	2039	LeitorComum19@gmail.com
-LeitorComum	123123143	LeitorComum Exemplo 20	rua la 20	9651231220	2040	LeitorComum20@gmail.com
-LeitorComum	123123144	LeitorComum Exemplo 21	rua la 21	9651231221	2041	LeitorComum21@gmail.com
-LeitorComum	123123145	LeitorComum Exemplo 22	rua la 22	9651231222	2042	LeitorComum22@gmail.com
-LeitorComum	123123146	LeitorComum Exemplo 23	rua la 23	9651231223	2043	LeitorComum23@gmail.com
-LeitorComum	123123147	LeitorComum Exemplo 24	rua la 24	9651231224	2044	LeitorComum24@gmail.com
-LeitorComum	123123148	LeitorComum Exemplo 25	rua la 25	9651231225	2045	LeitorComum25@gmail.com
-Estudante	123123149	Estudante Exemplo 1	rua la 1	965123121	2021	estudante1@gmail.com	Curso1
-Estudante	123123150	Estudante Exemplo 2	rua la 2	965123122	2022	estudante2@gmail.com	Curso2
-Estudante	123123151	Estudante Exemplo 3	rua la 3	965123123	2023	estudante3@gmail.com	Curso3
-Estudante	123123152	Estudante Exemplo 4	rua la 4	965123124	2024	estudante4@gmail.com	Curso4
-Estudante	123123153	Estudante Exemplo 5	rua la 5	965123125	2025	estudante5@gmail.c	Curso4
-Emprestimo	5	11	2024	123123103	1234-5679	30
-Emprestimo	1	11	2024	123123103	2929-890X	30
-Reserva	1234-5679	123123110
-Reserva	1234-5679	123123107
+LeitorComum	10000001	Carlos Almeida	Rua Direita, 3500-002, Viseu	919488245	18	Carlos.Almeida@gmail.com
+LeitorComum	10000002	Lucas Santos	Avenida Alberto Sampaio, 3500-004, Viseu	912168576	40	Lucas.Santos@gmail.com
+LeitorComum	10000003	Tiago Oliveira	Rua Formosa, 3500-003, Viseu	911138742	22	Tiago.Oliveira@gmail.com
+LeitorComum	10000004	Tiago Pereira	Rua Direita, 3500-003, Viseu	928650286	8	Tiago.Pereira@gmail.com
+LeitorComum	10000005	Maria Souza	Rua 31 de Janeiro, 3500-005, Viseu	920900613	16	Maria.Souza@gmail.com
+LeitorComum	10000006	João Costa	Avenida Alberto Sampaio, 3500-004, Viseu	910661849	21	E-mail inválido
+LeitorComum	10000007	Lucas Souza	Rua Direita, 3500-003, Viseu	939135984	10	Lucas.Souza@gmail.com
+LeitorComum	10000008	Sofia Pereira	Rua Formosa, 3500-003, Viseu	925420973	56	Sofia.Pereira@gmail.com
+LeitorComum	10000009	Sofia Silva	Rua Direita, 3500-002, Viseu	915754120	40	Sofia.Silva@gmail.com
+LeitorComum	10000010	Maria Martins	Avenida Alberto Sampaio, 3500-001, Viseu	929981826	21	Maria.Martins@gmail.com
+LeitorComum	10000011	João Souza	Rua do Comércio, 3500-004, Viseu	916189841	41	E-mail inválido
+Estudante	10000012	Tiago Souza	Avenida Alberto Sampaio, 3500-001, Viseu	917783837	23	Tiago.Souza@gmail.com	Serviço Social
+Estudante	10000013	Lucas Pereira	Rua 31 de Janeiro, 3500-005, Viseu	915109968	37	Lucas.Pereira@gmail.com	Secretariado de Administração
+Estudante	10000014	Laura Costa	Rua 31 de Janeiro, 3500-004, Viseu	935533374	54	Laura.Costa@gmail.com	Secretariado de Administração
+Estudante	10000015	Ana Souza	Rua Formosa, 3500-004, Viseu	918198972	35	Ana.Souza@gmail.com	Serviço Social
+Estudante	10000016	Beatriz Souza	Rua do Comércio, 3500-003, Viseu	928158612	42	Beatriz.Souza@gmail.com	Secretariado de Administração
+Estudante	10000017	Pedro Souza	Rua 31 de Janeiro, 3500-003, Viseu	935392461	54	Pedro.Souza@gmail.com	Gestão Comercial
+Estudante	10000018	Carlos Santos	Rua do Comércio, 3500-002, Viseu	912952003	46	Carlos.Santos@gmail.com	Secretariado de Administração
+Estudante	10000019	Laura Santos	Rua do Comércio, 3500-004, Viseu	922294196	14	Laura.Santos@gmail.com	Secretariado de Administração
+Estudante	10000020	Beatriz Rodrigues	Rua 31 de Janeiro, 3500-005, Viseu	921250839	25	Beatriz.Rodrigues@gmail.com	Engenharia Informática
+Estudante	10000021	Sofia Almeida	Rua Direita, 3500-004, Viseu	926935766	15	Sofia.Almeida@gmail.com	Secretariado de Administração
+Estudante	10000022	Beatriz Rodrigues	Rua 31 de Janeiro, 3500-003, Viseu	926163355	17	Beatriz.Rodrigues@gmail.com	Secretariado de Administração
+Professor	10000023	Laura Oliveira	Rua Formosa, 3500-005, Viseu	911862146	37	Laura.Oliveira@gmail.com	Departamento de Ambiente
+Professor	10000024	Carlos Rodrigues	Rua Direita, 3500-001, Viseu	934929344	62	Carlos.Rodrigues@gmail.com	Departamento de Ambiente
+Professor	10000025	Tiago Martins	Rua Direita, 3500-003, Viseu	938875812	45	Tiago.Martins@gmail.com	Departamento de Informática
+Professor	10000026	Maria Costa	Rua Formosa, 3500-004, Viseu	932930778	30	Maria.Costa@gmail.com	Departamento de Gestão
+Professor	10000027	Ana Pereira	Rua Direita, 3500-004, Viseu	922037297	28	Ana.Pereira@gmail.com	Departamento de Informática
+Professor	10000028	Maria Pereira	Rua Formosa, 3500-003, Viseu	923253512	55	Maria.Pereira@gmail.com	Departamento de Eng. Eletrotécnica
+Professor	10000029	Sofia Costa	Rua Direita, 3500-002, Viseu	913400531	35	Sofia.Costa@gmail.com	Departamento de Ambiente
+Professor	10000030	Lucas Rodrigues	Rua Formosa, 3500-002, Viseu	935495648	46	Lucas.Rodrigues@gmail.com	Departamento de Ambiente
+Professor	10000031	Sofia Souza	Avenida Alberto Sampaio, 3500-001, Viseu	918492070	42	Sofia.Souza@gmail.com	Departamento de Informática
+Professor	10000032	Lucas Silva	Rua Direita, 3500-005, Viseu	912236715	47	Lucas.Silva@gmail.com	Departamento de Ambiente
+Professor	10000033	Ana Oliveira	Rua do Comércio, 3500-004, Viseu	931117300	40	Ana.Oliveira@gmail.com	Departamento de Eng. Civil
+Senior	10000034	João Silva	Rua Direita, 3500-004, Viseu	920388577	75	Acessibilidade arquitetônica
+Senior	10000035	Tiago Pereira	Rua 31 de Janeiro, 3500-004, Viseu	917837100	98	Acessibilidade arquitetônica
+Senior	10000036	Maria Rodrigues	Avenida Alberto Sampaio, 3500-002, Viseu	915620356	76	Acessibilidade digital
+Senior	10000037	Lucas Martins	Rua Formosa, 3500-002, Viseu	915139959	94	Acessibilidade arquitetônica
+Senior	10000038	Pedro Pereira	Rua 31 de Janeiro, 3500-002, Viseu	934279237	69	Acessibilidade digital
+Senior	10000039	Pedro Almeida	Rua Direita, 3500-002, Viseu	933241159	72	Acessibilidade digital
+Senior	10000040	Ana Martins	Rua Direita, 3500-004, Viseu	936365281	74	Acessibilidade em ambientes de trabalho
+Senior	10000041	Carlos Rodrigues	Rua 31 de Janeiro, 3500-001, Viseu	931748236	91	Acessibilidade digital
+Senior	10000042	João Rodrigues	Rua 31 de Janeiro, 3500-001, Viseu	937225910	87	Acessibilidade em ambientes de trabalho
+Senior	10000043	Ana Almeida	Rua do Comércio, 3500-003, Viseu	923410485	75	Acessibilidade digital
+Senior	10000044	Pedro Costa	Rua Formosa, 3500-003, Viseu	925827961	92	Acessibilidade arquitetônica
