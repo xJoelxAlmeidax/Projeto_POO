@@ -680,16 +680,22 @@ void printEnvelope(int offset) {
     cout << spaces << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
 }
 
-
+int getScreenWidth() {
+    CONSOLE_SCREEN_BUFFER_INFO csbi;
+    if (GetConsoleScreenBufferInfo(GetStdHandle(STD_OUTPUT_HANDLE), &csbi)) {
+        return csbi.srWindow.Right - csbi.srWindow.Left + 1; // Retorna a largura do terminal
+    }
+    return 80; // Retorna 80 como padrão para se falhar
+}
 
 void moverparalado() {
-    const int screenWidth = 85;  // Largura do terminal em caracteres
+    const int screenWidth = getScreenWidth();  // Largura do terminal em caracteres 
     const int envelopeWidth = 36; // Largura do envelope em caracteres
-    const int totalSteps = screenWidth + envelopeWidth; // Total de passos do envelope
+    const int totalSteps = screenWidth-36; // Total de passos do envelope pra nao deformar
 
-    for (int i = 0; i <= screenWidth; i += 4) {
-        system("cls");   // Limpa a tela para simular movimento
-        printEnvelope(i); // Desenha o envelope deslocado
-        Sleep(2);       // Pausa para criar efeito de animação (50ms)
+    for (int i = 0; i <= totalSteps; i += 4) {
+        system("cls"); 
+        printEnvelope(i); 
+        Sleep(2);     
     }
 }
