@@ -1,0 +1,170 @@
+# depslib dependency file v1.0
+1733309197 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\biblioteca.cpp
+	"Biblioteca.h"
+
+1733249394 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\biblioteca.h
+	<iostream>
+	<string>
+	<list>
+	<cctype>
+	<fstream>
+	"Emprestimo.h"
+	"Uteis.h"
+	"Livro.h"
+	"Leitor.h"
+	"LivroGenerico.h"
+	"LivroCientifico.h"
+	"LivroFiccao.h"
+	"LivroEducativo.h"
+	"Jornal.h"
+	"Revista.h"
+	"Estudante.h"
+	"Professor.h"
+	"LeitorComum.h"
+	"Senior.h"
+
+1733309197 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\emprestimo.h
+	<iostream>
+	<string>
+	<list>
+	<ctime>
+	"Multa.h"
+	"Uteis.h"
+
+1731248873 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\multa.h
+	<iostream>
+	<string>
+	<list>
+
+1733309877 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\uteis.h
+	<iostream>
+	<string>
+	<conio.h>
+	<windows.h>
+	<algorithm>
+	<cctype>
+	<regex>
+
+1733248806 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livro.h
+	<iostream>
+	<string>
+	<list>
+	"Emprestimo.h"
+	"Leitor.h"
+
+1732730581 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\leitor.h
+	<iostream>
+	<string>
+	<list>
+	"Emprestimo.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livrogenerico.h
+	<iostream>
+	<string>
+	<list>
+	"Livro.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livrocientifico.h
+	<iostream>
+	<string>
+	<list>
+	"LivroGenerico.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livroficcao.h
+	<iostream>
+	<string>
+	<list>
+	"LivroGenerico.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livroeducativo.h
+	<iostream>
+	<string>
+	<list>
+	"LivroGenerico.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\jornal.h
+	"OutrosLivros.h"
+
+1731320203 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\outroslivros.h
+	"Livro.h"
+
+1731320205 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\revista.h
+	"OutrosLivros.h"
+
+1731321345 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\estudante.h
+	<iostream>
+	<string>
+	<list>
+	"Leitor.h"
+
+1731616783 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\professor.h
+	<iostream>
+	<string>
+	<list>
+	"Leitor.h"
+
+1731321345 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\leitorcomum.h
+	<iostream>
+	<string>
+	<list>
+	"Leitor.h"
+
+1731321345 c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\senior.h
+	<iostream>
+	<string>
+	<list>
+	"Leitor.h"
+
+1733309197 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\emprestimo.cpp
+	"Emprestimo.h"
+	"Livro.h"
+	"Leitor.h"
+
+1731321345 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\estudante.cpp
+	"Estudante.h"
+
+1731320243 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\jornal.cpp
+	"Jornal.h"
+
+1733309197 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\leitor.cpp
+	"Leitor.h"
+	"Livro.h"
+
+1731321345 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\leitorcomum.cpp
+	"LeitorComum.h"
+
+1732730581 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livro.cpp
+	"Livro.h"
+
+1731320263 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livrocientifico.cpp
+	"LivroCientifico.h"
+
+1731320313 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livroeducativo.cpp
+	"LivroEducativo.h"
+
+1731320313 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livroficcao.cpp
+	"LivroFiccao.h"
+
+1731248873 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\livrogenerico.cpp
+	"LivroGenerico.h"
+
+1733310047 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\main.cpp
+	<locale>
+	"Biblioteca.h"
+
+1731248873 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\outroslivros.cpp
+	"OutrosLivros.h"
+
+1731616783 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\professor.cpp
+	"Professor.h"
+
+1731320312 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\revista.cpp
+	"Revista.h"
+
+1731321343 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\senior.cpp
+	"Senior.h"
+
+1733320421 source:c:\users\2005j\onedrive - estgv\2ºano\0201 poo\projeto_poo\uteis.cpp
+	"Uteis.h"
+	<regex>
+

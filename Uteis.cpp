@@ -94,7 +94,7 @@ bool ValidarISSN(const string& ISSN) {
     return regex_match(ISSN, pattern);
 }
 
-static bool AnoBissexto(int ano) {
+bool AnoBissexto(int ano) {
     if ((ano % 4 == 0 && ano % 100 != 0) || (ano % 400 == 0)) {
         return true;
     }
