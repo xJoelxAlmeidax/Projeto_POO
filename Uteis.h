@@ -22,6 +22,9 @@ bool AnoBissexto(int Ano);
 int DiasNoMes(int Mes, int Ano);
 int ConverterDataDias(int dia, int mes, int ano);
 void subs_systpause();
+void EncerrarPrograma();
+void clearScreen();
+void drawEnvelope(int step);
 
 class Uteis
 {

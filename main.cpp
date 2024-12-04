@@ -253,39 +253,62 @@ int main() {
                 break;
             case 23:
                 system("cls");
-                cout << "Ver Notificações\n";
+                //cout << "Ver Notificações\n";
                 B->Sistema_Notif_atraso();
                 break;
             case 24:
                 system("cls");
-                cout << "Ver Historico de uma Pessoa\n";
+                //cout << "Ver Historico de uma Pessoa\n";
                 B->Ver_HistoricoPessoa();
                 break;
             case 25:
                 system("cls");
-                cout << "Ver Reservas de um Livro\n";
+                //cout << "Ver Reservas de um Livro\n";
                 B->Ver_Reservas();
                 break;
             case 26:
                 system("cls");
-                cout << "Pedir prorrogação\n";
+                //cout << "Pedir prorrogação\n";
                 B->Prorrogacao();
                 break;
             case 27:
                 system("cls");
-                cout << "Ver Multas pendentes\n";
+                //cout << "Ver Multas pendentes\n";
                 B->MultasPendentes();
                 break;
 
                 //quarta aba
             case 30:
+            {
                 system("cls");
-                cout << "Salvar Ficheiros\n";
+                //cout << "Salvar Ficheiros\n";
+                /*for (int j = 0; j < 3; ++j) { 
+                    std::cout << "Salvar Ficheiros"; 
+                    for (int i = 0; i < 3; ++i) { 
+                        std::cout << ".";
+                        Sleep(500);
+                    }
+                    system("cls");
+                }*/
+
+                int step = 0;
+                while (step <= 15) {
+                    clearScreen();
+                    drawEnvelope(step);
+                    Sleep(250);  // Pausa de 500ms
+                    step++;
+                }
+                Sleep(600);
+                system("cls");
+
+
                 B->save_file("Dados.txt");
                 break;
+            }
             case 31:
                 system("cls");
-                cout << "Sair\n";
+                //cout << "Sair\n";
+                EncerrarPrograma();
                 B->save_file("Dados.txt");
                 return 0;
             }

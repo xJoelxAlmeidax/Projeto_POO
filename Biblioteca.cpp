@@ -875,26 +875,31 @@ void Biblioteca::EntregarLivro(Emprestimo* E) {
 			ENTREGA.MES = 0;
 			ENTREGA.ANO = 0;
 			Emprestimo* E_NovoEmp = new Emprestimo(DATAINICIO, reservaNovoEmp, E->get_livro(), 0, ENTREGA);
-			Emprestimos.remove(E);
-			delete(E);
 			Add_Emprestimo_Reserva(E_NovoEmp);
 			break;
 		}
 	}
+
+	Emprestimos.remove(E);
 }
 
 void Biblioteca::Prorrogacao() {
 	string dias;
 
-	cout << "Dias: ";
-	cin >> dias;
+	Emprestimo* E = Pesquisar_E();
+
+	do {
+		cout << "Dias (15/30): ";
+		cin >> dias;
+	} while (dias != "15" && dias != "30");
+	
 
 	if (!So_numeros(dias)) {
 		cout << "Formato do dia desconhecido\n";
 		return;
 	}
 
-	Emprestimo* E = Pesquisar_E();
+	
 	if(E)
 		E->pedir_prorrogacao(stoi(dias));
 }
@@ -1019,6 +1024,7 @@ bool Biblioteca::load_file(string nf) {
 			L = new Jornal(buffer2, buffer3, stoi(buffer4), buffer5, buffer6, buffer7, buffer8);
 		}
 		else if (buffer1 == "Emprestimo" || buffer1 == "Historico") {
+			string buffer9;
 			DATA data;
 			DATA entrega;
 			entrega.DIA = 0;
@@ -1033,7 +1039,19 @@ bool Biblioteca::load_file(string nf) {
 
 			getline(File, buffer5, '\t');
 			getline(File, buffer6, '\t');
-			getline(File, buffer7);
+			if (buffer1 == "Emprestimo")
+				getline(File, buffer7);
+			else
+			{
+				getline(File, buffer7, '\t');
+				getline(File, buffer8, '\t');
+				getline(File, buffer9);
+
+				entrega.DIA = stoi(buffer7);
+				entrega.MES = stoi(buffer8);
+				entrega.ANO = stoi(buffer9);
+			}
+				
 
 			for (auto leitorLoad : Leitores)
 			{
@@ -1236,9 +1254,9 @@ bool Biblioteca::save_file(string nf) {
 					File << Emp_HistSave->get_livro()->get_isbn() << "\t";
 				else
 					File << Emp_HistSave->get_livro()->get_issn() << "\t";
-				File << Emp_HistSave->get_dias() << "\n";
-
-				// guardar data entrega
+				File << Emp_HistSave->get_dataEntregaLeitor().DIA << "\t";
+				File << Emp_HistSave->get_dataEntregaLeitor().MES << "\t";
+				File << Emp_HistSave->get_dataEntregaLeitor().ANO << "\n";
 			}
 		}
 	}

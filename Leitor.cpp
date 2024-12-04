@@ -1,4 +1,5 @@
 #include "Leitor.h"
+#include "Livro.h"
 
 Leitor::Leitor(string _ncc, string _nome, string _morada, string _telefone, int _idade) {
 	N_CC = _ncc;
@@ -84,13 +85,11 @@ void Leitor::Mostrar_HistEmprestimo()
 		cout << "Nenhum Emprestimo realizado ate ao momento" << endl;
 	else
 	{
-		int teste = 0;
-		cout << "Emprestimos Já Feitos pelo " << NOME << "\n";
+		cout << "Emprestimos Já Feitos por " << NOME << " | " << N_CC << "\n";
 		for (auto hist_emp : Historico_Emp) { 	//Percorre a lista de reservas do livro
-			// mostrar os livros ja requisitados
-			teste++;
+			DATA data_i = hist_emp->get_dataInicio();
+			DATA data_e = hist_emp->get_dataEntregaLeitor();
+			cout << "Titulo: " << hist_emp->get_livro()->get_titulo() << " | " << "Data: " << data_i.DIA << "/" << data_i.MES << "/" << data_i.ANO << " - " << data_e.DIA << "/" << data_e.MES << "/" << data_e.ANO << endl;
 		}
-
-		cout << "Num de livros Requisitados: " << teste << " \n";
 	}
 }

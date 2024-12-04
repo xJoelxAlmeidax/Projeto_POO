@@ -49,8 +49,8 @@ class Emprestimo
 {
 	DATA DATA_INICIO;
 	int DIAS;
-	DATA DATA_ENTREGA;
-	DATA DATA_FIM;
+	DATA DATA_ENTREGA; // DATA EM QUE O LEITOR ENTREGOU
+	DATA DATA_FIM; //DATA MAXIMA PARA ENTREGA DENTRO DO PRAZO
 	float MULTA;
 	Leitor* Leitor_Emp;
 	Livro* Livro_Emp;
@@ -64,11 +64,12 @@ public:
 	void pedir_prorrogacao(int dias);
 	DATA get_dataInicio();
 	DATA get_dataFim();
+	DATA get_dataEntregaLeitor();
 	Livro* get_livro();
 	Leitor* get_leitor();
 	int get_dias();
 	void Show();
-	DATA Alterar_dataEntrega(DATA entrega);
+	void Alterar_dataEntrega(DATA entrega);
 	float AplicarDesconto(float multa);
 
 };

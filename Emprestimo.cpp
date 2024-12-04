@@ -65,6 +65,11 @@ DATA Emprestimo::data_fim() {
 	return D;
 }
 
+DATA Emprestimo::get_dataEntregaLeitor()
+{
+	return DATA_ENTREGA;
+}
+
 void Emprestimo::pedir_prorrogacao(int dias) {
 	if (Leitor_Emp->quem_es() == "Estudante" || Leitor_Emp->quem_es() == "Professor") {
 		DATA D = DATA_INICIO;
@@ -95,13 +100,11 @@ DATA Emprestimo::get_dataInicio()
 	return DATA_INICIO;
 }
 
-DATA Emprestimo::Alterar_dataEntrega(DATA entrega)
+void Emprestimo::Alterar_dataEntrega(DATA entrega)
 {
 	DATA_ENTREGA.DIA = entrega.DIA;
 	DATA_ENTREGA.MES = entrega.MES;
 	DATA_ENTREGA.ANO = entrega.ANO;
-
-	return DATA_ENTREGA;
 }
 
 int Emprestimo::get_dias()

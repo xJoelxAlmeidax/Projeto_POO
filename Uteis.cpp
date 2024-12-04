@@ -143,6 +143,78 @@ void subs_systpause() {
     } while (tecla != 13); // Continua até pressionar o Enter
 }
 
+void EncerrarPrograma() {
+    std::vector<std::string> art = {
+        "                        .,,uod8B8bou,,.",
+        "                ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.",
+        "            ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||",
+        "            !...:!TVBBBRPFT||||||||||!!^^\"\"'   ||||",
+        "            !.......:!?|||||!!^^\"\"'            ||||",
+        "            !.........||||                     ||||",
+        "            !.........||||                     ||||",
+        "            !.........||||                     ||||",
+        "            !.........||||                     ||||",
+        "            !.........||||                     ||||",
+        "            `.........||||                    ,||||",
+        "            .;.......||||               _.-!!|||||",
+        "    .,uodWBBBBb.....||||       _.-!!|||||||||!:'",
+        "!YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....",
+        "!..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.",
+        "!....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.",
+        "!......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^\"`;:::       `.",
+        "!........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.",
+        "`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo.",
+        "    `..........:::::::::::::::::::::::;iof688888888888b.     `YBBBP^'",
+        "    `........::::::::::::::::;iof688888888888888888888b.     `",
+        "        `......:::::::::;iof688888888888888888888888888888b.",
+        "        `....:::;iof688888888888888888888888888888888899fT!",
+        "            `..::!8888888888888888888888888888888899fT|!^\"'",
+        "            `' !!988888888888888888888888899fT|!^\"'",
+        "                `!!8888888888888888899fT|!^\"'",
+        "                    `!988888888899fT|!^\"'",
+        "                    `!9899fT|!^\"'"
+    };
+
+    // Índices do ecrã (linhas que representam a tela)
+    const int screen_start = 5; // Linha inicial do ecrã
+    const int screen_end = 9;   // Linha final do ecrã
+
+    for (int cycle = 0; cycle < 3; ++cycle) { // Executa duas vezes
+        for (int dot_count = 0; dot_count <= 2; ++dot_count) { // Pontos progressivos
+            // Limpar a tela
+            std::cout << "\033[2J\033[1;1H";
+
+            // Atualizar a arte com o texto no ecrã
+            for (size_t j = 0; j < art.size(); ++j) {
+                if (j >= screen_start && j <= screen_end) {
+                    if (j == screen_start + 2) { // Linha principal do texto
+                        std::cout << "            !.........||||   A encerrar.";
+                        for (int d = 0; d < dot_count; ++d) std::cout << ".";
+                        for (int s = 0; s < 3 - dot_count; ++s) std::cout << " "; // Adicionar espaços para manter o alinhamento
+                        std::cout << "    ||||" << std::endl;
+                    }
+                    else {
+                        // Outras linhas do ecrã
+                        std::cout << "            !.........||||                     ||||" << std::endl;
+                    }
+                }
+                else {
+                    // Partes fixas da arte
+                    std::cout << art[j] << std::endl;
+                }
+            }
+
+            // Pausar antes de adicionar mais um ponto
+            Sleep(500);
+        }
+    }
+
+    system("cls");
+    for (size_t j = 0; j < art.size(); ++j) {
+        cout << art[j] << endl;
+    }
+}
+
 
 /*cout << R"(
                     .--.         .--.         .--.         .--.
@@ -156,35 +228,431 @@ void subs_systpause() {
                 /         \  /        \  /          \  /         \
                 |  Simão  |  |  Joel  |  |  Renato  |  |  Tomás  |
                 \_________/  \________/  \__________/  \_________/
-)";
-        cout << R"(
-                        .,,uod8B8bou,,.
-                ..,uod8BBBBBBBBBBBBBBBBRPFT?l!i:.
-            ,=m8BBBBBBBBBBBBBBBRPFT?!||||||||||||||
-            !...:!TVBBBRPFT||||||||||!!^^""'   ||||
-            !.......:!?|||||!!^^""'            ||||
-            !.........||||                     ||||
-            !.........||||  ##                 ||||
-            !.........||||                     ||||
-            !.........||||                     ||||
-            !.........||||                     ||||
-            !.........||||                     ||||
-            `.........||||                    ,||||
-            .;.......||||               _.-!!|||||
-    .,uodWBBBBb.....||||       _.-!!|||||||||!:'
-!YBBBBBBBBBBBBBBb..!|||:..-!!|||||||!iof68BBBBBb....
-!..YBBBBBBBBBBBBBBb!!||||||||!iof68BBBBBBRPFT?!::   `.
-!....YBBBBBBBBBBBBBBbaaitf68BBBBBBRPFT?!:::::::::     `.
-!......YBBBBBBBBBBBBBBBBBBBRPFT?!::::::;:!^"`;:::       `.
-!........YBBBBBBBBBBRPFT?!::::::::::^''...::::::;         iBBbo.
-`..........YBRPFT?!::::::::::::::::::::::::;iof68bo.      WBBBBbo.
-    `..........:::::::::::::::::::::::;iof688888888888b.     `YBBBP^'
-    `........::::::::::::::::;iof688888888888888888888b.     `
-        `......:::::::::;iof688888888888888888888888888888b.
-        `....:::;iof688888888888888888888888888888888899fT!
-            `..::!8888888888888888888888888888888899fT|!^"'
-            `' !!988888888888888888888888899fT|!^"'
-                `!!8888888888888888899fT|!^"'
-                    `!988888888899fT|!^"'
-                    `!9899fT|!^"'
-    )";*/
+)";*/
+
+
+
+
+void clearScreen() {
+    std::cout << "\033[2J\033[1;1H"; // Código para limpar o terminal
+}
+
+void drawEnvelope(int step) {
+    clearScreen();  // Limpa a tela a cada nova fase
+    if (step == 0) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%                0%     ?&\n";
+        std::cout << "&%      ?@%            =%?      ?&\n";
+        std::cout << "%%        ?&0  =======?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+    }
+    else if (step == 1) {
+        std::cout << "           ?0?0=?==?              \n";
+        std::cout << "                ?00               \n";
+        std::cout << "                 0?               \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%                0%     ?&\n";
+        std::cout << "&%      ?@%            =%?      ?&\n";
+        std::cout << "%%        ?&0  =======?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+    }
+    else if (step == 2) {
+        std::cout << "              0     0?            \n";
+        std::cout << "            ?0       ??           \n";
+        std::cout << "           %????= ????%           \n";
+        std::cout << "           ????%?=%0              \n";
+        std::cout << "            ?%00=0 =%0            \n";
+        std::cout << "          0%?   ==   ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%                0%     ?&\n";
+        std::cout << "&%      ?@%            =%?      ?&\n";
+        std::cout << "%%        ?&0  =======?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+    }
+    else if (step == 3) {
+        std::cout << "                                  \n";
+        std::cout << "             ?0?==00???           \n";
+        std::cout << "              0=?0%=?==0          \n";
+        std::cout << "              ?0======?0          \n";
+        std::cout << "            ?&%=====?&0           \n";
+        std::cout << "          0%0=====  =&&0          \n";
+        std::cout << "        0%?=??=?==?=?=0%&0        \n";
+        std::cout << "      0%?     =?=0   ?= =%&0      \n";
+        std::cout << "    ?%?       0=?          %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%                0%     ?&\n";
+        std::cout << "&%      ?@%            =%?      ?&\n";
+        std::cout << "%%        ?&0  =======?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+    }
+    else if (step == 4) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?    0??  ??0&&0        \n";
+        std::cout << "      0%?      =?=0%== ==%&0      \n";
+        std::cout << "    ?%?      =??===? ===?  %&?    \n";
+        std::cout << "   0?     ?00?======??00     0%0  \n";
+        std::cout << " ??=======?0%%%==== =%0000???00&@0\n";
+        std::cout << "&@0????=======0==?=? 0         0&0\n";
+        std::cout << "&&&0         0=?=   0?       ?0 0&\n";
+        std::cout << "@% 0&%       ==             %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%                0%     ?&\n";
+        std::cout << "&%      ?@%            =%?      ?&\n";
+        std::cout << "%%        ?&0  =======?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 5) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======   ?=             0&0\n";
+        std::cout << "&&&0            0?0  ??      ?0 0&\n";
+        std::cout << "@% 0&%          0==%0==??   %?  0&\n";
+        std::cout << "@%   %&=  =000??======? ? =&=   0&\n";
+        std::cout << "&%    =&%  ????=====?==0?0%     ?&\n";
+        std::cout << "&%      ?@%   ?=====??==%?      ?&\n";
+        std::cout << "%%        ?@%0??000?0=?%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 6) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%        00      0%     ?&\n";
+        std::cout << "&%      ?@%      0=0?0??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 7) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%       =?      0%      ?&\n";
+        std::cout << "&%      ?@%      ??=  =%?       ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 8) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%               0%      ?&\n";
+        std::cout << "&%      ?@%     ??=   =%?       ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 9) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%       =?      0%      ?&\n";
+        std::cout << "&%      ?@%      ??=  =%?       ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 10) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                 ?                \n";
+        std::cout << "              ?%0=?0              \n";
+        std::cout << "            ?%0    =%0            \n";
+        std::cout << "          0%?        ?&0          \n";
+        std::cout << "        0%?            %&0        \n";
+        std::cout << "      0%?               =%&0      \n";
+        std::cout << "    ?%?                    %&?    \n";
+        std::cout << "   0?                        0%0  \n";
+        std::cout << " ??========????00000000000???00&@0\n";
+        std::cout << "&@0????======                  0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%        ==      0%     ?&\n";
+        std::cout << "&%      ?@%      0=0?0??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 11) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "              ?%@%0               \n";
+        std::cout << "           ?%@&?  ?%&%?           \n";
+        std::cout << "        ?%@%?        =%&%?        \n";
+        std::cout << "      %&%?              =%&%0     \n";
+        std::cout << "   0&%?                    =?%%?  \n";
+        std::cout << " 0&0????????00000%%%%%&&&&&&&&&&@0\n";
+        std::cout << "&%%0???????=======             0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%        ==      0%     ?&\n";
+        std::cout << "&%      ?@%      0=0?0??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 12) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "          ?0%&&&&0%%%0??          \n";
+        std::cout << "     ?0%&&&0?        =?0%&&&%0?   \n";
+        std::cout << " 0&0????????00000%%%%%&&&&&&&&&&@0\n";
+        std::cout << "&%%0???????=======             0&0\n";
+        std::cout << "&&&0                         ?0 0&\n";
+        std::cout << "@% 0&%                      %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%        ==      0%     ?&\n";
+        std::cout << "&%      ?@%      0=0?0??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 13) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "    ????????00000%%%%%&&&&&&&&&&@0\n";
+        std::cout << "&%&&@@%&0??========     =0%%%0?%&0\n";
+        std::cout << "&&&0  =?0%%%%%0??= =0%%0?    ?0 0&\n";
+        std::cout << "@% 0&%        =??0%?=       %?  0&\n";
+        std::cout << "@%   %&=                  ?&=   0&\n";
+        std::cout << "&%    =&%        ==      0%     ?&\n";
+        std::cout << "&%      ?@%      0=0?0??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 14) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "    ????????00000%%%%%&&&&&&&&&&@0\n";
+        std::cout << "&%%&0??????????==           0@@@&0\n";
+        std::cout << "&&&0@&?                   %%%00 0&\n";
+        std::cout << "@% 0&0%&%=              %@%=%?  0&\n";
+        std::cout << "@%   %&==0&%?        =%@0 ?&=   0&\n";
+        std::cout << "&%    =&%   0&%?   ?&&?  0%     ?&\n";
+        std::cout << "&%      ?@%    0%&&&00??&?      ?&\n";
+        std::cout << "%%        ?@@0000???%?0%        ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+    else if (step == 15) {
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "                                  \n";
+        std::cout << "       ?????00000%%%%%&&&&&&&&&&@0\n";
+        std::cout << "&%%00000?????0???======       =&&0\n";
+        std::cout << "&&&0                         ?&=0&\n";
+        std::cout << "@% 0@?                      %0  0&\n";
+        std::cout << "@%   &&=                  =&=   0&\n";
+        std::cout << "&%    =&%                %%     ?&\n";
+        std::cout << "&%      ?&0            =&?      ?&\n";
+        std::cout << "%%        ?&0   ==?????%&       ?&\n";
+        std::cout << "0%         ?0???????=?%?        ?&\n";
+        std::cout << "?&       ??            =0?      ?&\n";
+        std::cout << "?@     ??                =0?    ?&\n";
+        std::cout << "?@   ??                    =?=  ?&\n";
+        std::cout << "=& =?                         ==0%\n";
+        std::cout << "=&%%%%%%%%%%%%%%%%%%%%%%%%%%%%%&&0\n";
+        }
+}
