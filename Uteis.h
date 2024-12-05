@@ -36,6 +36,7 @@ string gerarISSNUnico(vector<string>& geradosISSN);
 string gerarEDICAO();
 string gerareditorBoss();
 string gerar_tipo_dis();
+int idadeRecomendada(const string& livro);
 
 
 

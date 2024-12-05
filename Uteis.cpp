@@ -205,7 +205,8 @@ void EncerrarPrograma() {
             }
 
             // Pausar antes de adicionar mais um ponto
-            Sleep(500);
+            Sleep(500); 
+            system("cls");
         }
     }
 
@@ -713,10 +714,20 @@ unsigned long long indiceTesteed = 0;
 
 string gerarNomesJornais() {
     // Lista de nomes e sobrenomes
-    vector<string> cursos = { "O Panorama Diário", "Jornal Nova Era", "Gazeta do Povo", "A Voz do Povo", "O Observador","Revista Atual","Jornal de Hoje","O Estado em Foco","Informativo Global","Notícias ao Vivo"};
-
+    vector<string> livrosEducativos = {
+        "Fundamentos da Educação e Aprendizagem",
+        "Desenvolvimento Cognitivo e Psicologia Infantil",
+        "Métodos e Técnicas de Ensino",
+        "Educação e Inclusão: Desafios e Soluções",
+        "Pedagogia do Século XXI: Inovações e Tendências",
+        "Práticas Pedagógicas para o Ensino Fundamental",
+        "A Psicologia na Sala de Aula: Teorias e Aplicações",
+        "Educação Ambiental: Conscientização e Sustentabilidade",
+        "Ensino de Matemática: Estratégias para o Sucesso Escolar",
+        "Alfabetização e Letramento: Métodos e Desafios"
+    };
     // Combinar nome e sobrenome
-    return cursos[indiceTesteNome++];
+    return livrosEducativos[indiceTesteNome++];
 }
 
 string gerar_nome_autor() {
@@ -820,23 +831,77 @@ string gerarEDICAO() {
 
 string gerareditorBoss() {
     // Lista de nomes e sobrenomes
-    vector<string> editor = { "Ana Beatriz Silva", "Carlos Eduardo Costa", "Luciana Pereira", "Miguel Almeida", "Joana Martins","Felipe Souza","Patrícia Ribeiro","Ricardo Gomes","Fernanda Oliveira","Bruno Rocha" };
-
-    int indice_sobrenome = rand() % editor.size();
+    vector<string> areasDeEstudoCientificas = {
+    "Ciências da Educação / Psicologia Educacional / Pedagogia",
+    "Psicologia / Neurociências Cognitivas / Desenvolvimento Infantil",
+    "Pedagogia / Ciências da Educação / Didática",
+    "Educação Inclusiva / Sociologia da Educação / Psicologia Educacional",
+    "Pedagogia / Tecnologias Educacionais / Inovações no Ensino",
+    "Ciências da Educação / Didática / Ensino Fundamental",
+    "Psicologia Educacional / Psicologia Cognitiva / Neuropsicologia",
+    "Ciências Ambientais / Educação Ambiental / Ecologia",
+    "Matemática Educacional / Educação Matemática / Psicologia Cognitiva",
+    "Linguística / Psicologia Cognitiva / Ciências da Linguagem"
+    };
 
     // Combinar nome e sobrenome
-    return editor[indice_sobrenome];
+    return areasDeEstudoCientificas[indiceTesteNome];
 }
 
 string gerar_tipo_dis() {
     // Listas de primeiros nomes e sobrenomes
-    std::vector<std::string> tipo = { "Nacional", "Regional", "Local"};
+    vector<string> nomesDePessoas = {
+    "Arthur Figueiredo",
+    "Luísa Oliveira",
+    "Pedro Martins",
+    "Clara Alves",
+    "Felipe Costa",
+    "Sofia Pereira",
+    "Vinícius Rocha",
+    "Isabela Duarte",
+    "André Gomes",
+    "Juliana Lima",
+    "Rafael Barbosa",
+    "Larissa Mendes",
+    "Gustavo Silva",
+    "Beatriz Castro",
+    "Samuel Ribeiro",
+    "Fernanda Costa",
+    "Otávio Souza",
+    "Carolina Ferreira",
+    "Henrique Pinto",
+    "Isabel Santos"
+    };
 
     // Gerando índices aleatórios para selecionar nomes
-    int indice_tipo = rand() % tipo.size();
+    int indice_tipo = rand() % nomesDePessoas.size();
 
     // Montando o nome completo
-    return tipo[indice_tipo];
+    return nomesDePessoas[indice_tipo];
 }
 
+
+
+// Função para retornar a idade recomendada para o livro
+int idadeRecomendada(const string& livro) {
+    // Definir a idade recomendada com base no título do livro
+    if (livro == "Fundamentos da Educação e Aprendizagem" || livro == "Métodos e Técnicas de Ensino" || livro == "Gestão Escolar: Liderança e Empoderamento") {
+        return 18;  // Livros mais técnicos, recomendados para adultos ou educadores
+    }
+    else if (livro == "Desenvolvimento Cognitivo e Psicologia Infantil" || livro == "A Psicologia na Sala de Aula: Teorias e Aplicações") {
+        return 16;  // Livros educativos mais profundos, para maiores de 16 anos ou estudantes de psicologia
+    }
+    else if (livro == "Educação e Inclusão: Desafios e Soluções" || livro == "Pedagogia do Século XXI: Inovações e Tendências") {
+        return 14;  // Livros para adolescentes ou iniciantes na educação
+    }
+    else if (livro == "Educação Ambiental: Conscientização e Sustentabilidade" || livro == "Alfabetização e Letramento: Métodos e Desafios") {
+        return 12;  // Livros voltados para adolescentes em fase escolar
+    }
+    else if (livro == "Ensino de Matemática: Estratégias para o Sucesso Escolar") {
+        return 10;  // Livros focados em ensinar matemática, adequados para crianças mais velhas
+    }
+    else {
+        return 18;  // Default para livros adultos ou especializados
+    }
+}
 

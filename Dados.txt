@@ -1,3 +1,23 @@
+Jornal	O Panorama Diário	Fernando Sousa	1970	4094-8824	1 Edição	Ricardo Gomes	Local
+Jornal	Jornal Nova Era	Fernando Ferreira	1957	5276-142X	2 Edição	Carlos Eduardo Costa	Regional
+Jornal	Gazeta do Povo	Miguel Martins	2019	7618-9279	3 Edição	Felipe Souza	Local
+Jornal	A Voz do Povo	Pedro Teixeira	2007	3411-387X	4 Edição	Miguel Almeida	Local
+Jornal	O Observador	Patrícia Costa	1967	9865-028X	5 Edição	Carlos Eduardo Costa	Local
+Jornal	Revista Atual	Patrícia Campos	1973	0900-6138	6 Edição	Felipe Souza	Local
+Jornal	Jornal de Hoje	Gabriela Cardoso	1963	6618-4963	7 Edição	Ana Beatriz Silva	Nacional
+Jornal	O Estado em Foco	Fernando Machado	1986	3598-4076	8 Edição	Carlos Eduardo Costa	Nacional
+Jornal	Informativo Global	Rodrigo Sousa	1986	0973-7260	9 Edição	Luciana Pereira	Local
+Jornal	Notícias ao Vivo	Pedro Sousa	1991	1200-1460	10 Edição	Joana Martins	Nacional
+LivroCientifico	Avanços em Biotecnologia Molecular	Fernando Sousa	1970	978-7-40948-824-5	Biotecnologia / Biologia Molecular	Luísa Oliveira
+LivroCientifico	Fundamentos da Física Quântica e suas Aplicações	Fernando Ferreira	1957	978-1-52761-423-2	Física Quântica / Física Teórica	Luísa Oliveira
+LivroCientifico	Teorias da Evolução: Uma Abordagem Multidisciplinar	Miguel Martins	2019	978-5-76189-279-5	Biologia / Evolução / Ciências Naturais	Henrique Pinto
+LivroCientifico	Matemática Aplicada à Engenharia de Sistemas	Pedro Teixeira	2007	978-3-34113-874-2	Matemática Aplicada / Engenharia de Sistemas	Pedro Martins
+LivroCientifico	Química Ambiental: Desafios e Soluções	Patrícia Costa	1967	978-1-98650-286-0	Química Ambiental / Ciências Ambientais	Clara Alves
+LivroCientifico	Neurociências e Comportamento Humano	Patrícia Campos	1973	978-5-09006-138-9	Neurociências / Psicologia / Ciências Cognitivas	Vinícius Rocha
+LivroCientifico	A Física das Partículas Subatômicas	Gabriela Cardoso	1963	978-0-66184-963-7	Física de Partículas / Física Teórica	Otávio Souza
+LivroCientifico	Modelagem Matemática em Ciências Naturais	Fernando Machado	1986	978-1-35984-076-3	Matemática / Modelagem Computacional / Ciências Naturais	Juliana Lima
+LivroCientifico	Tecnologias Emergentes na Medicina Regenerativa	Rodrigo Sousa	1986	978-2-09737-260-1	Medicina Regenerativa / Biotecnologia / Engenharia Biomédica	Felipe Costa
+LivroCientifico	Genômica e sua Influência na Medicina Personalizada	Pedro Sousa	1991	978-4-12001-460-7	Genômica / Medicina Personalizada / Biologia Molecular	Fernanda Costa
 LeitorComum	10000001	Carlos Almeida	Rua Direita, 3500-002, Viseu	919488245	18	Carlos.Almeida@gmail.com
 LeitorComum	10000002	Lucas Santos	Avenida Alberto Sampaio, 3500-004, Viseu	912168576	40	Lucas.Santos@gmail.com
 LeitorComum	10000003	Tiago Oliveira	Rua Formosa, 3500-003, Viseu	911138742	22	Tiago.Oliveira@gmail.com
