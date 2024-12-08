@@ -27,22 +27,6 @@ void EncerrarPrograma();
 void Envelope(int step);
 void moverparalado();
 
-
-string gerarNomesJornais();
-string gerar_nome_autor();
-int gerar_anos();
-string gerarISBNUnico(vector<string>& geradosISBN);
-string gerarISSNUnico(vector<string>& geradosISSN);
-string gerarEDICAO();
-string gerareditorBoss();
-string gerar_tipo_dis();
-int idadeRecomendada(const string& livro);
-
-
-
-
-
-
 class Uteis
 {
 

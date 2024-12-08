@@ -18,6 +18,36 @@ LivroCientifico	A Física das Partículas Subatômicas	Gabriela Cardoso	1963	978-0-
 LivroCientifico	Modelagem Matemática em Ciências Naturais	Fernando Machado	1986	978-1-35984-076-3	Matemática / Modelagem Computacional / Ciências Naturais	Juliana Lima
 LivroCientifico	Tecnologias Emergentes na Medicina Regenerativa	Rodrigo Sousa	1986	978-2-09737-260-1	Medicina Regenerativa / Biotecnologia / Engenharia Biomédica	Felipe Costa
 LivroCientifico	Genômica e sua Influência na Medicina Personalizada	Pedro Sousa	1991	978-4-12001-460-7	Genômica / Medicina Personalizada / Biologia Molecular	Fernanda Costa
+LivroEducativo	Fundamentos da Educação e Aprendizagem	Fernando Sousa	1984	978-0-94882-455-1	18	Ciências da Educação / Psicologia Educacional / Pedagogia	Isabela Duarte
+LivroEducativo	Desenvolvimento Cognitivo e Psicologia Infantil	Fernando Martins	2020	978-2-76142-322-1	16	Psicologia / Neurociências Cognitivas / Desenvolvimento Infantil	Otávio Souza
+LivroEducativo	Métodos e Técnicas de Ensino	Gabriela Machado	1997	978-6-18927-954-3	18	Pedagogia / Ciências da Educação / Didática	Larissa Mendes
+LivroEducativo	Educação e Inclusão: Desafios e Soluções	Luana Vieira	1998	978-4-11387-427-7	14	Educação Inclusiva / Sociologia da Educação / Psicologia Educacional	Isabel Santos
+LivroEducativo	Pedagogia do Século XXI: Inovações e Tendências	Miguel Martins	1954	978-8-65028-602-4	14	Pedagogia / Tecnologias Educacionais / Inovações no Ensino	André Gomes
+LivroEducativo	Práticas Pedagógicas para o Ensino Fundamental	Raquel Machado	2015	978-9-00613-893-4	18	Ciências da Educação / Didática / Ensino Fundamental	Samuel Ribeiro
+LivroEducativo	A Psicologia na Sala de Aula: Teorias e Aplicações	Raquel Gomes	1966	978-6-18496-378-8	16	Psicologia Educacional / Psicologia Cognitiva / Neuropsicologia	Pedro Martins
+LivroEducativo	Educação Ambiental: Conscientização e Sustentabilidade	Ricardo Martins	1983	978-5-98407-636-1	12	Ciências Ambientais / Educação Ambiental / Ecologia	Sofia Pereira
+LivroEducativo	Ensino de Matemática: Estratégias para o Sucesso Escolar	Patrícia Cardoso	1995	978-9-73726-016-5	10	Matemática Educacional / Educação Matemática / Psicologia Cognitiva	Isabela Duarte
+LivroEducativo	Alfabetização e Letramento: Métodos e Desafios	Rodrigo Campos	2006	978-2-00146-071-7	12	Linguística / Psicologia Cognitiva / Ciências da Linguagem	Carolina Ferreira
+LivroFiccao	As Sombras de Eldoria	Fernando Sousa	1984	978-1-15276-142-3	Fantasia Sombria
+LivroFiccao	O Último Viajante das Estrelas	Luana Cardoso	1971	978-6-85761-892-7	Ficção Científica
+LivroFiccao	Crônicas do Reino Esquecido	Rodrigo Campos	2003	978-1-23341-138-7	Fantasia Épica
+LivroFiccao	A Máquina dos Sonhos	Luana Sousa	1962	978-9-31986-502-8	Ficção Científica / Distopia
+LivroFiccao	O Labirinto de Vidro	Isabel Cardoso	2014	978-8-65090-061-3	Suspense / Thriller Futurista
+LivroFiccao	A Canção dos Imortais	Ricardo Vieira	1959	978-4-60661-849-6	Fantasia / Aventura
+LivroFiccao	Além do Horizonte de Fogo	Pedro Costa	2018	978-2-91359-840-7	Ficção Científica / Aventura
+LivroFiccao	O Jogo Infinito	Miguel Ferreira	2021	978-5-42097-372-6	Ficção Científica / Cyberpunk
+LivroFiccao	Fragmentos do Tempo Perdido	Fernando Ferreira	1955	978-7-54120-014-6	Ficção Científica / Viagem no Tempo
+LivroFiccao	A Herdeira do Vento	Pedro Martins	1957	978-7-77335-998-1	Fantasia / Aventura Juvenil
+Revista	Revista Horizonte	Fernando Sousa	1984	0948-8245	1 Edição	Editora Luminare	Enfoque Criativo
+Revista	Mundo em Foco	Fernando Sousa	2011	1527-6142	2 Edição	Editora Visão Criativa	Lentes & Imagens
+Revista	Vanguarda Cultural	Luana Cardoso	1971	6857-618X	3 Edição	Editora Foco Editorial	Visão Fotográfica
+Revista	Revista Inovação	Pedro Teixeira	1960	4312-3341	4 Edição	Editora Imagem & Arte	Momentos Capturados
+Revista	Ponto de Vista	Miguel Costa	1997	4277-931X	5 Edição	Editora Inspiração	Ângulo Perfeito
+Revista	Exploração e Conhecimento	Raquel Machado	2015	2860-2486	6 Edição	Editora Prisma	Reflexões Visuais
+Revista	Revista EcoMundo	Isabel Teixeira	2020	0613-893X	7 Edição	Editora Flash	Imagens em Foco
+Revista	Conexões Globais	Raquel Gomes	1966	6184-963X	8 Edição	Editora Reflexo	A Arte da Fotografia
+Revista	Estilo & Tendência	Gabriela Cardoso	2004	1359-840X	9 Edição	Editora Ângulo Perfeito	Cores e Sombras
+Revista	Revista Universo	Miguel Ferreira	2021	5420-973X	10 Edição	Editora Horizonte Criativo	Fotografias em Movimento
 LeitorComum	10000001	Carlos Almeida	Rua Direita, 3500-002, Viseu	919488245	18	Carlos.Almeida@gmail.com
 LeitorComum	10000002	Lucas Santos	Avenida Alberto Sampaio, 3500-004, Viseu	912168576	40	Lucas.Santos@gmail.com
 LeitorComum	10000003	Tiago Oliveira	Rua Formosa, 3500-003, Viseu	911138742	22	Tiago.Oliveira@gmail.com
@@ -36,6 +66,7 @@ Estudante	10000015	Ana Souza	Rua Formosa, 3500-004, Viseu	918198972	35	Ana.Souza
 Estudante	10000016	Beatriz Souza	Rua do Comércio, 3500-003, Viseu	928158612	42	Beatriz.Souza@gmail.com	Secretariado de Administração
 Estudante	10000017	Pedro Souza	Rua 31 de Janeiro, 3500-003, Viseu	935392461	54	Pedro.Souza@gmail.com	Gestão Comercial
 Estudante	10000018	Carlos Santos	Rua do Comércio, 3500-002, Viseu	912952003	46	Carlos.Santos@gmail.com	Secretariado de Administração
+Historico	8	11	2024	10000018	978-7-40948-824-5	8	12	2024
 Estudante	10000019	Laura Santos	Rua do Comércio, 3500-004, Viseu	922294196	14	Laura.Santos@gmail.com	Secretariado de Administração
 Estudante	10000020	Beatriz Rodrigues	Rua 31 de Janeiro, 3500-005, Viseu	921250839	25	Beatriz.Rodrigues@gmail.com	Engenharia Informática
 Estudante	10000021	Sofia Almeida	Rua Direita, 3500-004, Viseu	926935766	15	Sofia.Almeida@gmail.com	Secretariado de Administração
@@ -62,3 +93,5 @@ Senior	10000041	Carlos Rodrigues	Rua 31 de Janeiro, 3500-001, Viseu	931748236	91
 Senior	10000042	João Rodrigues	Rua 31 de Janeiro, 3500-001, Viseu	937225910	87	Acessibilidade em ambientes de trabalho
 Senior	10000043	Ana Almeida	Rua do Comércio, 3500-003, Viseu	923410485	75	Acessibilidade digital
 Senior	10000044	Pedro Costa	Rua Formosa, 3500-003, Viseu	925827961	92	Acessibilidade arquitetônica
+Emprestimo	10	11	2024	10000006	978-2-09737-260-1	30
+Emprestimo	8	9	2024	10000021	978-0-94882-455-1	60

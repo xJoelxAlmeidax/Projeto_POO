@@ -9,24 +9,6 @@ int main() {
 
     Biblioteca* B = new Biblioteca("Biblioteca JRST");
     B->load_file("Dados.txt");
-
-
-
-    // ver isto
-    /*vector<string> geradosISBN;
-    vector<string> geradosISSN;
-
-
-    for (int i = 0; i < 10; i++)
-    {   
-        string nome = gerarNomesJornais();
-
-        Livro* Lei = new LivroEducativo(nome, gerar_nome_autor(), gerar_anos(), gerarISBNUnico(geradosISBN), to_string(idadeRecomendada(nome)), gerareditorBoss(), gerar_tipo_dis());
-
-        B->Add_Livro(Lei);
-    }*/
-    
-
     B->Sistema_Notif_atraso();
     subs_systpause(); system("cls");
     const char* opcoesTab1[] = { 

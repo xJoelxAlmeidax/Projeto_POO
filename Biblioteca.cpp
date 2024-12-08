@@ -412,7 +412,6 @@ bool Biblioteca::issnDuplicado(const string& ISSN) {
 }
 
 
-
 // LEITOR
 Leitor* Biblioteca::Add_Leitores() {
 	//cout << "Entrei em: [" << __FUNCTION__ << "]" << endl;
