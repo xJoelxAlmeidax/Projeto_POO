@@ -28,7 +28,7 @@ public:
 	list<Emprestimo*> get_Emp();
 	int get_idade();
 
-	virtual string get_NecessidadesAcessibilidade() { return ""; }	//Poderiam ser virtuais puros
+	virtual string get_NecessidadesAcessibilidade() { return ""; }
 	virtual string get_curso(){return "";}
 	virtual string get_Email() { return ""; }
 	virtual string get_Departamento() { return ""; }

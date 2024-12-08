@@ -29,7 +29,7 @@ class Livro
 
 
 		//gets extra
-		virtual string get_issn() { return ""; }	//Poderiam ser virtuais puros
+		virtual string get_issn() { return ""; }
 		virtual string get_edicao() { return ""; }
 		virtual string get_isbn() { return ""; }
 		virtual string get_editora() { return ""; }
